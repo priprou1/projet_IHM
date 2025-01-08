@@ -24,7 +24,18 @@ VOLUME_TRESH = 0.2
 SILENCE_TRESH = -40
 DEVICE_NUMBER = 7
 
-def get_current_note(volume_thresh=VOLUME_TRESH, printOut=False):
+def input_callback(io_type, name, value_type, value, my_data):
+
+    global VOLUME_TRESH
+
+    if(name == "volumeTresh"):
+        VOLUME_TRESH = value
+        print("Volume treshold set to : ", value)
+
+
+def get_current_note(printOut=False):
+
+    global VOLUME_TRESH
 
     p = pyaudio.PyAudio()
     for i in range(p.get_device_count()):
@@ -57,14 +68,13 @@ def get_current_note(volume_thresh=VOLUME_TRESH, printOut=False):
 
             volume = np.sum(samples**2)/len(samples) * 100
 
-            if pitch and volume > volume_thresh:  
+            if pitch and volume > VOLUME_TRESH:  
                 current_pitch.frequency = pitch
             else:
                 continue
 
             if printOut:
-                print(current_pitch)
-                print(current_pitch.name)
+                print(current_pitch, " : ", current_pitch.nameWithOctave)
                 igs.output_set_string("noteName", current_pitch.nameWithOctave)
                 igs.output_set_int("note", current_pitch.midi)
 
@@ -97,6 +107,9 @@ if __name__ == "__main__":
 
     igs.debug(f"Ingescape version: {igs.version()} (protocol v{igs.protocol()})")
 
+    igs.input_create("volumeTresh", igs.DOUBLE_T, None)
+    igs.observe_input("volumeTresh", input_callback, None)
+
     igs.output_create("noteName", igs.STRING_T, None)
     igs.output_create("note", igs.INTEGER_T, None)
 
@@ -104,7 +117,7 @@ if __name__ == "__main__":
     
     #input()
 
-    get_current_note(volume_thresh=VOLUME_TRESH, printOut=True)
+    get_current_note(printOut=True)
 
     igs.stop()
 

@@ -13,6 +13,8 @@ import sys
 import ingescape as igs
 
 id = -1
+bmin = 55
+bmax = 67
 
 def on_agent_event_callback(event, uuid, name, event_data, my_data):
     if name == "Whiteboard":
@@ -41,14 +43,23 @@ def elementCreated_callback(sender_agent_name, sender_agent_uuid, service_name, 
         print(id)
 
 def input_callback(io_type, name, value_type, value, my_data):
+    
+    global bmin, bmax
+
+    if(name == "bmin"):
+        bmin = value
+        print("bmin set to : ", value)
+
+    if(name == "bmax"):
+        bmax = value
+        print("bmax set to : ", value)
+
+def note_input_callback(io_type, name, value_type, value, my_data):
 
     # On suppose que les notes pertinentes sont celles de 20 à 100
     # On suppose que la hauteur du whiteboard est de 0 à 680
 
-    global id
-
-    bmin = 40
-    bmax = 84
+    global id, bmin, bmax
 
     screen_height = 1000
 
@@ -80,7 +91,13 @@ if __name__ == "__main__":
     igs.debug(f"Ingescape version: {igs.version()} (protocol v{igs.protocol()})")
 
     igs.input_create("note", igs.INTEGER_T, None)
-    igs.observe_input("note", input_callback, None)
+    igs.observe_input("note", note_input_callback, None)
+
+    igs.input_create("bmin", igs.INTEGER_T, None)
+    igs.observe_input("bmin", input_callback, None)
+
+    igs.input_create("bmax", igs.INTEGER_T, None)
+    igs.observe_input("bmax", input_callback, None)
 
     igs.service_init("elementCreated", elementCreated_callback, None)
     igs.service_arg_add("elementCreated", "elementId", igs.INTEGER_T)
