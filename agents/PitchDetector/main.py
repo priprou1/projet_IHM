@@ -20,8 +20,8 @@ import argparse
 import queue
 import music21  
 
-VOLUME_TRESH = 0.01
-SILENCE_TRESH = -32
+VOLUME_TRESH = 0.2
+SILENCE_TRESH = -40
 DEVICE_NUMBER = 7
 
 def get_current_note(volume_thresh=VOLUME_TRESH, printOut=False):
