@@ -24,6 +24,130 @@
     "library": {
         "classes": [
             {
+                "className": "PitchDetector",
+                "color": 0,
+                "definition": {
+                    "inputs": [
+                        {
+                            "name": "volumeTresh",
+                            "type": "DOUBLE"
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "noteName",
+                            "type": "STRING"
+                        },
+                        {
+                            "name": "note",
+                            "type": "INTEGER"
+                        }
+                    ]
+                },
+                "description": "",
+                "icon": -1,
+                "package": "",
+                "plugin": "ingescape_class",
+                "uuid": "2982af58-dc28-4413-8035-ff5a4b504abd",
+                "version": ""
+            },
+            {
+                "className": "Bird",
+                "color": 0,
+                "definition": {
+                    "inputs": [
+                        {
+                            "name": "screenHeight",
+                            "type": "DOUBLE"
+                        },
+                        {
+                            "name": "bmax",
+                            "type": "INTEGER"
+                        },
+                        {
+                            "name": "bmin",
+                            "type": "INTEGER"
+                        },
+                        {
+                            "name": "note",
+                            "type": "INTEGER"
+                        }
+                    ],
+                    "services": [
+                        {
+                            "arguments": [
+                                {
+                                    "name": "succeeded",
+                                    "type": "BOOL"
+                                }
+                            ],
+                            "name": "actionResult"
+                        },
+                        {
+                            "arguments": [
+                                {
+                                    "name": "elementId",
+                                    "type": "INTEGER"
+                                }
+                            ],
+                            "name": "elementCreated"
+                        }
+                    ]
+                },
+                "description": "",
+                "icon": -1,
+                "package": "",
+                "plugin": "ingescape_class",
+                "uuid": "73df17bd-cf71-4394-92f5-e24b45ade179",
+                "version": ""
+            },
+            {
+                "className": "Obstacle",
+                "color": 0,
+                "definition": {
+                    "inputs": [
+                        {
+                            "name": "screenHeight",
+                            "type": "INTEGER"
+                        },
+                        {
+                            "name": "note",
+                            "type": "INTEGER"
+                        },
+                        {
+                            "name": "clock",
+                            "type": "IMPULSION"
+                        }
+                    ],
+                    "services": [
+                        {
+                            "arguments": [
+                                {
+                                    "name": "elementId",
+                                    "type": "INTEGER"
+                                }
+                            ],
+                            "name": "elementCreated"
+                        },
+                        {
+                            "arguments": [
+                                {
+                                    "name": "succeeded",
+                                    "type": "BOOL"
+                                }
+                            ],
+                            "name": "actionResult"
+                        }
+                    ]
+                },
+                "description": "",
+                "icon": -1,
+                "package": "",
+                "plugin": "ingescape_class",
+                "uuid": "b0ecb6f6-5347-4be3-9494-b36690f99e20",
+                "version": ""
+            },
+            {
                 "className": "Whiteboard",
                 "color": 0,
                 "definition": {
@@ -55,6 +179,22 @@
                     ],
                     "outputs": [
                         {
+                            "name": "windowWidth",
+                            "type": "INTEGER"
+                        },
+                        {
+                            "name": "windowHeight",
+                            "type": "INTEGER"
+                        },
+                        {
+                            "name": "whiteboardWidth",
+                            "type": "INTEGER"
+                        },
+                        {
+                            "name": "whiteboardHeight",
+                            "type": "INTEGER"
+                        },
+                        {
                             "name": "lastChatMessage",
                             "type": "STRING"
                         },
@@ -71,11 +211,78 @@
                         {
                             "arguments": [
                                 {
+                                    "name": "title",
+                                    "type": "STRING"
+                                }
+                            ],
+                            "name": "setTitle"
+                        },
+                        {
+                            "arguments": [
+                                {
+                                    "name": "color",
+                                    "type": "STRING"
+                                }
+                            ],
+                            "name": "setBackgroundColor"
+                        },
+                        {
+                            "name": "getWindowSize",
+                            "replies": [
+                                {
+                                    "arguments": [
+                                        {
+                                            "name": "width",
+                                            "type": "INTEGER"
+                                        },
+                                        {
+                                            "name": "height",
+                                            "type": "INTEGER"
+                                        }
+                                    ],
+                                    "name": "getWindowSizeResult"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "getWhiteboardSize",
+                            "replies": [
+                                {
+                                    "arguments": [
+                                        {
+                                            "name": "width",
+                                            "type": "INTEGER"
+                                        },
+                                        {
+                                            "name": "height",
+                                            "type": "INTEGER"
+                                        }
+                                    ],
+                                    "name": "getWhiteboardSizeResult"
+                                }
+                            ]
+                        },
+                        {
+                            "arguments": [
+                                {
                                     "name": "message",
                                     "type": "STRING"
                                 }
                             ],
                             "name": "chat"
+                        },
+                        {
+                            "arguments": [
+                                {
+                                    "name": "name",
+                                    "type": "STRING"
+                                },
+                                {
+                                    "name": "message",
+                                    "type": "STRING"
+                                }
+                            ],
+                            "name": "chatAs"
                         },
                         {
                             "name": "snapshot",
@@ -410,93 +617,7 @@
                 "icon": -1,
                 "package": "",
                 "plugin": "ingescape_class",
-                "uuid": "446aedfb-f7a8-425a-bee6-49e92de230d6",
-                "version": ""
-            },
-            {
-                "className": "PitchDetector",
-                "color": 0,
-                "definition": {
-                    "inputs": [
-                        {
-                            "name": "volumeTresh",
-                            "type": "DOUBLE"
-                        }
-                    ],
-                    "outputs": [
-                        {
-                            "name": "noteName",
-                            "type": "STRING"
-                        },
-                        {
-                            "name": "note",
-                            "type": "INTEGER"
-                        }
-                    ]
-                },
-                "description": "",
-                "icon": -1,
-                "package": "",
-                "plugin": "ingescape_class",
-                "uuid": "2982af58-dc28-4413-8035-ff5a4b504abd",
-                "version": ""
-            },
-            {
-                "className": "Bird",
-                "color": 0,
-                "definition": {
-                    "inputs": [
-                        {
-                            "name": "bmax",
-                            "type": "INTEGER"
-                        },
-                        {
-                            "name": "bmin",
-                            "type": "INTEGER"
-                        },
-                        {
-                            "name": "note",
-                            "type": "INTEGER"
-                        }
-                    ],
-                    "services": [
-                        {
-                            "arguments": [
-                                {
-                                    "name": "succeeded",
-                                    "type": "BOOL"
-                                }
-                            ],
-                            "name": "actionResult"
-                        },
-                        {
-                            "arguments": [
-                                {
-                                    "name": "elementId",
-                                    "type": "INTEGER"
-                                }
-                            ],
-                            "name": "elementCreated"
-                        }
-                    ]
-                },
-                "description": "",
-                "icon": -1,
-                "package": "",
-                "plugin": "ingescape_class",
-                "uuid": "73df17bd-cf71-4394-92f5-e24b45ade179",
-                "version": ""
-            },
-            {
-                "className": "toto",
-                "color": 0,
-                "definition": {
-                },
-                "description": "",
-                "icon": -1,
-                "package": "",
-                "plugin": "ingescape_class",
-                "uuid": "e3dda3de-977a-4570-9649-d806ead33677",
+                "uuid": "49986800-5f93-4f38-b14a-e9245f623301",
                 "version": ""
             }
         ]
@@ -505,80 +626,176 @@
         {
             "children": [
                 {
-                    "agent": {
-                        "instances": [
-                            {
-                                "commandLine": "C:\\Users\\nicol\\Documents\\DOCUMENTS\\Cours\\Whiteboard.win64\\Whiteboard\\Whiteboard.exe",
-                                "hostname": "Nicolas",
-                                "ip": "172.22.225.50",
-                                "isAttachedToCircle": false,
-                                "uuid": "2663588f-4f8f-4350-8d7d-d47536fdad77"
-                            },
-                            {
-                                "commandLine": "C:\\Users\\Dell\\Downloads\\Whiteboard.win64\\Whiteboard\\Whiteboard.exe",
-                                "hostname": "Megatron",
-                                "ip": "172.22.225.165",
-                                "isAttachedToCircle": false,
-                                "uuid": "023b7f31-b2f2-465e-94cd-a79f82580858"
-                            },
-                            {
-                                "commandLine": "/home/lucas/Documents/S9/IHM/Whiteboard/bin/Whiteboard",
-                                "hostname": "adell",
-                                "ip": "172.22.224.176",
-                                "isAttachedToCircle": false,
-                                "mac": "90:0F:0C:8F:03:BD",
-                                "uuid": "f4c32bd0-6836-47bf-9b32-ef66c79bde8a"
-                            },
-                            {
-                                "commandLine": "/media/lucas/T7/repositories/projet_IHM/agents/Whiteboard/bin/Whiteboard",
-                                "hostname": "adell",
-                                "ip": "172.22.224.176",
-                                "isAttachedToCircle": false,
-                                "mac": "90:0F:0C:8F:03:BD",
-                                "uuid": "1117a5ed-98c0-423a-a1e0-d1016a74818d"
-                            },
-                            {
-                                "commandLine": "/home/n7student/Téléchargements/Whiteboard.linux64/Whiteboard/bin/Whiteboard",
-                                "hostname": "n7student",
-                                "ip": "172.22.225.19",
-                                "isAttachedToCircle": false,
-                                "uuid": "aea4cd4d-fbee-48b7-b305-a0e57f0a5a13"
-                            }
-                        ]
+                    "data": {
+                        "entries": [
+                            "40"
+                        ],
+                        "value_type": "INTEGER"
                     },
-                    "class": "446aedfb-f7a8-425a-bee6-49e92de230d6",
-                    "comment": "",
-                    "height": 202,
-                    "name": "Whiteboard",
-                    "simulationTime": 5000,
-                    "uuid": "d48e2efc-818c-4214-b9c4-7f7883cf7ff4",
-                    "width": 250,
-                    "x": 615.7505332340106,
-                    "y": 253.97992103405596
+                    "height": 79,
+                    "name": "",
+                    "tool": "com.ingescape.circle.tool.writer",
+                    "uuid": "19fe269f-fdde-462a-9bdf-901690e1553f",
+                    "width": 256,
+                    "x": -220.29489468592402,
+                    "y": 496.04968261504837
                 },
                 {
                     "data": {
-                        "arguments": [
-                            {
-                                "url": "https://raw.githubusercontent.com/priprou1/projet_IHM/refs/heads/master/Bird.png"
-                            },
-                            {
-                                "x": "200"
-                            },
-                            {
-                                "y": "200"
-                            }
+                        "entries": [
+                            "60"
                         ],
-                        "selectedAgentUuid": "d48e2efc-818c-4214-b9c4-7f7883cf7ff4",
-                        "selectedService": "addImageFromUrl"
+                        "value_type": "INTEGER"
                     },
-                    "height": 188,
+                    "height": 79,
                     "name": "",
-                    "tool": "com.ingescape.circle.tool.servicecaller",
-                    "uuid": "5f8657a5-fbe1-4293-8a5c-6f139f650721",
-                    "width": 246,
-                    "x": -151.64235599649274,
-                    "y": 145.13375980576274
+                    "tool": "com.ingescape.circle.tool.writer",
+                    "uuid": "808cb0be-91a4-40f5-a728-5c2f53f3d4b9",
+                    "width": 256,
+                    "x": -215.96862951013145,
+                    "y": 376.80783517488726
+                },
+                {
+                    "data": {
+                        "entries": [
+                            "1000"
+                        ],
+                        "value_type": "DOUBLE"
+                    },
+                    "height": 79,
+                    "name": "",
+                    "tool": "com.ingescape.circle.tool.writer",
+                    "uuid": "b31a5db7-3a88-4fa0-8a67-4a0943ad4a27",
+                    "width": 256,
+                    "x": -218.59003855739468,
+                    "y": 248.2895578969004
+                },
+                {
+                    "agent": {
+                        "instances": [
+                            {
+                                "commandLine": "/usr/local/bin/python3 main.py Bird wlp2s0 5670",
+                                "hostname": "adell",
+                                "ip": "172.22.227.4",
+                                "isAttachedToCircle": false,
+                                "mac": "90:0F:0C:8F:03:BD",
+                                "uuid": "0033c22f-8c9d-44d6-bc07-55cf58c65915"
+                            },
+                            {
+                                "commandLine": "/usr/local/bin/python3 /home/lucas/Documents/Ingescape/sandbox//Bird/main.py Bird wlp2s0 5670",
+                                "hostname": "adell",
+                                "ip": "172.22.227.4",
+                                "isAttachedToCircle": false,
+                                "mac": "90:0F:0C:8F:03:BD",
+                                "uuid": "fc79fb5e-4b2c-4077-8de2-15ee1c1c327a"
+                            },
+                            {
+                                "commandLine": "/usr/local/bin/python3 ./scripts/../agents/Bird/main.py Bird wlp2s0 5670",
+                                "hostname": "adell",
+                                "ip": "172.22.227.4",
+                                "isAttachedToCircle": false,
+                                "mac": "90:0F:0C:8F:03:BD",
+                                "uuid": "d307dc19-ea5c-411f-9d69-322ccd40f889"
+                            }
+                        ]
+                    },
+                    "class": "73df17bd-cf71-4394-92f5-e24b45ade179",
+                    "comment": "",
+                    "height": 158,
+                    "name": "Bird",
+                    "simulationTime": 5000,
+                    "uuid": "9b409dbc-1cec-4e74-9895-6ac14352e5be",
+                    "width": 250,
+                    "x": 556.9824186731676,
+                    "y": 73.10898087982417
+                },
+                {
+                    "agent": {
+                        "instances": [
+                            {
+                                "commandLine": "/usr/local/bin/python3 ./scripts/../agents/Obstacle/main.py Obstacle wlp2s0 5670",
+                                "hostname": "adell",
+                                "ip": "172.22.227.4",
+                                "isAttachedToCircle": false,
+                                "mac": "90:0F:0C:8F:03:BD",
+                                "uuid": "78901f7f-f013-44d0-b282-b0d0aaf9487e"
+                            }
+                        ]
+                    },
+                    "class": "b0ecb6f6-5347-4be3-9494-b36690f99e20",
+                    "comment": "",
+                    "height": 136,
+                    "name": "Obstacle",
+                    "simulationTime": 5000,
+                    "uuid": "4c69d215-1cf7-4d61-a538-aa432351b144",
+                    "width": 250,
+                    "x": 650.3477905088362,
+                    "y": 720.3595860384492
+                },
+                {
+                    "data": {
+                        "entries": [
+                            "0.05"
+                        ],
+                        "value_type": "DOUBLE"
+                    },
+                    "height": 79,
+                    "name": "",
+                    "tool": "com.ingescape.circle.tool.writer",
+                    "uuid": "92efc289-343b-4c90-ac08-c50b60c291d0",
+                    "width": 256,
+                    "x": -234.44173541688292,
+                    "y": 665.1105414378553
+                },
+                {
+                    "data": {
+                        "duration": 500,
+                        "repeat": -1
+                    },
+                    "height": 112,
+                    "name": "",
+                    "tool": "com.ingescape.circle.tool.timer",
+                    "uuid": "c0bd18f5-20d8-4070-89e7-1d3db1cfa249",
+                    "width": 210,
+                    "x": -248.4719734782346,
+                    "y": 950.8555010005501
+                },
+                {
+                    "data": {
+                        "entries": [
+                        ],
+                        "value_type": "IMPULSION"
+                    },
+                    "height": 44,
+                    "name": "",
+                    "tool": "com.ingescape.circle.tool.writer",
+                    "uuid": "d40da8f3-43a5-41cc-bc1a-82635031fa16",
+                    "width": 256,
+                    "x": -575.9694403950796,
+                    "y": 513.7294872901315
+                },
+                {
+                    "agent": {
+                        "instances": [
+                            {
+                                "commandLine": "/media/lucas/T7/repositories/projet_IHM/agents/Whiteboard/bin/Whiteboard",
+                                "hostname": "adell",
+                                "ip": "172.22.227.4",
+                                "isAttachedToCircle": false,
+                                "mac": "90:0F:0C:8F:03:BD",
+                                "uuid": "85c8ef06-0d89-4714-9dd3-670d5e7452af"
+                            }
+                        ]
+                    },
+                    "class": "49986800-5f93-4f38-b14a-e9245f623301",
+                    "comment": "",
+                    "height": 224,
+                    "name": "Whiteboard",
+                    "simulationTime": 5000,
+                    "uuid": "037d3303-3d37-4b58-9bda-78004cba8bbe",
+                    "width": 250,
+                    "x": 759.3968111553263,
+                    "y": 369.77349505710674
                 },
                 {
                     "agent": {
@@ -586,7 +803,7 @@
                             {
                                 "commandLine": "/usr/local/bin/python3 main.py PitchDetector wlp2s0 5670",
                                 "hostname": "adell",
-                                "ip": "172.22.224.176",
+                                "ip": "172.22.227.4",
                                 "isAttachedToCircle": false,
                                 "mac": "90:0F:0C:8F:03:BD",
                                 "uuid": "019e6cb5-ec52-499a-99d7-fa02f23336ac"
@@ -594,7 +811,7 @@
                             {
                                 "commandLine": "/usr/local/bin/python3 /home/lucas/Documents/Ingescape/sandbox//PitchDetector/main.py PitchDetector wlp2s0 5670",
                                 "hostname": "adell",
-                                "ip": "172.22.224.176",
+                                "ip": "172.22.227.4",
                                 "isAttachedToCircle": false,
                                 "mac": "90:0F:0C:8F:03:BD",
                                 "uuid": "7cedd22b-56f2-42ae-9f12-ea0bfeef2b38"
@@ -602,7 +819,7 @@
                             {
                                 "commandLine": "/usr/local/bin/python3 ./scripts/../agents/PitchDetector/main.py PitchDetector wlp2s0 5670",
                                 "hostname": "adell",
-                                "ip": "172.22.224.176",
+                                "ip": "172.22.227.4",
                                 "isAttachedToCircle": false,
                                 "mac": "90:0F:0C:8F:03:BD",
                                 "uuid": "6f046369-57e1-4396-bdfe-027300caebcf"
@@ -616,92 +833,35 @@
                     "simulationTime": 5000,
                     "uuid": "2f84a049-86c3-4c33-b945-9e18dcd7c99d",
                     "width": 250,
-                    "x": 163.06051953647602,
-                    "y": 335.19169988638413
+                    "x": 106.52067066918062,
+                    "y": 575.5057104315508
                 },
                 {
                     "data": {
-                        "entries": [
-                            "0.25"
-                        ],
-                        "value_type": "DOUBLE"
+                        "selectedAgentUuid": "Circle"
                     },
-                    "height": 79,
+                    "height": 174,
                     "name": "",
-                    "tool": "com.ingescape.circle.tool.writer",
-                    "uuid": "92efc289-343b-4c90-ac08-c50b60c291d0",
-                    "width": 256,
-                    "x": -109.84300966116984,
-                    "y": 500.04934288518416
-                },
-                {
-                    "agent": {
-                        "instances": [
-                            {
-                                "commandLine": "/usr/local/bin/python3 main.py Bird wlp2s0 5670",
-                                "hostname": "adell",
-                                "ip": "172.22.224.176",
-                                "isAttachedToCircle": false,
-                                "mac": "90:0F:0C:8F:03:BD",
-                                "uuid": "0033c22f-8c9d-44d6-bc07-55cf58c65915"
-                            },
-                            {
-                                "commandLine": "/usr/local/bin/python3 /home/lucas/Documents/Ingescape/sandbox//Bird/main.py Bird wlp2s0 5670",
-                                "hostname": "adell",
-                                "ip": "172.22.224.176",
-                                "isAttachedToCircle": false,
-                                "mac": "90:0F:0C:8F:03:BD",
-                                "uuid": "fc79fb5e-4b2c-4077-8de2-15ee1c1c327a"
-                            },
-                            {
-                                "commandLine": "/usr/local/bin/python3 ./scripts/../agents/Bird/main.py Bird wlp2s0 5670",
-                                "hostname": "adell",
-                                "ip": "172.22.224.176",
-                                "isAttachedToCircle": false,
-                                "mac": "90:0F:0C:8F:03:BD",
-                                "uuid": "d307dc19-ea5c-411f-9d69-322ccd40f889"
-                            }
-                        ]
-                    },
-                    "class": "73df17bd-cf71-4394-92f5-e24b45ade179",
-                    "comment": "",
-                    "height": 136,
-                    "name": "Bird",
-                    "simulationTime": 5000,
-                    "uuid": "9b409dbc-1cec-4e74-9895-6ac14352e5be",
-                    "width": 250,
-                    "x": 545.3503497738658,
-                    "y": 580.8166752607061
+                    "tool": "com.ingescape.circle.tool.serviceobserver",
+                    "uuid": "6228b09c-cc35-421b-9e10-bf805b993aeb",
+                    "width": 200,
+                    "x": -629.4184344266524,
+                    "y": 191.6131140360414
                 },
                 {
                     "data": {
-                        "entries": [
-                            "55"
+                        "arguments": [
                         ],
-                        "value_type": "INTEGER"
+                        "selectedAgentUuid": "037d3303-3d37-4b58-9bda-78004cba8bbe",
+                        "selectedService": "getWhiteboardSize"
                     },
-                    "height": 79,
+                    "height": 75,
                     "name": "",
-                    "tool": "com.ingescape.circle.tool.writer",
-                    "uuid": "19fe269f-fdde-462a-9bdf-901690e1553f",
-                    "width": 256,
-                    "x": 144.18849122318488,
-                    "y": 712.5274801980696
-                },
-                {
-                    "data": {
-                        "entries": [
-                            "67"
-                        ],
-                        "value_type": "INTEGER"
-                    },
-                    "height": 79,
-                    "name": "",
-                    "tool": "com.ingescape.circle.tool.writer",
-                    "uuid": "808cb0be-91a4-40f5-a728-5c2f53f3d4b9",
-                    "width": 256,
-                    "x": 151.79742614970053,
-                    "y": 595.1053735979837
+                    "tool": "com.ingescape.circle.tool.servicecaller",
+                    "uuid": "6711bf35-7aa5-4486-9232-136035f0cdc2",
+                    "width": 246,
+                    "x": -216.68814023251036,
+                    "y": 157.2843921663757
                 }
             ],
             "links": {
@@ -751,6 +911,102 @@
                             "type": "INPUT"
                         },
                         "source": "808cb0be-91a4-40f5-a728-5c2f53f3d4b9",
+                        "sourceIO": {
+                            "name": "value",
+                            "type": "OUTPUT"
+                        }
+                    },
+                    {
+                        "destination": "92efc289-343b-4c90-ac08-c50b60c291d0",
+                        "destinationIO": {
+                            "name": "trigger",
+                            "type": "INPUT"
+                        },
+                        "source": "d40da8f3-43a5-41cc-bc1a-82635031fa16",
+                        "sourceIO": {
+                            "name": "value",
+                            "type": "OUTPUT"
+                        }
+                    },
+                    {
+                        "destination": "808cb0be-91a4-40f5-a728-5c2f53f3d4b9",
+                        "destinationIO": {
+                            "name": "trigger",
+                            "type": "INPUT"
+                        },
+                        "source": "d40da8f3-43a5-41cc-bc1a-82635031fa16",
+                        "sourceIO": {
+                            "name": "value",
+                            "type": "OUTPUT"
+                        }
+                    },
+                    {
+                        "destination": "19fe269f-fdde-462a-9bdf-901690e1553f",
+                        "destinationIO": {
+                            "name": "trigger",
+                            "type": "INPUT"
+                        },
+                        "source": "d40da8f3-43a5-41cc-bc1a-82635031fa16",
+                        "sourceIO": {
+                            "name": "value",
+                            "type": "OUTPUT"
+                        }
+                    },
+                    {
+                        "destination": "9b409dbc-1cec-4e74-9895-6ac14352e5be",
+                        "destinationIO": {
+                            "name": "screenHeight",
+                            "type": "INPUT"
+                        },
+                        "source": "b31a5db7-3a88-4fa0-8a67-4a0943ad4a27",
+                        "sourceIO": {
+                            "name": "value",
+                            "type": "OUTPUT"
+                        }
+                    },
+                    {
+                        "destination": "b31a5db7-3a88-4fa0-8a67-4a0943ad4a27",
+                        "destinationIO": {
+                            "name": "trigger",
+                            "type": "INPUT"
+                        },
+                        "source": "d40da8f3-43a5-41cc-bc1a-82635031fa16",
+                        "sourceIO": {
+                            "name": "value",
+                            "type": "OUTPUT"
+                        }
+                    },
+                    {
+                        "destination": "4c69d215-1cf7-4d61-a538-aa432351b144",
+                        "destinationIO": {
+                            "name": "clock",
+                            "type": "INPUT"
+                        },
+                        "source": "c0bd18f5-20d8-4070-89e7-1d3db1cfa249",
+                        "sourceIO": {
+                            "name": "output",
+                            "type": "OUTPUT"
+                        }
+                    },
+                    {
+                        "destination": "c0bd18f5-20d8-4070-89e7-1d3db1cfa249",
+                        "destinationIO": {
+                            "name": "start",
+                            "type": "INPUT"
+                        },
+                        "source": "d40da8f3-43a5-41cc-bc1a-82635031fa16",
+                        "sourceIO": {
+                            "name": "value",
+                            "type": "OUTPUT"
+                        }
+                    },
+                    {
+                        "destination": "6711bf35-7aa5-4486-9232-136035f0cdc2",
+                        "destinationIO": {
+                            "name": "trigger",
+                            "type": "INPUT"
+                        },
+                        "source": "d40da8f3-43a5-41cc-bc1a-82635031fa16",
                         "sourceIO": {
                             "name": "value",
                             "type": "OUTPUT"
