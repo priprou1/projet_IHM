@@ -37,15 +37,15 @@
                     ],
                     "outputs": [
                         {
-                            "description": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Asap'; font-size:13px; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Name of the pitch found </p></body></html>",
-                            "name": "noteName",
-                            "type": "STRING"
-                        },
-                        {
                             "constraint": "[0,127]",
                             "description": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Asap'; font-size:13px; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Number of the note found wich correspond of the input of a MIDI keyboard</p></body></html>",
                             "name": "note",
                             "type": "INTEGER"
+                        },
+                        {
+                            "description": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Asap'; font-size:13px; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Name of the pitch found </p></body></html>",
+                            "name": "noteName",
+                            "type": "STRING"
                         }
                     ]
                 },
@@ -121,7 +121,13 @@
                 "definition": {
                     "inputs": [
                         {
-                            "name": "offset",
+                            "description": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Asap'; font-size:13px; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Height of the Whiteboard</p></body></html>",
+                            "name": "whiteboardHeight",
+                            "type": "INTEGER"
+                        },
+                        {
+                            "description": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Asap'; font-size:13px; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Width of the Whiteboard</p></body></html>",
+                            "name": "whiteboardWidth",
                             "type": "INTEGER"
                         },
                         {
@@ -137,13 +143,8 @@
                             "type": "INTEGER"
                         },
                         {
-                            "description": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Asap'; font-size:13px; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Width of the Whiteboard</p></body></html>",
-                            "name": "whiteboardWidth",
-                            "type": "INTEGER"
-                        },
-                        {
-                            "description": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Asap'; font-size:13px; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Height of the Whiteboard</p></body></html>",
-                            "name": "whiteboardHeight",
+                            "description": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Asap'; font-size:13px; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Size of the movement of the obstacle</p></body></html>",
+                            "name": "offset",
                             "type": "INTEGER"
                         },
                         {
@@ -665,6 +666,26 @@
                 "className": "PitchBird",
                 "color": 0,
                 "definition": {
+                    "inputs": [
+                        {
+                            "name": "whiteboardHeight",
+                            "type": "INTEGER"
+                        },
+                        {
+                            "name": "whiteboardWidth",
+                            "type": "INTEGER"
+                        },
+                        {
+                            "name": "maj",
+                            "type": "IMPULSION"
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "noteName",
+                            "type": "STRING"
+                        }
+                    ]
                 },
                 "description": "",
                 "icon": -1,
@@ -681,232 +702,20 @@
                 {
                     "data": {
                         "entries": [
-                            "40"
-                        ],
-                        "value_type": "INTEGER"
-                    },
-                    "height": 79,
-                    "name": "",
-                    "tool": "com.ingescape.circle.tool.writer",
-                    "uuid": "19fe269f-fdde-462a-9bdf-901690e1553f",
-                    "width": 256,
-                    "x": -220.29489468592402,
-                    "y": 496.04968261504837
-                },
-                {
-                    "data": {
-                        "selectedAgentUuid": "Circle"
-                    },
-                    "height": 174,
-                    "name": "",
-                    "tool": "com.ingescape.circle.tool.serviceobserver",
-                    "uuid": "6228b09c-cc35-421b-9e10-bf805b993aeb",
-                    "width": 200,
-                    "x": -629.4184344266524,
-                    "y": 191.6131140360414
-                },
-                {
-                    "agent": {
-                        "instances": [
-                            {
-                                "commandLine": "/usr/local/bin/python3 main.py PitchDetector wlp2s0 5670",
-                                "hostname": "adell",
-                                "ip": "172.22.227.4",
-                                "isAttachedToCircle": false,
-                                "mac": "90:0F:0C:8F:03:BD",
-                                "uuid": "019e6cb5-ec52-499a-99d7-fa02f23336ac"
-                            },
-                            {
-                                "commandLine": "/usr/local/bin/python3 /home/lucas/Documents/Ingescape/sandbox//PitchDetector/main.py PitchDetector wlp2s0 5670",
-                                "hostname": "adell",
-                                "ip": "172.22.227.4",
-                                "isAttachedToCircle": false,
-                                "mac": "90:0F:0C:8F:03:BD",
-                                "uuid": "7cedd22b-56f2-42ae-9f12-ea0bfeef2b38"
-                            },
-                            {
-                                "commandLine": "/usr/local/bin/python3 ./scripts/../agents/PitchDetector/main.py PitchDetector wlp2s0 5670",
-                                "hostname": "adell",
-                                "ip": "172.22.227.4",
-                                "isAttachedToCircle": false,
-                                "mac": "90:0F:0C:8F:03:BD",
-                                "uuid": "6f046369-57e1-4396-bdfe-027300caebcf"
-                            },
-                            {
-                                "commandLine": "/home/lucas/.pyenv/versions/3.8.20/bin/python3 ./scripts/../agents/PitchDetector/main.py PitchDetector wlp0s20f3 5670",
-                                "hostname": "amyoga",
-                                "ip": "192.168.64.110",
-                                "isAttachedToCircle": false,
-                                "mac": "C8:6E:08:D2:D1:8D",
-                                "uuid": "e3297b82-d753-4231-a80f-3cdfa9b60fb1"
-                            }
-                        ]
-                    },
-                    "class": "2982af58-dc28-4413-8035-ff5a4b504abd",
-                    "comment": "",
-                    "height": 136,
-                    "name": "PitchDetector",
-                    "simulationTime": 5000,
-                    "uuid": "2f84a049-86c3-4c33-b945-9e18dcd7c99d",
-                    "width": 250,
-                    "x": 386.69507021104755,
-                    "y": 444.55463238480866
-                },
-                {
-                    "data": {
-                        "entries": [
-                            "0.5"
-                        ],
-                        "value_type": "DOUBLE"
-                    },
-                    "height": 79,
-                    "name": "",
-                    "tool": "com.ingescape.circle.tool.writer",
-                    "uuid": "92efc289-343b-4c90-ac08-c50b60c291d0",
-                    "width": 256,
-                    "x": -226.82830064672362,
-                    "y": 729.0633935071946
-                },
-                {
-                    "data": {
-                        "entries": [
-                            "10"
-                        ],
-                        "value_type": "INTEGER"
-                    },
-                    "height": 79,
-                    "name": "",
-                    "tool": "com.ingescape.circle.tool.writer",
-                    "uuid": "e2bb4d65-9852-41cb-858b-e2ac93580f81",
-                    "width": 256,
-                    "x": -228.06059108420664,
-                    "y": 608.7856567776458
-                },
-                {
-                    "data": {
-                        "arguments": [
-                        ],
-                        "selectedAgentUuid": "037d3303-3d37-4b58-9bda-78004cba8bbe",
-                        "selectedService": "hideLabels"
-                    },
-                    "height": 75,
-                    "name": "",
-                    "tool": "com.ingescape.circle.tool.servicecaller",
-                    "uuid": "6711bf35-7aa5-4486-9232-136035f0cdc2",
-                    "width": 246,
-                    "x": -196.8614871852202,
-                    "y": 258.6206188525255
-                },
-                {
-                    "data": {
-                        "duration": 10,
-                        "repeat": -1
-                    },
-                    "height": 112,
-                    "name": "",
-                    "tool": "com.ingescape.circle.tool.timer",
-                    "uuid": "c0bd18f5-20d8-4070-89e7-1d3db1cfa249",
-                    "width": 210,
-                    "x": -205.12474162479907,
-                    "y": 1232.554937321995
-                },
-                {
-                    "data": {
-                        "entries": [
                         ],
                         "value_type": "IMPULSION"
                     },
                     "height": 44,
                     "name": "",
                     "tool": "com.ingescape.circle.tool.writer",
-                    "uuid": "d40da8f3-43a5-41cc-bc1a-82635031fa16",
+                    "uuid": "42c2a3dc-3d57-442f-931a-6fd610a78380",
                     "width": 256,
-                    "x": -575.9694403950796,
-                    "y": 513.7294872901315
-                },
-                {
-                    "data": {
-                        "arguments": [
-                            {
-                                "type": "rectangle"
-                            },
-                            {
-                                "x": "0"
-                            },
-                            {
-                                "y": "0"
-                            },
-                            {
-                                "width": "100"
-                            },
-                            {
-                                "height": "100"
-                            },
-                            {
-                                "fill": "#80FF0000"
-                            },
-                            {
-                                "stroke": "transparent"
-                            },
-                            {
-                                "strokeWidth": "0"
-                            }
-                        ],
-                        "selectedAgentUuid": "037d3303-3d37-4b58-9bda-78004cba8bbe",
-                        "selectedService": "addShape"
-                    },
-                    "height": 188,
-                    "name": "",
-                    "tool": "com.ingescape.circle.tool.servicecaller",
-                    "uuid": "3dc20aee-4274-419f-b8fc-c1e9c6ff1ee5",
-                    "width": 246,
-                    "x": -742.5306537946882,
-                    "y": 710.5237503652389
-                },
-                {
-                    "data": {
-                        "entries": [
-                            "45",
-                            "47",
-                            "50",
-                            "55"
-                        ],
-                        "value_type": "INTEGER"
-                    },
-                    "height": 163,
-                    "name": "",
-                    "tool": "com.ingescape.circle.tool.writer",
-                    "uuid": "a66bd82d-983c-4b4f-9d71-96bd882a8e36",
-                    "width": 256,
-                    "x": 148.6015420229018,
-                    "y": 894.4648140678032
-                },
-                {
-                    "data": {
-                        "entries": [
-                            "80"
-                        ],
-                        "value_type": "INTEGER"
-                    },
-                    "height": 79,
-                    "name": "",
-                    "tool": "com.ingescape.circle.tool.writer",
-                    "uuid": "808cb0be-91a4-40f5-a728-5c2f53f3d4b9",
-                    "width": 256,
-                    "x": -215.96862951013145,
-                    "y": 376.80783517488726
+                    "x": 892.565990532943,
+                    "y": 229.54373909596956
                 },
                 {
                     "agent": {
                         "instances": [
-                            {
-                                "commandLine": "/media/lucas/T7/repositories/projet_IHM/agents/Whiteboard/bin/Whiteboard",
-                                "hostname": "adell",
-                                "ip": "172.22.227.4",
-                                "isAttachedToCircle": false,
-                                "mac": "90:0F:0C:8F:03:BD",
-                                "uuid": "85c8ef06-0d89-4714-9dd3-670d5e7452af"
-                            },
                             {
                                 "commandLine": "/home/lucas/repositories/projet_IHM/agents/Whiteboard/bin/Whiteboard",
                                 "hostname": "amyoga",
@@ -914,6 +723,14 @@
                                 "isAttachedToCircle": false,
                                 "mac": "C8:6E:08:D2:D1:8D",
                                 "uuid": "b57b705f-93ff-43a4-98f2-b856206c57ca"
+                            },
+                            {
+                                "commandLine": "/media/lucas/T7/repositories/projet_IHM/agents/Whiteboard/bin/Whiteboard",
+                                "hostname": "adell",
+                                "ip": "172.22.227.4",
+                                "isAttachedToCircle": false,
+                                "mac": "90:0F:0C:8F:03:BD",
+                                "uuid": "85c8ef06-0d89-4714-9dd3-670d5e7452af"
                             }
                         ]
                     },
@@ -924,94 +741,188 @@
                     "simulationTime": 5000,
                     "uuid": "037d3303-3d37-4b58-9bda-78004cba8bbe",
                     "width": 250,
-                    "x": 716.6738298407663,
-                    "y": 466.3645832465468
+                    "x": 1454.8090746407665,
+                    "y": -241.31362475345293
                 },
                 {
-                    "agent": {
-                        "instances": [
-                            {
-                                "commandLine": "/usr/local/bin/python3 ./scripts/../agents/Obstacle/main.py Obstacle wlp2s0 5670",
-                                "hostname": "adell",
-                                "ip": "172.22.227.4",
-                                "isAttachedToCircle": false,
-                                "mac": "90:0F:0C:8F:03:BD",
-                                "uuid": "78901f7f-f013-44d0-b282-b0d0aaf9487e"
+                    "children": [
+                        {
+                            "agent": {
                             },
-                            {
-                                "commandLine": "/home/lucas/.pyenv/versions/3.8.20/bin/python3 ./scripts/../agents/Obstacle/main.py Obstacle wlp0s20f3 5670",
-                                "hostname": "amyoga",
-                                "ip": "192.168.64.110",
-                                "isAttachedToCircle": false,
-                                "mac": "C8:6E:08:D2:D1:8D",
-                                "uuid": "7b7ce4a6-a5b0-4f53-bef1-b3a6d82a2db7"
+                            "class": "73df17bd-cf71-4394-92f5-e24b45ade179",
+                            "comment": "",
+                            "height": 158,
+                            "name": "Bird",
+                            "simulationTime": 5000,
+                            "uuid": "bbe6bd53-694f-406f-bb85-c9dddf0bc43d",
+                            "width": 250,
+                            "x": 913.2217817395644,
+                            "y": 0.7384041301519346
+                        },
+                        {
+                            "agent": {
                             },
-                            {
-                                "commandLine": "/home/lucas/.pyenv/versions/3.8.20/bin/python3 ./../agents/Obstacle/main.py Obstacle wlp0s20f3 5670",
-                                "hostname": "amyoga",
-                                "ip": "192.168.64.110",
-                                "isAttachedToCircle": false,
-                                "mac": "C8:6E:08:D2:D1:8D",
-                                "uuid": "cc8d0b07-9b45-4437-99b7-68a96e36aad0"
-                            }
-                        ]
+                            "class": "2982af58-dc28-4413-8035-ff5a4b504abd",
+                            "comment": "",
+                            "height": 136,
+                            "name": "PitchDetector",
+                            "simulationTime": 5000,
+                            "uuid": "1f2e7f4a-5570-4f69-ae37-039c92ca7907",
+                            "width": 250,
+                            "x": 1099.3140484062312,
+                            "y": 1066.489817463485
+                        },
+                        {
+                            "data": {
+                                "entries": [
+                                    "0.5"
+                                ],
+                                "value_type": "DOUBLE"
+                            },
+                            "height": 79,
+                            "name": "",
+                            "tool": "com.ingescape.circle.tool.writer",
+                            "uuid": "47ce2325-134f-41f1-b0bb-7b152a2db137",
+                            "width": 256,
+                            "x": 81.32249285067383,
+                            "y": 1105.0073730190397
+                        },
+                        {
+                            "agent": {
+                            },
+                            "class": "b0ecb6f6-5347-4be3-9494-b36690f99e20",
+                            "comment": "",
+                            "height": 232.9759999999999,
+                            "name": "Obstacle",
+                            "simulationTime": 5000,
+                            "uuid": "2ef9beb3-f70b-4e7c-9d22-1a8fd714579b",
+                            "width": 250,
+                            "x": 909.3823150728972,
+                            "y": 795.5140841301511
+                        },
+                        {
+                            "data": {
+                                "arguments": [
+                                    {
+                                        "title": "PitchBird"
+                                    }
+                                ],
+                                "selectedAgentUuid": "037d3303-3d37-4b58-9bda-78004cba8bbe",
+                                "selectedService": "setTitle"
+                            },
+                            "height": 149,
+                            "name": "",
+                            "tool": "com.ingescape.circle.tool.servicecaller",
+                            "uuid": "e23931da-21a3-46cf-b5d0-27f183e15624",
+                            "width": 246,
+                            "x": 80.1744272578967,
+                            "y": 269.7813327928118
+                        },
+                        {
+                            "data": {
+                                "arguments": [
+                                ],
+                                "selectedAgentUuid": "037d3303-3d37-4b58-9bda-78004cba8bbe",
+                                "selectedService": "hideLabels"
+                            },
+                            "height": 75,
+                            "name": "",
+                            "tool": "com.ingescape.circle.tool.servicecaller",
+                            "uuid": "1ac0f78f-7a7c-4d28-95c5-85023a40fe6f",
+                            "width": 246,
+                            "x": 81.45996965789755,
+                            "y": 427.3088463928118
+                        },
+                        {
+                            "data": {
+                                "entries": [
+                                    "80"
+                                ],
+                                "value_type": "INTEGER"
+                            },
+                            "height": 79,
+                            "name": "",
+                            "tool": "com.ingescape.circle.tool.writer",
+                            "uuid": "1f56c7ed-fd8d-4163-a5ce-075fa2e1d1dd",
+                            "width": 256,
+                            "x": 80.26796965789731,
+                            "y": 509.4968463928117
+                        },
+                        {
+                            "data": {
+                                "entries": [
+                                    "40"
+                                ],
+                                "value_type": "INTEGER"
+                            },
+                            "height": 79,
+                            "name": "",
+                            "tool": "com.ingescape.circle.tool.writer",
+                            "uuid": "03d41624-b3d6-43d8-b601-d05d67c3d227",
+                            "width": 256,
+                            "x": 79.07449285067491,
+                            "y": 598.2953730190391
+                        },
+                        {
+                            "data": {
+                                "entries": [
+                                    "10"
+                                ],
+                                "value_type": "INTEGER"
+                            },
+                            "height": 79,
+                            "name": "",
+                            "tool": "com.ingescape.circle.tool.writer",
+                            "uuid": "83d6d035-5f8e-4b0b-9854-5f2edf8f9e85",
+                            "width": 256,
+                            "x": 78.49849285067467,
+                            "y": 681.4833730190396
+                        },
+                        {
+                            "data": {
+                                "duration": 10,
+                                "repeat": -1
+                            },
+                            "height": 112,
+                            "name": "",
+                            "tool": "com.ingescape.circle.tool.timer",
+                            "uuid": "27074822-98ac-4dc0-b2ad-503c69d8779d",
+                            "width": 230,
+                            "x": 78.1784928506745,
+                            "y": 982.0513730190396
+                        },
+                        {
+                            "data": {
+                                "entries": [
+                                    "45",
+                                    "47",
+                                    "50",
+                                    "55"
+                                ],
+                                "value_type": "INTEGER"
+                            },
+                            "height": 163,
+                            "name": "",
+                            "tool": "com.ingescape.circle.tool.writer",
+                            "uuid": "e8bfc8db-b3b8-4b42-81a5-5c00b0cb2546",
+                            "width": 256,
+                            "x": 81.43842725789682,
+                            "y": 778.7413327928117
+                        }
+                    ],
+                    "childrenViewport": {
+                        "height": 1224.9538174634877,
+                        "width": 1474.7036064201352
                     },
-                    "class": "b0ecb6f6-5347-4be3-9494-b36690f99e20",
+                    "class": "84a5edba-9e37-42a6-a7b6-a12bf675f0e9",
                     "comment": "",
-                    "height": 246,
-                    "name": "Obstacle",
+                    "height": 677.4769087317438,
+                    "name": "",
                     "simulationTime": 5000,
-                    "uuid": "4c69d215-1cf7-4d61-a538-aa432351b144",
-                    "width": 250,
-                    "x": 724.5141593153661,
-                    "y": 905.4083478131574
-                },
-                {
-                    "agent": {
-                        "instances": [
-                            {
-                                "commandLine": "/usr/local/bin/python3 main.py Bird wlp2s0 5670",
-                                "hostname": "adell",
-                                "ip": "172.22.227.4",
-                                "isAttachedToCircle": false,
-                                "mac": "90:0F:0C:8F:03:BD",
-                                "uuid": "0033c22f-8c9d-44d6-bc07-55cf58c65915"
-                            },
-                            {
-                                "commandLine": "/usr/local/bin/python3 /home/lucas/Documents/Ingescape/sandbox//Bird/main.py Bird wlp2s0 5670",
-                                "hostname": "adell",
-                                "ip": "172.22.227.4",
-                                "isAttachedToCircle": false,
-                                "mac": "90:0F:0C:8F:03:BD",
-                                "uuid": "fc79fb5e-4b2c-4077-8de2-15ee1c1c327a"
-                            },
-                            {
-                                "commandLine": "/usr/local/bin/python3 ./scripts/../agents/Bird/main.py Bird wlp2s0 5670",
-                                "hostname": "adell",
-                                "ip": "172.22.227.4",
-                                "isAttachedToCircle": false,
-                                "mac": "90:0F:0C:8F:03:BD",
-                                "uuid": "d307dc19-ea5c-411f-9d69-322ccd40f889"
-                            },
-                            {
-                                "commandLine": "/home/lucas/.pyenv/versions/3.8.20/bin/python3 ./scripts/../agents/Bird/main.py Bird wlp0s20f3 5670",
-                                "hostname": "amyoga",
-                                "ip": "192.168.64.110",
-                                "isAttachedToCircle": false,
-                                "mac": "C8:6E:08:D2:D1:8D",
-                                "uuid": "9c24ac1a-9c8a-4974-bba6-128bbebff1d2"
-                            }
-                        ]
-                    },
-                    "class": "73df17bd-cf71-4394-92f5-e24b45ade179",
-                    "comment": "",
-                    "height": 158,
-                    "name": "Bird",
-                    "simulationTime": 5000,
-                    "uuid": "9b409dbc-1cec-4e74-9895-6ac14352e5be",
-                    "width": 250,
-                    "x": 590.6064397013536,
-                    "y": 30.80779313468645
+                    "uuid": "e57063ba-778b-4ea8-aa95-b4814a5d60ff",
+                    "width": 747.3518032100676,
+                    "x": 1194.4796029190843,
+                    "y": 131.54770376472771
                 }
             ],
             "links": {
@@ -1021,208 +932,292 @@
                         "fromInput": "note",
                         "to": "PitchDetector",
                         "toOutput": "note"
-                    },
-                    {
-                        "from": "Whiteboard",
-                        "fromInput": "chatMessage",
-                        "to": "PitchDetector",
-                        "toOutput": "noteName"
-                    },
-                    {
-                        "from": "Obstacle",
-                        "fromInput": "whiteboardHeight",
-                        "to": "Whiteboard",
-                        "toOutput": "whiteboardHeight"
-                    },
-                    {
-                        "from": "Bird",
-                        "fromInput": "whiteboardHeight",
-                        "to": "Whiteboard",
-                        "toOutput": "whiteboardHeight"
-                    },
-                    {
-                        "from": "Obstacle",
-                        "fromInput": "whiteboardWidth",
-                        "to": "Whiteboard",
-                        "toOutput": "whiteboardWidth"
                     }
                 ],
                 "others": [
                     {
-                        "destination": "2f84a049-86c3-4c33-b945-9e18dcd7c99d",
+                        "destination": "bbe6bd53-694f-406f-bb85-c9dddf0bc43d",
+                        "destinationIO": {
+                            "name": "whiteboardHeight",
+                            "type": "INPUT"
+                        },
+                        "source": "e57063ba-778b-4ea8-aa95-b4814a5d60ff",
+                        "sourceIO": {
+                            "name": "whiteboardHeight",
+                            "type": "INPUT"
+                        }
+                    },
+                    {
+                        "destination": "e57063ba-778b-4ea8-aa95-b4814a5d60ff",
+                        "destinationIO": {
+                            "name": "maj",
+                            "type": "INPUT"
+                        },
+                        "source": "42c2a3dc-3d57-442f-931a-6fd610a78380",
+                        "sourceIO": {
+                            "name": "value",
+                            "type": "OUTPUT"
+                        }
+                    },
+                    {
+                        "destination": "1f2e7f4a-5570-4f69-ae37-039c92ca7907",
                         "destinationIO": {
                             "name": "volumeTresh",
                             "type": "INPUT"
                         },
-                        "source": "92efc289-343b-4c90-ac08-c50b60c291d0",
+                        "source": "47ce2325-134f-41f1-b0bb-7b152a2db137",
                         "sourceIO": {
                             "name": "value",
                             "type": "OUTPUT"
                         }
                     },
                     {
-                        "destination": "9b409dbc-1cec-4e74-9895-6ac14352e5be",
-                        "destinationIO": {
-                            "name": "bmin",
-                            "type": "INPUT"
-                        },
-                        "source": "19fe269f-fdde-462a-9bdf-901690e1553f",
-                        "sourceIO": {
-                            "name": "value",
-                            "type": "OUTPUT"
-                        }
-                    },
-                    {
-                        "destination": "9b409dbc-1cec-4e74-9895-6ac14352e5be",
-                        "destinationIO": {
-                            "name": "bmax",
-                            "type": "INPUT"
-                        },
-                        "source": "808cb0be-91a4-40f5-a728-5c2f53f3d4b9",
-                        "sourceIO": {
-                            "name": "value",
-                            "type": "OUTPUT"
-                        }
-                    },
-                    {
-                        "destination": "92efc289-343b-4c90-ac08-c50b60c291d0",
+                        "destination": "47ce2325-134f-41f1-b0bb-7b152a2db137",
                         "destinationIO": {
                             "name": "trigger",
                             "type": "INPUT"
                         },
-                        "source": "d40da8f3-43a5-41cc-bc1a-82635031fa16",
+                        "source": "e57063ba-778b-4ea8-aa95-b4814a5d60ff",
                         "sourceIO": {
-                            "name": "value",
-                            "type": "OUTPUT"
+                            "name": "maj",
+                            "type": "INPUT"
                         }
                     },
                     {
-                        "destination": "808cb0be-91a4-40f5-a728-5c2f53f3d4b9",
+                        "destination": "27074822-98ac-4dc0-b2ad-503c69d8779d",
                         "destinationIO": {
-                            "name": "trigger",
+                            "name": "start",
                             "type": "INPUT"
                         },
-                        "source": "d40da8f3-43a5-41cc-bc1a-82635031fa16",
+                        "source": "e57063ba-778b-4ea8-aa95-b4814a5d60ff",
                         "sourceIO": {
-                            "name": "value",
-                            "type": "OUTPUT"
-                        }
-                    },
-                    {
-                        "destination": "19fe269f-fdde-462a-9bdf-901690e1553f",
-                        "destinationIO": {
-                            "name": "trigger",
+                            "name": "maj",
                             "type": "INPUT"
-                        },
-                        "source": "d40da8f3-43a5-41cc-bc1a-82635031fa16",
-                        "sourceIO": {
-                            "name": "value",
-                            "type": "OUTPUT"
                         }
                     },
                     {
-                        "destination": "4c69d215-1cf7-4d61-a538-aa432351b144",
+                        "destination": "2ef9beb3-f70b-4e7c-9d22-1a8fd714579b",
                         "destinationIO": {
                             "name": "clock",
                             "type": "INPUT"
                         },
-                        "source": "c0bd18f5-20d8-4070-89e7-1d3db1cfa249",
+                        "source": "27074822-98ac-4dc0-b2ad-503c69d8779d",
                         "sourceIO": {
                             "name": "output",
                             "type": "OUTPUT"
                         }
                     },
                     {
-                        "destination": "c0bd18f5-20d8-4070-89e7-1d3db1cfa249",
-                        "destinationIO": {
-                            "name": "start",
-                            "type": "INPUT"
-                        },
-                        "source": "d40da8f3-43a5-41cc-bc1a-82635031fa16",
-                        "sourceIO": {
-                            "name": "value",
-                            "type": "OUTPUT"
-                        }
-                    },
-                    {
-                        "destination": "6711bf35-7aa5-4486-9232-136035f0cdc2",
+                        "destination": "83d6d035-5f8e-4b0b-9854-5f2edf8f9e85",
                         "destinationIO": {
                             "name": "trigger",
                             "type": "INPUT"
                         },
-                        "source": "d40da8f3-43a5-41cc-bc1a-82635031fa16",
+                        "source": "e57063ba-778b-4ea8-aa95-b4814a5d60ff",
                         "sourceIO": {
-                            "name": "value",
-                            "type": "OUTPUT"
+                            "name": "maj",
+                            "type": "INPUT"
                         }
                     },
                     {
-                        "destination": "4c69d215-1cf7-4d61-a538-aa432351b144",
+                        "destination": "03d41624-b3d6-43d8-b601-d05d67c3d227",
                         "destinationIO": {
-                            "name": "bmax",
+                            "name": "trigger",
                             "type": "INPUT"
                         },
-                        "source": "808cb0be-91a4-40f5-a728-5c2f53f3d4b9",
+                        "source": "e57063ba-778b-4ea8-aa95-b4814a5d60ff",
                         "sourceIO": {
-                            "name": "value",
-                            "type": "OUTPUT"
+                            "name": "maj",
+                            "type": "INPUT"
                         }
                     },
                     {
-                        "destination": "4c69d215-1cf7-4d61-a538-aa432351b144",
+                        "destination": "2ef9beb3-f70b-4e7c-9d22-1a8fd714579b",
                         "destinationIO": {
                             "name": "bmin",
                             "type": "INPUT"
                         },
-                        "source": "19fe269f-fdde-462a-9bdf-901690e1553f",
+                        "source": "03d41624-b3d6-43d8-b601-d05d67c3d227",
                         "sourceIO": {
                             "name": "value",
                             "type": "OUTPUT"
                         }
                     },
                     {
-                        "destination": "4c69d215-1cf7-4d61-a538-aa432351b144",
+                        "destination": "bbe6bd53-694f-406f-bb85-c9dddf0bc43d",
+                        "destinationIO": {
+                            "name": "bmin",
+                            "type": "INPUT"
+                        },
+                        "source": "03d41624-b3d6-43d8-b601-d05d67c3d227",
+                        "sourceIO": {
+                            "name": "value",
+                            "type": "OUTPUT"
+                        }
+                    },
+                    {
+                        "destination": "1f56c7ed-fd8d-4163-a5ce-075fa2e1d1dd",
+                        "destinationIO": {
+                            "name": "trigger",
+                            "type": "INPUT"
+                        },
+                        "source": "e57063ba-778b-4ea8-aa95-b4814a5d60ff",
+                        "sourceIO": {
+                            "name": "maj",
+                            "type": "INPUT"
+                        }
+                    },
+                    {
+                        "destination": "bbe6bd53-694f-406f-bb85-c9dddf0bc43d",
+                        "destinationIO": {
+                            "name": "bmax",
+                            "type": "INPUT"
+                        },
+                        "source": "1f56c7ed-fd8d-4163-a5ce-075fa2e1d1dd",
+                        "sourceIO": {
+                            "name": "value",
+                            "type": "OUTPUT"
+                        }
+                    },
+                    {
+                        "destination": "2ef9beb3-f70b-4e7c-9d22-1a8fd714579b",
+                        "destinationIO": {
+                            "name": "bmax",
+                            "type": "INPUT"
+                        },
+                        "source": "1f56c7ed-fd8d-4163-a5ce-075fa2e1d1dd",
+                        "sourceIO": {
+                            "name": "value",
+                            "type": "OUTPUT"
+                        }
+                    },
+                    {
+                        "destination": "2ef9beb3-f70b-4e7c-9d22-1a8fd714579b",
+                        "destinationIO": {
+                            "name": "whiteboardHeight",
+                            "type": "INPUT"
+                        },
+                        "source": "e57063ba-778b-4ea8-aa95-b4814a5d60ff",
+                        "sourceIO": {
+                            "name": "whiteboardHeight",
+                            "type": "INPUT"
+                        }
+                    },
+                    {
+                        "destination": "2ef9beb3-f70b-4e7c-9d22-1a8fd714579b",
+                        "destinationIO": {
+                            "name": "whiteboardWidth",
+                            "type": "INPUT"
+                        },
+                        "source": "e57063ba-778b-4ea8-aa95-b4814a5d60ff",
+                        "sourceIO": {
+                            "name": "whiteboardWidth",
+                            "type": "INPUT"
+                        }
+                    },
+                    {
+                        "destination": "2ef9beb3-f70b-4e7c-9d22-1a8fd714579b",
                         "destinationIO": {
                             "name": "offset",
                             "type": "INPUT"
                         },
-                        "source": "e2bb4d65-9852-41cb-858b-e2ac93580f81",
+                        "source": "83d6d035-5f8e-4b0b-9854-5f2edf8f9e85",
                         "sourceIO": {
                             "name": "value",
                             "type": "OUTPUT"
                         }
                     },
                     {
-                        "destination": "e2bb4d65-9852-41cb-858b-e2ac93580f81",
+                        "destination": "1ac0f78f-7a7c-4d28-95c5-85023a40fe6f",
                         "destinationIO": {
                             "name": "trigger",
                             "type": "INPUT"
                         },
-                        "source": "d40da8f3-43a5-41cc-bc1a-82635031fa16",
+                        "source": "e57063ba-778b-4ea8-aa95-b4814a5d60ff",
                         "sourceIO": {
-                            "name": "value",
+                            "name": "maj",
+                            "type": "INPUT"
+                        }
+                    },
+                    {
+                        "destination": "e57063ba-778b-4ea8-aa95-b4814a5d60ff",
+                        "destinationIO": {
+                            "name": "noteName",
+                            "type": "OUTPUT"
+                        },
+                        "source": "1f2e7f4a-5570-4f69-ae37-039c92ca7907",
+                        "sourceIO": {
+                            "name": "noteName",
                             "type": "OUTPUT"
                         }
                     },
                     {
-                        "destination": "a66bd82d-983c-4b4f-9d71-96bd882a8e36",
+                        "destination": "037d3303-3d37-4b58-9bda-78004cba8bbe",
+                        "destinationIO": {
+                            "name": "chatMessage",
+                            "type": "INPUT"
+                        },
+                        "source": "e57063ba-778b-4ea8-aa95-b4814a5d60ff",
+                        "sourceIO": {
+                            "name": "noteName",
+                            "type": "OUTPUT"
+                        }
+                    },
+                    {
+                        "destination": "e57063ba-778b-4ea8-aa95-b4814a5d60ff",
+                        "destinationIO": {
+                            "name": "whiteboardWidth",
+                            "type": "INPUT"
+                        },
+                        "source": "037d3303-3d37-4b58-9bda-78004cba8bbe",
+                        "sourceIO": {
+                            "name": "whiteboardWidth",
+                            "type": "OUTPUT"
+                        }
+                    },
+                    {
+                        "destination": "e57063ba-778b-4ea8-aa95-b4814a5d60ff",
+                        "destinationIO": {
+                            "name": "whiteboardHeight",
+                            "type": "INPUT"
+                        },
+                        "source": "037d3303-3d37-4b58-9bda-78004cba8bbe",
+                        "sourceIO": {
+                            "name": "whiteboardHeight",
+                            "type": "OUTPUT"
+                        }
+                    },
+                    {
+                        "destination": "e23931da-21a3-46cf-b5d0-27f183e15624",
                         "destinationIO": {
                             "name": "trigger",
                             "type": "INPUT"
                         },
-                        "source": "d40da8f3-43a5-41cc-bc1a-82635031fa16",
+                        "source": "e57063ba-778b-4ea8-aa95-b4814a5d60ff",
                         "sourceIO": {
-                            "name": "value",
-                            "type": "OUTPUT"
+                            "name": "maj",
+                            "type": "INPUT"
                         }
                     },
                     {
-                        "destination": "4c69d215-1cf7-4d61-a538-aa432351b144",
+                        "destination": "e8bfc8db-b3b8-4b42-81a5-5c00b0cb2546",
+                        "destinationIO": {
+                            "name": "trigger",
+                            "type": "INPUT"
+                        },
+                        "source": "e57063ba-778b-4ea8-aa95-b4814a5d60ff",
+                        "sourceIO": {
+                            "name": "maj",
+                            "type": "INPUT"
+                        }
+                    },
+                    {
+                        "destination": "2ef9beb3-f70b-4e7c-9d22-1a8fd714579b",
                         "destinationIO": {
                             "name": "note",
                             "type": "INPUT"
                         },
-                        "source": "a66bd82d-983c-4b4f-9d71-96bd882a8e36",
+                        "source": "e8bfc8db-b3b8-4b42-81a5-5c00b0cb2546",
                         "sourceIO": {
                             "name": "value",
                             "type": "OUTPUT"
