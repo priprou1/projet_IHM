@@ -29,22 +29,27 @@
                 "definition": {
                     "inputs": [
                         {
+                            "constraint": "[0.01,1]",
+                            "description": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Asap'; font-size:13px; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Threshold of the volume capture by the microphone in order to reduice the unwanted noise</p></body></html>",
                             "name": "volumeTresh",
                             "type": "DOUBLE"
                         }
                     ],
                     "outputs": [
                         {
+                            "description": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Asap'; font-size:13px; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Name of the pitch found </p></body></html>",
                             "name": "noteName",
                             "type": "STRING"
                         },
                         {
+                            "constraint": "[0,127]",
+                            "description": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Asap'; font-size:13px; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Number of the note found wich correspond of the input of a MIDI keyboard</p></body></html>",
                             "name": "note",
                             "type": "INTEGER"
                         }
                     ]
                 },
-                "description": "",
+                "description": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Asap'; font-size:13px; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Agent that detect the pitch from the voice input of the microphone</p></body></html>",
                 "icon": -1,
                 "package": "",
                 "plugin": "ingescape_class",
@@ -57,18 +62,25 @@
                 "definition": {
                     "inputs": [
                         {
+                            "description": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Asap'; font-size:13px; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">/!\\Integer et pas Double non? Height of the Whiteboard</p></body></html>",
                             "name": "whiteboardHeight",
                             "type": "DOUBLE"
                         },
                         {
+                            "constraint": "[0,127]",
+                            "description": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Asap'; font-size:13px; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Maximum value of the note that the bird can reach (correspond of the input of a MIDI keyboard)</p></body></html>",
                             "name": "bmax",
                             "type": "INTEGER"
                         },
                         {
+                            "constraint": "[0,127]",
+                            "description": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Asap'; font-size:13px; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Minimum value of the note that the bird can reach (correspond of the input of a MIDI keyboard)</p></body></html>",
                             "name": "bmin",
                             "type": "INTEGER"
                         },
                         {
+                            "constraint": "[0,127]",
+                            "description": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Asap'; font-size:13px; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Number of the note that wil determine the position of the bird on the screen (correspond of the input of a MIDI keyboard)</p></body></html>",
                             "name": "note",
                             "type": "INTEGER"
                         }
@@ -86,15 +98,17 @@
                         {
                             "arguments": [
                                 {
+                                    "description": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Asap'; font-size:13px; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">ID of the picture of the bird displayed on the WhiteBoard</p></body></html>",
                                     "name": "elementId",
                                     "type": "INTEGER"
                                 }
                             ],
+                            "description": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Asap'; font-size:13px; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Service that can be called by the WhiteBoard to give the ID of the bird created</p></body></html>",
                             "name": "elementCreated"
                         }
                     ]
                 },
-                "description": "",
+                "description": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Asap'; font-size:13px; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Agent that display the bird on the Whiteboard depending of the pitch given</p></body></html>",
                 "icon": -1,
                 "package": "",
                 "plugin": "ingescape_class",
@@ -111,22 +125,35 @@
                             "type": "INTEGER"
                         },
                         {
+                            "constraint": "[0,127]",
+                            "description": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Asap'; font-size:13px; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Maximum value of the note where the obstacle will be (correspond of the input of a MIDI keyboard)</p></body></html>",
                             "name": "bmax",
                             "type": "INTEGER"
                         },
                         {
+                            "constraint": "[0,127]",
+                            "description": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Asap'; font-size:13px; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Minimum value of the note where the obstacle will be (correspond of the input of a MIDI keyboard)</p></body></html>",
                             "name": "bmin",
                             "type": "INTEGER"
                         },
                         {
+                            "description": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Asap'; font-size:13px; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Width of the Whiteboard</p></body></html>",
+                            "name": "whiteboardWidth",
+                            "type": "INTEGER"
+                        },
+                        {
+                            "description": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Asap'; font-size:13px; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Height of the Whiteboard</p></body></html>",
                             "name": "whiteboardHeight",
                             "type": "INTEGER"
                         },
                         {
+                            "constraint": "[0,127]",
+                            "description": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Asap'; font-size:13px; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Number of the note that wil determine the position of the obstacle on the screen (correspond of the input of a MIDI keyboard)</p></body></html>",
                             "name": "note",
                             "type": "INTEGER"
                         },
                         {
+                            "description": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Asap'; font-size:13px; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Clock tick for the evolution of the obstacles</p></body></html>",
                             "name": "clock",
                             "type": "IMPULSION"
                         }
@@ -135,10 +162,12 @@
                         {
                             "arguments": [
                                 {
+                                    "description": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Asap'; font-size:13px; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">ID of the element of the obstacle displayed on the WhiteBoard</p></body></html>",
                                     "name": "elementId",
                                     "type": "INTEGER"
                                 }
                             ],
+                            "description": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Asap'; font-size:13px; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Service that can be called by the WhiteBoard to give the ID of the element of the obstacle created</p></body></html>",
                             "name": "elementCreated"
                         },
                         {
@@ -152,7 +181,7 @@
                         }
                     ]
                 },
-                "description": "",
+                "description": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Asap'; font-size:13px; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Agent that display the bird on the Whiteboard depending of the pitch given</p></body></html>",
                 "icon": -1,
                 "package": "",
                 "plugin": "ingescape_class",
@@ -644,6 +673,8 @@
                 "uuid": "84a5edba-9e37-42a6-a7b6-a12bf675f0e9",
                 "version": ""
             }
+        ],
+        "detailedTypes": [
         ]
     },
     "systemViews": [
@@ -680,6 +711,14 @@
                     "agent": {
                         "instances": [
                             {
+                                "commandLine": "/home/lucas/.pyenv/versions/3.8.20/bin/python3 ./scripts/../agents/PitchDetector/main.py PitchDetector wlp0s20f3 5670",
+                                "hostname": "amyoga",
+                                "ip": "192.168.64.110",
+                                "isAttachedToCircle": false,
+                                "mac": "C8:6E:08:D2:D1:8D",
+                                "uuid": "e3297b82-d753-4231-a80f-3cdfa9b60fb1"
+                            },
+                            {
                                 "commandLine": "/usr/local/bin/python3 main.py PitchDetector wlp2s0 5670",
                                 "hostname": "adell",
                                 "ip": "172.22.227.4",
@@ -702,14 +741,6 @@
                                 "isAttachedToCircle": false,
                                 "mac": "90:0F:0C:8F:03:BD",
                                 "uuid": "6f046369-57e1-4396-bdfe-027300caebcf"
-                            },
-                            {
-                                "commandLine": "/home/lucas/.pyenv/versions/3.8.20/bin/python3 ./scripts/../agents/PitchDetector/main.py PitchDetector wlp0s20f3 5670",
-                                "hostname": "amyoga",
-                                "ip": "192.168.64.110",
-                                "isAttachedToCircle": false,
-                                "mac": "C8:6E:08:D2:D1:8D",
-                                "uuid": "e3297b82-d753-4231-a80f-3cdfa9b60fb1"
                             }
                         ]
                     },
@@ -785,14 +816,6 @@
                     "agent": {
                         "instances": [
                             {
-                                "commandLine": "/usr/local/bin/python3 ./scripts/../agents/Obstacle/main.py Obstacle wlp2s0 5670",
-                                "hostname": "adell",
-                                "ip": "172.22.227.4",
-                                "isAttachedToCircle": false,
-                                "mac": "90:0F:0C:8F:03:BD",
-                                "uuid": "78901f7f-f013-44d0-b282-b0d0aaf9487e"
-                            },
-                            {
                                 "commandLine": "/home/lucas/.pyenv/versions/3.8.20/bin/python3 ./scripts/../agents/Obstacle/main.py Obstacle wlp0s20f3 5670",
                                 "hostname": "amyoga",
                                 "ip": "192.168.64.110",
@@ -807,96 +830,26 @@
                                 "isAttachedToCircle": false,
                                 "mac": "C8:6E:08:D2:D1:8D",
                                 "uuid": "cc8d0b07-9b45-4437-99b7-68a96e36aad0"
+                            },
+                            {
+                                "commandLine": "/usr/local/bin/python3 ./scripts/../agents/Obstacle/main.py Obstacle wlp2s0 5670",
+                                "hostname": "adell",
+                                "ip": "172.22.227.4",
+                                "isAttachedToCircle": false,
+                                "mac": "90:0F:0C:8F:03:BD",
+                                "uuid": "78901f7f-f013-44d0-b282-b0d0aaf9487e"
                             }
                         ]
                     },
                     "class": "b0ecb6f6-5347-4be3-9494-b36690f99e20",
                     "comment": "",
-                    "height": 202,
+                    "height": 246,
                     "name": "Obstacle",
                     "simulationTime": 5000,
                     "uuid": "4c69d215-1cf7-4d61-a538-aa432351b144",
                     "width": 250,
                     "x": 724.5141593153661,
                     "y": 905.4083478131574
-                },
-                {
-                    "agent": {
-                        "instances": [
-                            {
-                                "commandLine": "/usr/local/bin/python3 main.py Bird wlp2s0 5670",
-                                "hostname": "adell",
-                                "ip": "172.22.227.4",
-                                "isAttachedToCircle": false,
-                                "mac": "90:0F:0C:8F:03:BD",
-                                "uuid": "0033c22f-8c9d-44d6-bc07-55cf58c65915"
-                            },
-                            {
-                                "commandLine": "/usr/local/bin/python3 /home/lucas/Documents/Ingescape/sandbox//Bird/main.py Bird wlp2s0 5670",
-                                "hostname": "adell",
-                                "ip": "172.22.227.4",
-                                "isAttachedToCircle": false,
-                                "mac": "90:0F:0C:8F:03:BD",
-                                "uuid": "fc79fb5e-4b2c-4077-8de2-15ee1c1c327a"
-                            },
-                            {
-                                "commandLine": "/usr/local/bin/python3 ./scripts/../agents/Bird/main.py Bird wlp2s0 5670",
-                                "hostname": "adell",
-                                "ip": "172.22.227.4",
-                                "isAttachedToCircle": false,
-                                "mac": "90:0F:0C:8F:03:BD",
-                                "uuid": "d307dc19-ea5c-411f-9d69-322ccd40f889"
-                            },
-                            {
-                                "commandLine": "/home/lucas/.pyenv/versions/3.8.20/bin/python3 ./scripts/../agents/Bird/main.py Bird wlp0s20f3 5670",
-                                "hostname": "amyoga",
-                                "ip": "192.168.64.110",
-                                "isAttachedToCircle": false,
-                                "mac": "C8:6E:08:D2:D1:8D",
-                                "uuid": "9c24ac1a-9c8a-4974-bba6-128bbebff1d2"
-                            }
-                        ]
-                    },
-                    "class": "73df17bd-cf71-4394-92f5-e24b45ade179",
-                    "comment": "",
-                    "height": 158,
-                    "name": "Bird",
-                    "simulationTime": 5000,
-                    "uuid": "9b409dbc-1cec-4e74-9895-6ac14352e5be",
-                    "width": 250,
-                    "x": 590.6064397013536,
-                    "y": 30.80779313468645
-                },
-                {
-                    "agent": {
-                        "instances": [
-                            {
-                                "commandLine": "/media/lucas/T7/repositories/projet_IHM/agents/Whiteboard/bin/Whiteboard",
-                                "hostname": "adell",
-                                "ip": "172.22.227.4",
-                                "isAttachedToCircle": false,
-                                "mac": "90:0F:0C:8F:03:BD",
-                                "uuid": "85c8ef06-0d89-4714-9dd3-670d5e7452af"
-                            },
-                            {
-                                "commandLine": "/home/lucas/repositories/projet_IHM/agents/Whiteboard/bin/Whiteboard",
-                                "hostname": "amyoga",
-                                "ip": "192.168.64.110",
-                                "isAttachedToCircle": false,
-                                "mac": "C8:6E:08:D2:D1:8D",
-                                "uuid": "b57b705f-93ff-43a4-98f2-b856206c57ca"
-                            }
-                        ]
-                    },
-                    "class": "49986800-5f93-4f38-b14a-e9245f623301",
-                    "comment": "",
-                    "height": 224,
-                    "name": "Whiteboard",
-                    "simulationTime": 5000,
-                    "uuid": "037d3303-3d37-4b58-9bda-78004cba8bbe",
-                    "width": 250,
-                    "x": 716.6738298407663,
-                    "y": 466.3645832465468
                 },
                 {
                     "data": {
@@ -983,6 +936,84 @@
                     "width": 256,
                     "x": -215.96862951013145,
                     "y": 376.80783517488726
+                },
+                {
+                    "agent": {
+                        "instances": [
+                            {
+                                "commandLine": "/home/lucas/repositories/projet_IHM/agents/Whiteboard/bin/Whiteboard",
+                                "hostname": "amyoga",
+                                "ip": "192.168.64.110",
+                                "isAttachedToCircle": false,
+                                "mac": "C8:6E:08:D2:D1:8D",
+                                "uuid": "b57b705f-93ff-43a4-98f2-b856206c57ca"
+                            },
+                            {
+                                "commandLine": "/media/lucas/T7/repositories/projet_IHM/agents/Whiteboard/bin/Whiteboard",
+                                "hostname": "adell",
+                                "ip": "172.22.227.4",
+                                "isAttachedToCircle": false,
+                                "mac": "90:0F:0C:8F:03:BD",
+                                "uuid": "85c8ef06-0d89-4714-9dd3-670d5e7452af"
+                            }
+                        ]
+                    },
+                    "class": "49986800-5f93-4f38-b14a-e9245f623301",
+                    "comment": "",
+                    "height": 224,
+                    "name": "Whiteboard",
+                    "simulationTime": 5000,
+                    "uuid": "037d3303-3d37-4b58-9bda-78004cba8bbe",
+                    "width": 250,
+                    "x": 716.6738298407663,
+                    "y": 466.3645832465468
+                },
+                {
+                    "agent": {
+                        "instances": [
+                            {
+                                "commandLine": "/home/lucas/.pyenv/versions/3.8.20/bin/python3 ./scripts/../agents/Bird/main.py Bird wlp0s20f3 5670",
+                                "hostname": "amyoga",
+                                "ip": "192.168.64.110",
+                                "isAttachedToCircle": false,
+                                "mac": "C8:6E:08:D2:D1:8D",
+                                "uuid": "9c24ac1a-9c8a-4974-bba6-128bbebff1d2"
+                            },
+                            {
+                                "commandLine": "/usr/local/bin/python3 main.py Bird wlp2s0 5670",
+                                "hostname": "adell",
+                                "ip": "172.22.227.4",
+                                "isAttachedToCircle": false,
+                                "mac": "90:0F:0C:8F:03:BD",
+                                "uuid": "0033c22f-8c9d-44d6-bc07-55cf58c65915"
+                            },
+                            {
+                                "commandLine": "/usr/local/bin/python3 /home/lucas/Documents/Ingescape/sandbox//Bird/main.py Bird wlp2s0 5670",
+                                "hostname": "adell",
+                                "ip": "172.22.227.4",
+                                "isAttachedToCircle": false,
+                                "mac": "90:0F:0C:8F:03:BD",
+                                "uuid": "fc79fb5e-4b2c-4077-8de2-15ee1c1c327a"
+                            },
+                            {
+                                "commandLine": "/usr/local/bin/python3 ./scripts/../agents/Bird/main.py Bird wlp2s0 5670",
+                                "hostname": "adell",
+                                "ip": "172.22.227.4",
+                                "isAttachedToCircle": false,
+                                "mac": "90:0F:0C:8F:03:BD",
+                                "uuid": "d307dc19-ea5c-411f-9d69-322ccd40f889"
+                            }
+                        ]
+                    },
+                    "class": "73df17bd-cf71-4394-92f5-e24b45ade179",
+                    "comment": "",
+                    "height": 158,
+                    "name": "Bird",
+                    "simulationTime": 5000,
+                    "uuid": "9b409dbc-1cec-4e74-9895-6ac14352e5be",
+                    "width": 250,
+                    "x": 590.6064397013536,
+                    "y": 30.80779313468645
                 }
             ],
             "links": {
