@@ -5,8 +5,9 @@
 #  main.py
 #  PitchDetector
 #  Created by Ingenuity i/o on 2025/01/04
+#  authors : Lucas Bolbènes, Armand Claveau, Priscilia Gonthier
 #
-# no description
+#  Agent that detect the pitch from the voice input of the microphone
 
 
 import sys

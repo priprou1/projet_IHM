@@ -43,7 +43,7 @@
                             "type": "INTEGER"
                         },
                         {
-                            "description": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Asap'; font-size:13px; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Name of the pitch found </p></body></html>",
+                            "description": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Asap'; font-size:13px; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Name of the pitch found</p></body></html>",
                             "name": "noteName",
                             "type": "STRING"
                         }
@@ -668,51 +668,81 @@
                 "definition": {
                     "inputs": [
                         {
+                            "description": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Asap'; font-size:13px; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Height of the Whiteboard</p></body></html>",
                             "name": "whiteboardHeight",
                             "type": "INTEGER"
                         },
                         {
+                            "description": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Asap'; font-size:13px; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Width of the Whiteboard</p></body></html>",
                             "name": "whiteboardWidth",
                             "type": "INTEGER"
                         },
                         {
-                            "name": "maj",
+                            "description": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Asap'; font-size:13px; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Impulsion to start or update the differents service caller and writer all at once</p></body></html>",
+                            "name": "update",
                             "type": "IMPULSION"
                         }
                     ],
                     "outputs": [
                         {
+                            "description": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Asap'; font-size:13px; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Name of the pitch of the voice</p></body></html>",
                             "name": "noteName",
                             "type": "STRING"
                         }
                     ]
                 },
-                "description": "",
+                "description": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Asap'; font-size:13px; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Box that contain all the agent needed for the PitchBird game that comunicate with the WhiteBoard agent</p></body></html>",
                 "icon": -1,
                 "package": "",
                 "plugin": "ingescape_class",
                 "uuid": "84a5edba-9e37-42a6-a7b6-a12bf675f0e9",
                 "version": ""
             }
+        ],
+        "requirements": [
+            {
+                "description": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Asap'; font-size:13px; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Detect the pitch from the voice input of the computer</p></body></html>",
+                "importUUID": "",
+                "name": "Detect pitch",
+                "package": "",
+                "plugin": "ingescape_requirement",
+                "uuid": "b53338b6-df61-412f-b2ff-7a4a7efe932b"
+            },
+            {
+                "derivedFrom": [
+                    "8442c6c3-1740-407b-a3cb-53e0b1fbaa30"
+                ],
+                "description": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Asap'; font-size:13px; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Modify the position of the bird from the pitch and display it on the whiteBoard</p></body></html>",
+                "importUUID": "",
+                "name": "Control the Bird",
+                "package": "",
+                "plugin": "ingescape_requirement",
+                "uuid": "7a01ee2b-3bc9-4817-bc6b-093c75bec2fb"
+            },
+            {
+                "description": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Asap'; font-size:13px; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Display the obstacles and the bird on the witheBoard</p></body></html>",
+                "importUUID": "",
+                "name": "Display on the whiteBoard",
+                "package": "",
+                "plugin": "ingescape_requirement",
+                "uuid": "8442c6c3-1740-407b-a3cb-53e0b1fbaa30"
+            },
+            {
+                "derivedFrom": [
+                    "8442c6c3-1740-407b-a3cb-53e0b1fbaa30"
+                ],
+                "description": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Asap'; font-size:13px; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Modify the position of the obstacle from the pitch and display it on the whiteBoard</p></body></html>",
+                "importUUID": "",
+                "name": "Control the obstacle",
+                "package": "",
+                "plugin": "ingescape_requirement",
+                "uuid": "6c676c88-07ad-4444-9698-8ef37b6e5b6e"
+            }
         ]
     },
     "systemViews": [
         {
             "children": [
-                {
-                    "data": {
-                        "entries": [
-                        ],
-                        "value_type": "IMPULSION"
-                    },
-                    "height": 44,
-                    "name": "",
-                    "tool": "com.ingescape.circle.tool.writer",
-                    "uuid": "42c2a3dc-3d57-442f-931a-6fd610a78380",
-                    "width": 256,
-                    "x": 892.565990532943,
-                    "y": 229.54373909596956
-                },
                 {
                     "agent": {
                         "instances": [
@@ -731,6 +761,13 @@
                                 "isAttachedToCircle": false,
                                 "mac": "90:0F:0C:8F:03:BD",
                                 "uuid": "85c8ef06-0d89-4714-9dd3-670d5e7452af"
+                            },
+                            {
+                                "commandLine": "/home/priscilia/Cours/IHM/agents/Whiteboard/bin/Whiteboard",
+                                "hostname": "LAPTOP-PRISCILIA",
+                                "ip": "172.25.43.23",
+                                "isAttachedToCircle": false,
+                                "uuid": "57b5b5f5-8706-4d29-8ced-db9af03ba2ed"
                             }
                         ]
                     },
@@ -741,26 +778,36 @@
                     "simulationTime": 5000,
                     "uuid": "037d3303-3d37-4b58-9bda-78004cba8bbe",
                     "width": 250,
-                    "x": 1454.8090746407665,
-                    "y": -241.31362475345293
+                    "x": 1447.6427130407665,
+                    "y": -209.064997553453
+                },
+                {
+                    "data": {
+                        "entries": [
+                        ],
+                        "value_type": "IMPULSION"
+                    },
+                    "height": 44,
+                    "name": "",
+                    "tool": "com.ingescape.circle.tool.writer",
+                    "uuid": "42c2a3dc-3d57-442f-931a-6fd610a78380",
+                    "width": 256,
+                    "x": 892.565990532943,
+                    "y": 229.54373909596956
                 },
                 {
                     "children": [
                         {
                             "agent": {
-                            },
-                            "class": "73df17bd-cf71-4394-92f5-e24b45ade179",
-                            "comment": "",
-                            "height": 158,
-                            "name": "Bird",
-                            "simulationTime": 5000,
-                            "uuid": "bbe6bd53-694f-406f-bb85-c9dddf0bc43d",
-                            "width": 250,
-                            "x": 913.2217817395644,
-                            "y": 0.7384041301519346
-                        },
-                        {
-                            "agent": {
+                                "instances": [
+                                    {
+                                        "commandLine": "/usr/bin/python3 ./../agents/PitchDetector/main.py PitchDetector eth0 5670",
+                                        "hostname": "LAPTOP-PRISCILIA",
+                                        "ip": "172.25.43.23",
+                                        "isAttachedToCircle": false,
+                                        "uuid": "3619c24c-56b3-4a54-aa22-8a067ce43dbc"
+                                    }
+                                ]
                             },
                             "class": "2982af58-dc28-4413-8035-ff5a4b504abd",
                             "comment": "",
@@ -789,6 +836,22 @@
                         },
                         {
                             "agent": {
+                                "instances": [
+                                    {
+                                        "commandLine": "/usr/bin/python3 ./scripts/../agents/Obstacle/main.py Obstacle eth0 5670",
+                                        "hostname": "LAPTOP-PRISCILIA",
+                                        "ip": "172.25.43.23",
+                                        "isAttachedToCircle": false,
+                                        "uuid": "381f8a31-b5ce-49fe-b7bc-13d480ff2b6f"
+                                    },
+                                    {
+                                        "commandLine": "/usr/bin/python3 ./../agents/Obstacle/main.py Obstacle eth0 5670",
+                                        "hostname": "LAPTOP-PRISCILIA",
+                                        "ip": "172.25.43.23",
+                                        "isAttachedToCircle": false,
+                                        "uuid": "e3e83485-583d-4674-93b8-b0217645e740"
+                                    }
+                                ]
                             },
                             "class": "b0ecb6f6-5347-4be3-9494-b36690f99e20",
                             "comment": "",
@@ -880,19 +943,6 @@
                         },
                         {
                             "data": {
-                                "duration": 10,
-                                "repeat": -1
-                            },
-                            "height": 112,
-                            "name": "",
-                            "tool": "com.ingescape.circle.tool.timer",
-                            "uuid": "27074822-98ac-4dc0-b2ad-503c69d8779d",
-                            "width": 230,
-                            "x": 78.1784928506745,
-                            "y": 982.0513730190396
-                        },
-                        {
-                            "data": {
                                 "entries": [
                                     "45",
                                     "47",
@@ -908,6 +958,48 @@
                             "width": 256,
                             "x": 81.43842725789682,
                             "y": 778.7413327928117
+                        },
+                        {
+                            "agent": {
+                                "instances": [
+                                    {
+                                        "commandLine": "/usr/bin/python3 ./scripts/../agents/Bird/main.py Bird eth0 5670",
+                                        "hostname": "LAPTOP-PRISCILIA",
+                                        "ip": "172.25.43.23",
+                                        "isAttachedToCircle": false,
+                                        "uuid": "9d092a91-62cc-4d59-8a4d-08d45192f1fd"
+                                    },
+                                    {
+                                        "commandLine": "/usr/bin/python3 ./../agents/Bird/main.py Bird eth0 5670",
+                                        "hostname": "LAPTOP-PRISCILIA",
+                                        "ip": "172.25.43.23",
+                                        "isAttachedToCircle": false,
+                                        "uuid": "d1c6f6f1-48e2-47e7-85a8-855b48ca3219"
+                                    }
+                                ]
+                            },
+                            "class": "73df17bd-cf71-4394-92f5-e24b45ade179",
+                            "comment": "",
+                            "height": 158,
+                            "name": "Bird",
+                            "simulationTime": 5000,
+                            "uuid": "bbe6bd53-694f-406f-bb85-c9dddf0bc43d",
+                            "width": 250,
+                            "x": 913.2217817395644,
+                            "y": 0.7384041301519346
+                        },
+                        {
+                            "data": {
+                                "duration": 10,
+                                "repeat": -1
+                            },
+                            "height": 112,
+                            "name": "",
+                            "tool": "com.ingescape.circle.tool.timer",
+                            "uuid": "27074822-98ac-4dc0-b2ad-503c69d8779d",
+                            "width": 230,
+                            "x": 78.1784928506745,
+                            "y": 982.0513730190396
                         }
                     ],
                     "childrenViewport": {
@@ -950,7 +1042,7 @@
                     {
                         "destination": "e57063ba-778b-4ea8-aa95-b4814a5d60ff",
                         "destinationIO": {
-                            "name": "maj",
+                            "name": "update",
                             "type": "INPUT"
                         },
                         "source": "42c2a3dc-3d57-442f-931a-6fd610a78380",
@@ -979,7 +1071,7 @@
                         },
                         "source": "e57063ba-778b-4ea8-aa95-b4814a5d60ff",
                         "sourceIO": {
-                            "name": "maj",
+                            "name": "update",
                             "type": "INPUT"
                         }
                     },
@@ -991,7 +1083,7 @@
                         },
                         "source": "e57063ba-778b-4ea8-aa95-b4814a5d60ff",
                         "sourceIO": {
-                            "name": "maj",
+                            "name": "update",
                             "type": "INPUT"
                         }
                     },
@@ -1015,7 +1107,7 @@
                         },
                         "source": "e57063ba-778b-4ea8-aa95-b4814a5d60ff",
                         "sourceIO": {
-                            "name": "maj",
+                            "name": "update",
                             "type": "INPUT"
                         }
                     },
@@ -1027,7 +1119,7 @@
                         },
                         "source": "e57063ba-778b-4ea8-aa95-b4814a5d60ff",
                         "sourceIO": {
-                            "name": "maj",
+                            "name": "update",
                             "type": "INPUT"
                         }
                     },
@@ -1063,7 +1155,7 @@
                         },
                         "source": "e57063ba-778b-4ea8-aa95-b4814a5d60ff",
                         "sourceIO": {
-                            "name": "maj",
+                            "name": "update",
                             "type": "INPUT"
                         }
                     },
@@ -1135,7 +1227,7 @@
                         },
                         "source": "e57063ba-778b-4ea8-aa95-b4814a5d60ff",
                         "sourceIO": {
-                            "name": "maj",
+                            "name": "update",
                             "type": "INPUT"
                         }
                     },
@@ -1195,7 +1287,7 @@
                         },
                         "source": "e57063ba-778b-4ea8-aa95-b4814a5d60ff",
                         "sourceIO": {
-                            "name": "maj",
+                            "name": "update",
                             "type": "INPUT"
                         }
                     },
@@ -1207,7 +1299,7 @@
                         },
                         "source": "e57063ba-778b-4ea8-aa95-b4814a5d60ff",
                         "sourceIO": {
-                            "name": "maj",
+                            "name": "update",
                             "type": "INPUT"
                         }
                     },

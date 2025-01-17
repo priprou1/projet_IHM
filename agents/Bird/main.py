@@ -5,8 +5,9 @@
 #  main.py
 #  Bird
 #  Created by Ingenuity i/o on 2025/01/04
+#  authors : Lucas Bolbènes, Armand Claveau, Priscilia Gonthier
 #
-# no description
+#  Agent that display the bird on the Whiteboard depending of the pitch given
 
 
 import sys
