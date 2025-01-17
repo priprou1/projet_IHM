@@ -13,9 +13,12 @@ import sys
 import ingescape as igs
 
 id = -1
-bmin = 55
-bmax = 67
-screenHeight = 1000.0
+
+whiteboardHeight = 1000.0
+bmax = 60
+bmin = 40
+
+birdSize = 150.0
 
 def on_agent_event_callback(event, uuid, name, event_data, my_data):
     if name == "Whiteboard":
@@ -44,7 +47,7 @@ def elementCreated_callback(sender_agent_name, sender_agent_uuid, service_name, 
 
 def input_callback(io_type, name, value_type, value, my_data):
     
-    global bmin, bmax, screenHeight
+    global bmin, bmax, whiteboardHeight
 
     if(name == "bmin"):
         bmin = value
@@ -54,25 +57,22 @@ def input_callback(io_type, name, value_type, value, my_data):
         bmax = value
         print("bmax set to : ", value)
 
-    if(name == "screenHeight"):
-        screenHeight = value
-        print("screenHeight set to : ", value)
+    if(name == "whiteboardHeight"):
+        whiteboardHeight = value
+        print("whiteboardHeight set to : ", value)
 
 def note_input_callback(io_type, name, value_type, value, my_data):
 
-    # On suppose que les notes pertinentes sont celles de 20 à 100
-    # On suppose que la hauteur du whiteboard est de 0 à 680
-
-    global id, bmin, bmax, screenHeight
+    global id, bmin, bmax, whiteboardHeight, birdSize
 
     if(value > bmin and value < bmax):
 
-        height = screenHeight - (((value - bmin) / (bmax - bmin)) * screenHeight)
+        currentY = whiteboardHeight - (((value - bmin) / (bmax - bmin)) * whiteboardHeight)
 
-        print(value, " ; ", height)
+        print(value, " ; ", currentY)
 
         if(id != -1):
-            arguments_list = (id, 50.0, height)
+            arguments_list = (id, 50.0, currentY - (birdSize / 2))
             igs.service_call("Whiteboard", "moveTo", arguments_list, "")
         
 if __name__ == "__main__":
@@ -101,8 +101,8 @@ if __name__ == "__main__":
     igs.input_create("bmax", igs.INTEGER_T, None)
     igs.observe_input("bmax", input_callback, None)
 
-    igs.input_create("screenHeight", igs.DOUBLE_T, None)
-    igs.observe_input("screenHeight", input_callback, None)
+    igs.input_create("whiteboardHeight", igs.DOUBLE_T, None)
+    igs.observe_input("whiteboardHeight", input_callback, None)
 
     igs.service_init("elementCreated", elementCreated_callback, None)
     igs.service_arg_add("elementCreated", "elementId", igs.INTEGER_T)

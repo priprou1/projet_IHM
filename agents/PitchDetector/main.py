@@ -22,7 +22,7 @@ import music21
 
 VOLUME_TRESH = 0.2
 SILENCE_TRESH = -40
-DEVICE_NUMBER = 7
+DEVICE_NUMBER = 6
 
 def input_callback(io_type, name, value_type, value, my_data):
 

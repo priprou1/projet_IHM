@@ -14,71 +14,97 @@ import ingescape as igs
 
 hautId = -1
 basId = -1 #U.w.U
-screenHeight = 1000.0
-bmin = -1
-bmax = -1
+
+whiteboardWidth = 1000.0
+whiteboardHeight = 1000.0
+
+bmax = 60
+bmin = 40
 
 currentX = 1000.0
+currentY = 500.0
 
-currentY = 0.0
+note = 50
 
-holeThickness = 100.0
+offset = 10
+
+holeThickness = 200.0
+obstacleThickness = 150.0
+
+color = "#664566BA"
 
 def on_agent_event_callback(event, uuid, name, event_data, my_data):
 
-    global screenHeight, currentX
+    global whiteboardHeight, currentX
 
     if name == "Whiteboard":
         if event == igs.AGENT_KNOWS_US:
 
-            thickness = 100.0
-
-            arguments_list = ("rectangle", currentX, 0.0, thickness, 500.0, "blue", "transparent", 0)
-            igs.service_call("Whiteboard", "addShape", arguments_list, "haut")
-
-            arguments_list = ("rectangle", currentX, 550.0, thickness, 500.0, "blue", "transparent", 0)
-            igs.service_call("Whiteboard", "addShape", arguments_list, "bas")
+            pass   
 
 
 #inputs
 def input_callback(io_type, name, value_type, value, my_data):
     
-    global screenHeight
+    global whiteboardWidth, whiteboardHeight, bmin, bmax, note, offset
 
-    if(name == "screenHeight"):
-        screenHeight = value
-        print("screenHeight set to : ", value)
+    if(name == "whiteboardWidth"):
+        whiteboardWidth = value
+        print("whiteboardWidth set to : ", value)
+
+    if(name == "whiteboardHeight"):
+        whiteboardHeight = value
+        print("whiteboardHeight set to : ", value)
+
+    if(name == "bmax"):
+        bmax = value
+        print("bmax set to : ", value) 
 
     if(name == "bmin"):
         bmin = value
         print("bmin set to : ", value)
     
-    if(name == "bmax"):
-        bmax = value
-        print("bmax set to : ", value)    
+    if(name == "note"):
+        note = value
+        print("note set to : ", value)
+    
+    if(name == "offset"):
+        offset = value
+        print("offset set to : ", value)
+       
 
 
 def clock_callback(io_type, name, value_type, value, my_data):
 
-    global currentX
+    global currentX, currentY, obstacleThickness, bmin, bmax, color
 
-    arguments_list = (hautId, -10.0, 0.0)
-    igs.service_call("Whiteboard", "translate", arguments_list, "haut")
+    if(note > bmin and note < bmax):
 
-    arguments_list = (basId, -10.0, 0.0)
-    igs.service_call("Whiteboard", "translate", arguments_list, "bas")
+        currentY = whiteboardHeight - (((note - bmin) / (bmax - bmin)) * whiteboardHeight)
 
-    currentX -= 10.0   
+    # Clear
+
+    arguments_list = (hautId)
+    igs.service_call("Whiteboard", "remove", arguments_list, "haut")
+
+    arguments_list = (basId)
+    igs.service_call("Whiteboard", "remove", arguments_list, "bas")
+
+    # Draw again
+
+    arguments_list = ("rectangle", currentX, 0.0, obstacleThickness, (currentY - (holeThickness / 2)), color, "transparent", 0)
+    igs.service_call("Whiteboard", "addShape", arguments_list, "haut")
+
+    arguments_list = ("rectangle", currentX, currentY + holeThickness / 2, obstacleThickness, whiteboardHeight - (currentY - (holeThickness / 2)), color, "transparent", 0)
+    igs.service_call("Whiteboard", "addShape", arguments_list, "bas")
+
+    currentX -= offset
 
     if(currentX < 0):
 
-        currentX = 1000.0
+        currentX = whiteboardWidth 
 
-        arguments_list = (hautId, currentX, 0.0)
-        igs.service_call("Whiteboard", "moveTo", arguments_list, "haut")
-
-        arguments_list = (basId, currentX, 550.0)
-        igs.service_call("Whiteboard", "moveTo", arguments_list, "bas")
+    
 
     
 
@@ -91,11 +117,10 @@ def elementCreated_callback(sender_agent_name, sender_agent_uuid, service_name, 
 
     if(token == "haut"):
         hautId = arguments[0]
-        print(hautId)   
     
     if(token == "bas"):
         basId = arguments[0]
-        print(basId)
+
 
 
 if __name__ == "__main__":
@@ -115,8 +140,8 @@ if __name__ == "__main__":
 
     igs.debug(f"Ingescape version: {igs.version()} (protocol v{igs.protocol()})")
 
-    igs.input_create("screenHeight", igs.INTEGER_T, None)
-    igs.observe_input("screenHeight", input_callback, None)
+    igs.input_create("whiteboardHeight", igs.INTEGER_T, None)
+    igs.observe_input("whiteboardHeight", input_callback, None)
 
     igs.input_create("note", igs.INTEGER_T, None)
     igs.observe_input("note", input_callback, None)
@@ -124,17 +149,20 @@ if __name__ == "__main__":
     igs.input_create("clock", igs.IMPULSION_T, None)
     igs.observe_input("clock", clock_callback, None)
 
-    igs.service_init("elementCreated", elementCreated_callback, None)
-    igs.service_arg_add("elementCreated", "elementId", igs.INTEGER_T)
-
-    igs.service_init("actionResult", actionResult_callback, None)
-    igs.service_arg_add("actionResult", "succeeded", igs.BOOL_T)
-
     igs.input_create("bmin", igs.INTEGER_T, None)
     igs.observe_input("bmin", input_callback, None)
 
     igs.input_create("bmax", igs.INTEGER_T, None)
     igs.observe_input("bmax", input_callback, None)
+
+    igs.input_create("offset", igs.INTEGER_T, None)
+    igs.observe_input("offset", input_callback, None)
+
+    igs.service_init("elementCreated", elementCreated_callback, None)
+    igs.service_arg_add("elementCreated", "elementId", igs.INTEGER_T)
+
+    igs.service_init("actionResult", actionResult_callback, None)
+    igs.service_arg_add("actionResult", "succeeded", igs.BOOL_T)
 
     igs.observe_agent_events(on_agent_event_callback, None)
 
