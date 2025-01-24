@@ -712,7 +712,7 @@
                 "derivedFrom": [
                     "8442c6c3-1740-407b-a3cb-53e0b1fbaa30"
                 ],
-                "description": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Asap'; font-size:13px; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Modify the position of the bird from the pitch and display it on the whiteBoard</p></body></html>",
+                "description": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Asap'; font-size:13px; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Modify the position of the bird from the pitch and display it on the whiteboard</p></body></html>",
                 "importUUID": "",
                 "name": "Control the Bird",
                 "package": "",
@@ -720,7 +720,7 @@
                 "uuid": "7a01ee2b-3bc9-4817-bc6b-093c75bec2fb"
             },
             {
-                "description": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Asap'; font-size:13px; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Display the obstacles and the bird on the witheBoard</p></body></html>",
+                "description": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Asap'; font-size:13px; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Display the obstacles and the bird on the whiteboard</p></body></html>",
                 "importUUID": "",
                 "name": "Display on the whiteBoard",
                 "package": "",
@@ -731,7 +731,7 @@
                 "derivedFrom": [
                     "8442c6c3-1740-407b-a3cb-53e0b1fbaa30"
                 ],
-                "description": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Asap'; font-size:13px; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Modify the position of the obstacle from the pitch and display it on the whiteBoard</p></body></html>",
+                "description": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Asap'; font-size:13px; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Modify the position of the obstacle from the pitch and display it on the whiteboard</p></body></html>",
                 "importUUID": "",
                 "name": "Control the obstacle",
                 "package": "",
@@ -747,6 +747,13 @@
                     "agent": {
                         "instances": [
                             {
+                                "commandLine": "/home/priscilia/Cours/IHM/agents/Whiteboard/bin/Whiteboard",
+                                "hostname": "LAPTOP-PRISCILIA",
+                                "ip": "172.25.43.23",
+                                "isAttachedToCircle": false,
+                                "uuid": "57b5b5f5-8706-4d29-8ced-db9af03ba2ed"
+                            },
+                            {
                                 "commandLine": "/home/lucas/repositories/projet_IHM/agents/Whiteboard/bin/Whiteboard",
                                 "hostname": "amyoga",
                                 "ip": "192.168.64.110",
@@ -761,13 +768,6 @@
                                 "isAttachedToCircle": false,
                                 "mac": "90:0F:0C:8F:03:BD",
                                 "uuid": "85c8ef06-0d89-4714-9dd3-670d5e7452af"
-                            },
-                            {
-                                "commandLine": "/home/priscilia/Cours/IHM/agents/Whiteboard/bin/Whiteboard",
-                                "hostname": "LAPTOP-PRISCILIA",
-                                "ip": "172.25.43.23",
-                                "isAttachedToCircle": false,
-                                "uuid": "57b5b5f5-8706-4d29-8ced-db9af03ba2ed"
                             }
                         ]
                     },
@@ -797,72 +797,6 @@
                 },
                 {
                     "children": [
-                        {
-                            "agent": {
-                                "instances": [
-                                    {
-                                        "commandLine": "/usr/bin/python3 ./../agents/PitchDetector/main.py PitchDetector eth0 5670",
-                                        "hostname": "LAPTOP-PRISCILIA",
-                                        "ip": "172.25.43.23",
-                                        "isAttachedToCircle": false,
-                                        "uuid": "3619c24c-56b3-4a54-aa22-8a067ce43dbc"
-                                    }
-                                ]
-                            },
-                            "class": "2982af58-dc28-4413-8035-ff5a4b504abd",
-                            "comment": "",
-                            "height": 136,
-                            "name": "PitchDetector",
-                            "simulationTime": 5000,
-                            "uuid": "1f2e7f4a-5570-4f69-ae37-039c92ca7907",
-                            "width": 250,
-                            "x": 1099.3140484062312,
-                            "y": 1066.489817463485
-                        },
-                        {
-                            "data": {
-                                "entries": [
-                                    "0.5"
-                                ],
-                                "value_type": "DOUBLE"
-                            },
-                            "height": 79,
-                            "name": "",
-                            "tool": "com.ingescape.circle.tool.writer",
-                            "uuid": "47ce2325-134f-41f1-b0bb-7b152a2db137",
-                            "width": 256,
-                            "x": 81.32249285067383,
-                            "y": 1105.0073730190397
-                        },
-                        {
-                            "agent": {
-                                "instances": [
-                                    {
-                                        "commandLine": "/usr/bin/python3 ./scripts/../agents/Obstacle/main.py Obstacle eth0 5670",
-                                        "hostname": "LAPTOP-PRISCILIA",
-                                        "ip": "172.25.43.23",
-                                        "isAttachedToCircle": false,
-                                        "uuid": "381f8a31-b5ce-49fe-b7bc-13d480ff2b6f"
-                                    },
-                                    {
-                                        "commandLine": "/usr/bin/python3 ./../agents/Obstacle/main.py Obstacle eth0 5670",
-                                        "hostname": "LAPTOP-PRISCILIA",
-                                        "ip": "172.25.43.23",
-                                        "isAttachedToCircle": false,
-                                        "uuid": "e3e83485-583d-4674-93b8-b0217645e740"
-                                    }
-                                ]
-                            },
-                            "class": "b0ecb6f6-5347-4be3-9494-b36690f99e20",
-                            "comment": "",
-                            "height": 232.9759999999999,
-                            "name": "Obstacle",
-                            "simulationTime": 5000,
-                            "uuid": "2ef9beb3-f70b-4e7c-9d22-1a8fd714579b",
-                            "width": 250,
-                            "x": 909.3823150728972,
-                            "y": 795.5140841301511
-                        },
                         {
                             "data": {
                                 "arguments": [
@@ -927,39 +861,6 @@
                             "y": 598.2953730190391
                         },
                         {
-                            "data": {
-                                "entries": [
-                                    "10"
-                                ],
-                                "value_type": "INTEGER"
-                            },
-                            "height": 79,
-                            "name": "",
-                            "tool": "com.ingescape.circle.tool.writer",
-                            "uuid": "83d6d035-5f8e-4b0b-9854-5f2edf8f9e85",
-                            "width": 256,
-                            "x": 78.49849285067467,
-                            "y": 681.4833730190396
-                        },
-                        {
-                            "data": {
-                                "entries": [
-                                    "45",
-                                    "47",
-                                    "50",
-                                    "55"
-                                ],
-                                "value_type": "INTEGER"
-                            },
-                            "height": 163,
-                            "name": "",
-                            "tool": "com.ingescape.circle.tool.writer",
-                            "uuid": "e8bfc8db-b3b8-4b42-81a5-5c00b0cb2546",
-                            "width": 256,
-                            "x": 81.43842725789682,
-                            "y": 778.7413327928117
-                        },
-                        {
                             "agent": {
                                 "instances": [
                                     {
@@ -990,6 +891,39 @@
                         },
                         {
                             "data": {
+                                "entries": [
+                                    "45",
+                                    "47",
+                                    "50",
+                                    "55"
+                                ],
+                                "value_type": "INTEGER"
+                            },
+                            "height": 163,
+                            "name": "",
+                            "tool": "com.ingescape.circle.tool.writer",
+                            "uuid": "e8bfc8db-b3b8-4b42-81a5-5c00b0cb2546",
+                            "width": 256,
+                            "x": 81.43842725789682,
+                            "y": 778.7413327928117
+                        },
+                        {
+                            "data": {
+                                "entries": [
+                                    "10"
+                                ],
+                                "value_type": "INTEGER"
+                            },
+                            "height": 79,
+                            "name": "",
+                            "tool": "com.ingescape.circle.tool.writer",
+                            "uuid": "83d6d035-5f8e-4b0b-9854-5f2edf8f9e85",
+                            "width": 256,
+                            "x": 81.68320759682683,
+                            "y": 687.852802511344
+                        },
+                        {
+                            "data": {
                                 "duration": 10,
                                 "repeat": -1
                             },
@@ -998,8 +932,74 @@
                             "tool": "com.ingescape.circle.tool.timer",
                             "uuid": "27074822-98ac-4dc0-b2ad-503c69d8779d",
                             "width": 230,
-                            "x": 78.1784928506745,
-                            "y": 982.0513730190396
+                            "x": 83.27403644451783,
+                            "y": 955.5120834677714
+                        },
+                        {
+                            "data": {
+                                "entries": [
+                                    "0.5"
+                                ],
+                                "value_type": "DOUBLE"
+                            },
+                            "height": 79,
+                            "name": "",
+                            "tool": "com.ingescape.circle.tool.writer",
+                            "uuid": "47ce2325-134f-41f1-b0bb-7b152a2db137",
+                            "width": 256,
+                            "x": 80.43784986563162,
+                            "y": 1083.0682269899914
+                        },
+                        {
+                            "agent": {
+                                "instances": [
+                                    {
+                                        "commandLine": "/usr/bin/python3 ./scripts/../agents/Obstacle/main.py Obstacle eth0 5670",
+                                        "hostname": "LAPTOP-PRISCILIA",
+                                        "ip": "172.25.43.23",
+                                        "isAttachedToCircle": false,
+                                        "uuid": "381f8a31-b5ce-49fe-b7bc-13d480ff2b6f"
+                                    },
+                                    {
+                                        "commandLine": "/usr/bin/python3 ./../agents/Obstacle/main.py Obstacle eth0 5670",
+                                        "hostname": "LAPTOP-PRISCILIA",
+                                        "ip": "172.25.43.23",
+                                        "isAttachedToCircle": false,
+                                        "uuid": "e3e83485-583d-4674-93b8-b0217645e740"
+                                    }
+                                ]
+                            },
+                            "class": "b0ecb6f6-5347-4be3-9494-b36690f99e20",
+                            "comment": "",
+                            "height": 232.9759999999999,
+                            "name": "Obstacle",
+                            "simulationTime": 5000,
+                            "uuid": "2ef9beb3-f70b-4e7c-9d22-1a8fd714579b",
+                            "width": 250,
+                            "x": 908.3207434908466,
+                            "y": 766.8516514147816
+                        },
+                        {
+                            "agent": {
+                                "instances": [
+                                    {
+                                        "commandLine": "/usr/bin/python3 ./../agents/PitchDetector/main.py PitchDetector eth0 5670",
+                                        "hostname": "LAPTOP-PRISCILIA",
+                                        "ip": "172.25.43.23",
+                                        "isAttachedToCircle": false,
+                                        "uuid": "3619c24c-56b3-4a54-aa22-8a067ce43dbc"
+                                    }
+                                ]
+                            },
+                            "class": "2982af58-dc28-4413-8035-ff5a4b504abd",
+                            "comment": "",
+                            "height": 136,
+                            "name": "PitchDetector",
+                            "simulationTime": 5000,
+                            "uuid": "1f2e7f4a-5570-4f69-ae37-039c92ca7907",
+                            "width": 250,
+                            "x": 1094.0061904959773,
+                            "y": 1041.0120994942679
                         }
                     ],
                     "childrenViewport": {
@@ -1015,6 +1015,18 @@
                     "width": 747.3518032100676,
                     "x": 1194.4796029190843,
                     "y": 131.54770376472771
+                },
+                {
+                    "data": {
+                        "selectedAgentUuid": "037d3303-3d37-4b58-9bda-78004cba8bbe"
+                    },
+                    "height": 174,
+                    "name": "",
+                    "tool": "com.ingescape.circle.tool.serviceobserver",
+                    "uuid": "afcb2e6f-5d97-423c-a324-309b8c348ce2",
+                    "width": 200,
+                    "x": 828.2189059708969,
+                    "y": -273.583119460941
                 }
             ],
             "links": {
