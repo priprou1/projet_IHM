@@ -747,11 +747,12 @@
                     "agent": {
                         "instances": [
                             {
-                                "commandLine": "/home/priscilia/Cours/IHM/agents/Whiteboard/bin/Whiteboard",
-                                "hostname": "LAPTOP-PRISCILIA",
-                                "ip": "172.25.43.23",
+                                "commandLine": "/media/lucas/T7/repositories/projet_IHM/agents/Whiteboard/bin/Whiteboard",
+                                "hostname": "adell",
+                                "ip": "172.22.227.4",
                                 "isAttachedToCircle": false,
-                                "uuid": "57b5b5f5-8706-4d29-8ced-db9af03ba2ed"
+                                "mac": "90:0F:0C:8F:03:BD",
+                                "uuid": "85c8ef06-0d89-4714-9dd3-670d5e7452af"
                             },
                             {
                                 "commandLine": "/home/lucas/repositories/projet_IHM/agents/Whiteboard/bin/Whiteboard",
@@ -762,12 +763,11 @@
                                 "uuid": "b57b705f-93ff-43a4-98f2-b856206c57ca"
                             },
                             {
-                                "commandLine": "/media/lucas/T7/repositories/projet_IHM/agents/Whiteboard/bin/Whiteboard",
-                                "hostname": "adell",
-                                "ip": "172.22.227.4",
+                                "commandLine": "/home/priscilia/Cours/IHM/agents/Whiteboard/bin/Whiteboard",
+                                "hostname": "LAPTOP-PRISCILIA",
+                                "ip": "172.25.43.23",
                                 "isAttachedToCircle": false,
-                                "mac": "90:0F:0C:8F:03:BD",
-                                "uuid": "85c8ef06-0d89-4714-9dd3-670d5e7452af"
+                                "uuid": "57b5b5f5-8706-4d29-8ced-db9af03ba2ed"
                             }
                         ]
                     },
@@ -1018,15 +1018,15 @@
                 },
                 {
                     "data": {
-                        "selectedAgentUuid": "037d3303-3d37-4b58-9bda-78004cba8bbe"
+                        "selectedAgentUuid": "Circle"
                     },
-                    "height": 174,
+                    "height": 237.20088381156773,
                     "name": "",
                     "tool": "com.ingescape.circle.tool.serviceobserver",
                     "uuid": "afcb2e6f-5d97-423c-a324-309b8c348ce2",
-                    "width": 200,
-                    "x": 828.2189059708969,
-                    "y": -273.583119460941
+                    "width": 354.4910493171664,
+                    "x": 1004.947303295836,
+                    "y": -215.0637825983782
                 }
             ],
             "links": {
