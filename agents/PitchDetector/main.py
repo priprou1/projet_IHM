@@ -5,7 +5,8 @@
 #  main.py
 #  PitchDetector
 #  Created by Ingenuity i/o on 2025/01/04
-#  authors : Lucas Bolbènes, Armand Claveau, Priscilia Gonthier
+#
+#  Authors : Lucas Bolbènes, Armand Claveau, Priscilia Gonthier
 #
 #  Agent that detect the pitch from the voice input of the microphone
 
@@ -21,10 +22,14 @@ import argparse
 import queue
 import music21  
 
+## Definition of global variables
+# Threshold of the volume capture by the microphone in order to reduce the unwanted noise
 VOLUME_TRESH = 0.2
 SILENCE_TRESH = -40
+# Number of the device used for the microphone
 DEVICE_NUMBER = 9
 
+# Callback function to get and update the inputs from the other agents
 def input_callback(io_type, name, value_type, value, my_data):
 
     global VOLUME_TRESH
@@ -33,7 +38,7 @@ def input_callback(io_type, name, value_type, value, my_data):
         VOLUME_TRESH = value
         print("Volume treshold set to : ", value)
 
-
+# Function to get the current note from the microphone TODO : Code à commenter dedans ou pas à voir
 def get_current_note(printOut=False):
 
     global VOLUME_TRESH
@@ -99,6 +104,7 @@ if __name__ == "__main__":
             print(f" {device}")
         exit(0)
 
+    ## Set the documentation of the agent
     igs.agent_set_name(sys.argv[1])
     igs.definition_set_description("""<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Asap'; font-size:13px; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Agent that detect the pitch from the voice input of the microphone</p></body></html>""")
     igs.definition_set_class("PitchDetector")
@@ -108,16 +114,20 @@ if __name__ == "__main__":
 
     igs.debug(f"Ingescape version: {igs.version()} (protocol v{igs.protocol()})")
 
+    ## Create the inputs of the agent
     igs.input_create("volumeTresh", igs.DOUBLE_T, None)
     igs.input_set_description("volumeTresh", """<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Asap'; font-size:13px; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Threshold of the volume capture by the microphone in order to reduice the unwanted noise</p></body></html>""")
     igs.input_add_constraint("volumeTresh", "range [0.01,1]")
     igs.observe_input("volumeTresh", input_callback, None)
 
+    ## Create the outputs of the agent
     igs.output_create("note", igs.INTEGER_T, None)
     igs.output_set_description("note", """<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Asap'; font-size:13px; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Number of the note found wich correspond of the input of a MIDI keyboard</p></body></html>""")
     igs.output_add_constraint("note", "range [0,127]")
     
     igs.output_create("noteName", igs.STRING_T, None)
+    igs.output_set_description("noteName", """<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Asap'; font-size:13px; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Name of the pitch of the voice</p></body></html>""")
+
     
     igs.start_with_device(sys.argv[2], int(sys.argv[3]))
 
