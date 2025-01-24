@@ -43,9 +43,13 @@
                             "type": "INTEGER"
                         },
                         {
-                            "description": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Asap'; font-size:13px; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Name of the pitch found</p></body></html>",
                             "name": "noteName",
                             "type": "STRING"
+                        }
+                    ],
+                    "services": [
+                        {
+                            "name": "getNote"
                         }
                     ]
                 },
@@ -98,12 +102,10 @@
                         {
                             "arguments": [
                                 {
-                                    "description": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Asap'; font-size:13px; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">ID of the picture of the bird displayed on the WhiteBoard</p></body></html>",
                                     "name": "elementId",
                                     "type": "INTEGER"
                                 }
                             ],
-                            "description": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Asap'; font-size:13px; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Service that can be called by the WhiteBoard to give the ID of the bird created</p></body></html>",
                             "name": "elementCreated"
                         }
                     ]
@@ -150,7 +152,7 @@
                         {
                             "constraint": "[0,127]",
                             "description": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Asap'; font-size:13px; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Number of the note that wil determine the position of the obstacle on the screen (correspond of the input of a MIDI keyboard)</p></body></html>",
-                            "name": "note",
+                            "name": "obstacleNote",
                             "type": "INTEGER"
                         },
                         {
@@ -163,12 +165,10 @@
                         {
                             "arguments": [
                                 {
-                                    "description": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Asap'; font-size:13px; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">ID of the element of the obstacle displayed on the WhiteBoard</p></body></html>",
                                     "name": "elementId",
                                     "type": "INTEGER"
                                 }
                             ],
-                            "description": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Asap'; font-size:13px; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Service that can be called by the WhiteBoard to give the ID of the element of the obstacle created</p></body></html>",
                             "name": "elementCreated"
                         },
                         {
@@ -747,6 +747,13 @@
                     "agent": {
                         "instances": [
                             {
+                                "commandLine": "/home/lucas/repositories/projet_IHM/agents/Whiteboard/bin/Whiteboard",
+                                "hostname": "amyoga",
+                                "ip": "192.168.142.43",
+                                "isAttachedToCircle": false,
+                                "uuid": "3305ada2-0e51-40eb-8794-41f212a0e428"
+                            },
+                            {
                                 "commandLine": "/media/lucas/T7/repositories/projet_IHM/agents/Whiteboard/bin/Whiteboard",
                                 "hostname": "adell",
                                 "ip": "172.22.227.4",
@@ -755,19 +762,27 @@
                                 "uuid": "85c8ef06-0d89-4714-9dd3-670d5e7452af"
                             },
                             {
-                                "commandLine": "/home/lucas/repositories/projet_IHM/agents/Whiteboard/bin/Whiteboard",
-                                "hostname": "amyoga",
-                                "ip": "192.168.64.110",
-                                "isAttachedToCircle": false,
-                                "mac": "C8:6E:08:D2:D1:8D",
-                                "uuid": "b57b705f-93ff-43a4-98f2-b856206c57ca"
-                            },
-                            {
                                 "commandLine": "/home/priscilia/Cours/IHM/agents/Whiteboard/bin/Whiteboard",
                                 "hostname": "LAPTOP-PRISCILIA",
                                 "ip": "172.25.43.23",
                                 "isAttachedToCircle": false,
                                 "uuid": "57b5b5f5-8706-4d29-8ced-db9af03ba2ed"
+                            },
+                            {
+                                "commandLine": "/home/lucas/repositories/projet_IHM/agents/Whiteboard/bin/Whiteboard",
+                                "hostname": "amyoga",
+                                "ip": "172.22.223.227",
+                                "isAttachedToCircle": false,
+                                "mac": "C8:6E:08:D2:D1:8D",
+                                "uuid": "b57b705f-93ff-43a4-98f2-b856206c57ca"
+                            },
+                            {
+                                "commandLine": "/home/lucas/repositories/projet_IHM/agents/Whiteboard/bin/Whiteboard",
+                                "hostname": "amyoga",
+                                "ip": "192.168.142.106",
+                                "isAttachedToCircle": false,
+                                "mac": "32:B0:CD:29:15:7D",
+                                "uuid": "a7762cdf-bd94-463d-aa25-c4ac3d8cc8cf"
                             }
                         ]
                     },
@@ -780,6 +795,18 @@
                     "width": 250,
                     "x": 1447.6427130407665,
                     "y": -209.064997553453
+                },
+                {
+                    "data": {
+                        "selectedAgentUuid": "Circle"
+                    },
+                    "height": 174,
+                    "name": "",
+                    "tool": "com.ingescape.circle.tool.serviceobserver",
+                    "uuid": "afcb2e6f-5d97-423c-a324-309b8c348ce2",
+                    "width": 354.4910493171664,
+                    "x": 1004.947303295836,
+                    "y": -215.0637825983782
                 },
                 {
                     "data": {
@@ -797,24 +824,6 @@
                 },
                 {
                     "children": [
-                        {
-                            "data": {
-                                "arguments": [
-                                    {
-                                        "title": "PitchBird"
-                                    }
-                                ],
-                                "selectedAgentUuid": "037d3303-3d37-4b58-9bda-78004cba8bbe",
-                                "selectedService": "setTitle"
-                            },
-                            "height": 149,
-                            "name": "",
-                            "tool": "com.ingescape.circle.tool.servicecaller",
-                            "uuid": "e23931da-21a3-46cf-b5d0-27f183e15624",
-                            "width": 246,
-                            "x": 80.1744272578967,
-                            "y": 269.7813327928118
-                        },
                         {
                             "data": {
                                 "arguments": [
@@ -859,35 +868,6 @@
                             "width": 256,
                             "x": 79.07449285067491,
                             "y": 598.2953730190391
-                        },
-                        {
-                            "agent": {
-                                "instances": [
-                                    {
-                                        "commandLine": "/usr/bin/python3 ./scripts/../agents/Bird/main.py Bird eth0 5670",
-                                        "hostname": "LAPTOP-PRISCILIA",
-                                        "ip": "172.25.43.23",
-                                        "isAttachedToCircle": false,
-                                        "uuid": "9d092a91-62cc-4d59-8a4d-08d45192f1fd"
-                                    },
-                                    {
-                                        "commandLine": "/usr/bin/python3 ./../agents/Bird/main.py Bird eth0 5670",
-                                        "hostname": "LAPTOP-PRISCILIA",
-                                        "ip": "172.25.43.23",
-                                        "isAttachedToCircle": false,
-                                        "uuid": "d1c6f6f1-48e2-47e7-85a8-855b48ca3219"
-                                    }
-                                ]
-                            },
-                            "class": "73df17bd-cf71-4394-92f5-e24b45ade179",
-                            "comment": "",
-                            "height": 158,
-                            "name": "Bird",
-                            "simulationTime": 5000,
-                            "uuid": "bbe6bd53-694f-406f-bb85-c9dddf0bc43d",
-                            "width": 250,
-                            "x": 913.2217817395644,
-                            "y": 0.7384041301519346
                         },
                         {
                             "data": {
@@ -936,6 +916,58 @@
                             "y": 955.5120834677714
                         },
                         {
+                            "agent": {
+                                "instances": [
+                                    {
+                                        "commandLine": "/home/lucas/.pyenv/versions/3.8.20/bin/python3 ./scripts/../agents/Bird/main.py Bird enxd21f3b1d5290 5670",
+                                        "hostname": "amyoga",
+                                        "ip": "192.168.142.43",
+                                        "isAttachedToCircle": false,
+                                        "uuid": "9f5f6b64-1233-4d07-b657-5bd50cbf4026"
+                                    },
+                                    {
+                                        "commandLine": "/usr/bin/python3 ./scripts/../agents/Bird/main.py Bird eth0 5670",
+                                        "hostname": "LAPTOP-PRISCILIA",
+                                        "ip": "172.25.43.23",
+                                        "isAttachedToCircle": false,
+                                        "uuid": "9d092a91-62cc-4d59-8a4d-08d45192f1fd"
+                                    },
+                                    {
+                                        "commandLine": "/usr/bin/python3 ./../agents/Bird/main.py Bird eth0 5670",
+                                        "hostname": "LAPTOP-PRISCILIA",
+                                        "ip": "172.25.43.23",
+                                        "isAttachedToCircle": false,
+                                        "uuid": "d1c6f6f1-48e2-47e7-85a8-855b48ca3219"
+                                    },
+                                    {
+                                        "commandLine": "/home/lucas/.pyenv/versions/3.8.20/bin/python3 ./scripts/../agents/Bird/main.py Bird wlp0s20f3 5670",
+                                        "hostname": "amyoga",
+                                        "ip": "172.22.223.227",
+                                        "isAttachedToCircle": false,
+                                        "mac": "C8:6E:08:D2:D1:8D",
+                                        "uuid": "44ad68a5-41e7-48d6-88a6-4eeec03a5068"
+                                    },
+                                    {
+                                        "commandLine": "/home/lucas/.pyenv/versions/3.8.20/bin/python3 ./scripts/../agents/Bird/main.py Bird enx32b0cd29157d 5670",
+                                        "hostname": "amyoga",
+                                        "ip": "192.168.142.106",
+                                        "isAttachedToCircle": false,
+                                        "mac": "32:B0:CD:29:15:7D",
+                                        "uuid": "15df0f5a-5dbb-4570-a53c-5dd655391391"
+                                    }
+                                ]
+                            },
+                            "class": "73df17bd-cf71-4394-92f5-e24b45ade179",
+                            "comment": "",
+                            "height": 158,
+                            "name": "Bird",
+                            "simulationTime": 5000,
+                            "uuid": "bbe6bd53-694f-406f-bb85-c9dddf0bc43d",
+                            "width": 250,
+                            "x": 913.2217817395644,
+                            "y": 0.7384041301519346
+                        },
+                        {
                             "data": {
                                 "entries": [
                                     "0.5"
@@ -947,12 +979,64 @@
                             "tool": "com.ingescape.circle.tool.writer",
                             "uuid": "47ce2325-134f-41f1-b0bb-7b152a2db137",
                             "width": 256,
-                            "x": 80.43784986563162,
-                            "y": 1083.0682269899914
+                            "x": 77.87411885008942,
+                            "y": 1106.996383135052
                         },
                         {
                             "agent": {
                                 "instances": [
+                                    {
+                                        "commandLine": "/home/lucas/.pyenv/versions/3.8.20/bin/python3 ./scripts/../agents/PitchDetector/main.py PitchDetector enxd21f3b1d5290 5670",
+                                        "hostname": "amyoga",
+                                        "ip": "192.168.142.43",
+                                        "isAttachedToCircle": false,
+                                        "uuid": "feb4d4bc-ff2f-4cc8-bcf4-bcaf2ad3b582"
+                                    },
+                                    {
+                                        "commandLine": "/usr/bin/python3 ./../agents/PitchDetector/main.py PitchDetector eth0 5670",
+                                        "hostname": "LAPTOP-PRISCILIA",
+                                        "ip": "172.25.43.23",
+                                        "isAttachedToCircle": false,
+                                        "uuid": "3619c24c-56b3-4a54-aa22-8a067ce43dbc"
+                                    },
+                                    {
+                                        "commandLine": "/home/lucas/.pyenv/versions/3.8.20/bin/python3 ./scripts/../agents/PitchDetector/main.py PitchDetector wlp0s20f3 5670",
+                                        "hostname": "amyoga",
+                                        "ip": "172.22.223.227",
+                                        "isAttachedToCircle": false,
+                                        "mac": "C8:6E:08:D2:D1:8D",
+                                        "uuid": "5e1cd72a-5b8d-4b44-852a-2ebdb36c39b8"
+                                    },
+                                    {
+                                        "commandLine": "/home/lucas/.pyenv/versions/3.8.20/bin/python3 ./scripts/../agents/PitchDetector/main.py PitchDetector enx32b0cd29157d 5670",
+                                        "hostname": "amyoga",
+                                        "ip": "192.168.142.106",
+                                        "isAttachedToCircle": false,
+                                        "mac": "32:B0:CD:29:15:7D",
+                                        "uuid": "5112bd2c-63eb-40ba-aadc-da0e65f9b6e4"
+                                    }
+                                ]
+                            },
+                            "class": "2982af58-dc28-4413-8035-ff5a4b504abd",
+                            "comment": "",
+                            "height": 136,
+                            "name": "PitchDetector",
+                            "simulationTime": 5000,
+                            "uuid": "1f2e7f4a-5570-4f69-ae37-039c92ca7907",
+                            "width": 250,
+                            "x": 911.9812883924828,
+                            "y": 1055.53990858234
+                        },
+                        {
+                            "agent": {
+                                "instances": [
+                                    {
+                                        "commandLine": "/home/lucas/.pyenv/versions/3.8.20/bin/python3 ./scripts/../agents/Obstacle/main.py Obstacle enxd21f3b1d5290 5670",
+                                        "hostname": "amyoga",
+                                        "ip": "192.168.142.43",
+                                        "isAttachedToCircle": false,
+                                        "uuid": "17e098c8-8d28-4eee-b3eb-efc0934c78e0"
+                                    },
                                     {
                                         "commandLine": "/usr/bin/python3 ./scripts/../agents/Obstacle/main.py Obstacle eth0 5670",
                                         "hostname": "LAPTOP-PRISCILIA",
@@ -966,40 +1050,34 @@
                                         "ip": "172.25.43.23",
                                         "isAttachedToCircle": false,
                                         "uuid": "e3e83485-583d-4674-93b8-b0217645e740"
+                                    },
+                                    {
+                                        "commandLine": "/home/lucas/.pyenv/versions/3.8.20/bin/python3 ./scripts/../agents/Obstacle/main.py Obstacle wlp0s20f3 5670",
+                                        "hostname": "amyoga",
+                                        "ip": "172.22.223.227",
+                                        "isAttachedToCircle": false,
+                                        "mac": "C8:6E:08:D2:D1:8D",
+                                        "uuid": "33936019-3ccb-41e7-bb0e-85ec2372eb46"
+                                    },
+                                    {
+                                        "commandLine": "/home/lucas/.pyenv/versions/3.8.20/bin/python3 ./scripts/../agents/Obstacle/main.py Obstacle enx32b0cd29157d 5670",
+                                        "hostname": "amyoga",
+                                        "ip": "192.168.142.106",
+                                        "isAttachedToCircle": false,
+                                        "mac": "32:B0:CD:29:15:7D",
+                                        "uuid": "af1bd08b-5430-467c-8538-28e9c1d55641"
                                     }
                                 ]
                             },
                             "class": "b0ecb6f6-5347-4be3-9494-b36690f99e20",
                             "comment": "",
-                            "height": 232.9759999999999,
+                            "height": 246,
                             "name": "Obstacle",
                             "simulationTime": 5000,
                             "uuid": "2ef9beb3-f70b-4e7c-9d22-1a8fd714579b",
                             "width": 250,
                             "x": 908.3207434908466,
                             "y": 766.8516514147816
-                        },
-                        {
-                            "agent": {
-                                "instances": [
-                                    {
-                                        "commandLine": "/usr/bin/python3 ./../agents/PitchDetector/main.py PitchDetector eth0 5670",
-                                        "hostname": "LAPTOP-PRISCILIA",
-                                        "ip": "172.25.43.23",
-                                        "isAttachedToCircle": false,
-                                        "uuid": "3619c24c-56b3-4a54-aa22-8a067ce43dbc"
-                                    }
-                                ]
-                            },
-                            "class": "2982af58-dc28-4413-8035-ff5a4b504abd",
-                            "comment": "",
-                            "height": 136,
-                            "name": "PitchDetector",
-                            "simulationTime": 5000,
-                            "uuid": "1f2e7f4a-5570-4f69-ae37-039c92ca7907",
-                            "width": 250,
-                            "x": 1094.0061904959773,
-                            "y": 1041.0120994942679
                         }
                     ],
                     "childrenViewport": {
@@ -1015,18 +1093,6 @@
                     "width": 747.3518032100676,
                     "x": 1194.4796029190843,
                     "y": 131.54770376472771
-                },
-                {
-                    "data": {
-                        "selectedAgentUuid": "Circle"
-                    },
-                    "height": 237.20088381156773,
-                    "name": "",
-                    "tool": "com.ingescape.circle.tool.serviceobserver",
-                    "uuid": "afcb2e6f-5d97-423c-a324-309b8c348ce2",
-                    "width": 354.4910493171664,
-                    "x": 1004.947303295836,
-                    "y": -215.0637825983782
                 }
             ],
             "links": {
@@ -1292,18 +1358,6 @@
                         }
                     },
                     {
-                        "destination": "e23931da-21a3-46cf-b5d0-27f183e15624",
-                        "destinationIO": {
-                            "name": "trigger",
-                            "type": "INPUT"
-                        },
-                        "source": "e57063ba-778b-4ea8-aa95-b4814a5d60ff",
-                        "sourceIO": {
-                            "name": "update",
-                            "type": "INPUT"
-                        }
-                    },
-                    {
                         "destination": "e8bfc8db-b3b8-4b42-81a5-5c00b0cb2546",
                         "destinationIO": {
                             "name": "trigger",
@@ -1318,7 +1372,7 @@
                     {
                         "destination": "2ef9beb3-f70b-4e7c-9d22-1a8fd714579b",
                         "destinationIO": {
-                            "name": "note",
+                            "name": "obstacleNote",
                             "type": "INPUT"
                         },
                         "source": "e8bfc8db-b3b8-4b42-81a5-5c00b0cb2546",

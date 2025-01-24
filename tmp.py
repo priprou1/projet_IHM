@@ -4,7 +4,8 @@
 #
 #  main.py
 #  Bird
-#  Created by Ingenuity i/o on 2025/01/24
+#  Created by Ingenuity i/o on 2025/01/04
+#  authors : Lucas Bolbènes, Armand Claveau, Priscilia Gonthier
 #
 #  Agent that display the bird on the Whiteboard depending of the pitch given
 
@@ -75,7 +76,6 @@ def note_input_callback(io_type, name, value_type, value, my_data):
             arguments_list = (id, 50.0, currentY - (birdSize / 2))
             igs.service_call("Whiteboard", "moveTo", arguments_list, "")
         
-
 if __name__ == "__main__":
     if len(sys.argv) < 4:
         print("usage: python3 main.py agent_name network_device port")
@@ -86,7 +86,6 @@ if __name__ == "__main__":
         exit(0)
 
     igs.agent_set_name(sys.argv[1])
-    igs.definition_set_description("""<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Asap'; font-size:13px; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Agent that display the bird on the Whiteboard depending of the pitch given</p></body></html>""")
     igs.definition_set_class("Bird")
     igs.log_set_console(True)
     igs.log_set_file(True, None)
@@ -109,7 +108,6 @@ if __name__ == "__main__":
     igs.input_set_description("note", """<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Asap'; font-size:13px; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Number of the note that wil determine the position of the bird on the screen (correspond of the input of a MIDI keyboard)</p></body></html>""")
     igs.input_add_constraint("note", "range [0,127]")
     igs.observe_input("note", note_input_callback, None)
-    
 
     igs.service_init("elementCreated", elementCreated_callback, None)
     igs.service_arg_add("elementCreated", "elementId", igs.INTEGER_T)
