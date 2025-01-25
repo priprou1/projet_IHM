@@ -55,7 +55,6 @@ def on_agent_event_callback(event, uuid, name, event_data, my_data):
         if event == igs.AGENT_KNOWS_US:
             arguments_list = ("Score : 0 / 0", 0, -60, "black")
             igs.service_call("Whiteboard", "addText", arguments_list, "score")
-            pass   
 
 
 # Callback function to get and update the inputs from the other agents

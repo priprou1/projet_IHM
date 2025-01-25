@@ -18,6 +18,16 @@ import ingescape as igs
 # Switch input value
 switch = "microphone"
 
+# Callback function for the agent events
+def on_agent_event_callback(event, uuid, name, event_data, my_data):
+
+    global switch
+    # When the agent is known by the Whiteboard agent, we display the input device in the chat
+    if name == "Whiteboard":
+        if event == igs.AGENT_KNOWS_US:
+            arguments_list = ("Input device " + switch + " selected")
+            igs.service_call("Whiteboard", "chat", arguments_list, None)
+
 # Callback function to get and update the inputs from the other agents and set the output
 def input_callback(io_type, name, value_type, value, my_data):
     global switch
@@ -26,7 +36,7 @@ def input_callback(io_type, name, value_type, value, my_data):
     if (name == "switch"):
         switch = value
         # Display the switch on the whiteboard chat
-        arguments_list = ("Switched to : " + value + " input")
+        arguments_list = ("Switched to " + value + " input")
         igs.service_call("Whiteboard", "chat", arguments_list, None)
         print("switch set to : ", value)
 

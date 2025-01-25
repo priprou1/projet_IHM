@@ -1,1 +1,4 @@
 ingescape>=4
+aubio
+pyaudio
+music21
