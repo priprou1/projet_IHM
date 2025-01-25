@@ -2,9 +2,6 @@
 
 - Python3 (https://www.python.org/downloads/)
 - Ingescape python binding (from pip)
-- aubio module (from pip)
-- pyaudio (form pip, if doesn't work for apt : sudo apt install python3-pyaudio)
-- music21 (from pip)
 
 ## Install dependencies
 

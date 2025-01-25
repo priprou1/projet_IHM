@@ -50,11 +50,17 @@ localContact = False
 def on_agent_event_callback(event, uuid, name, event_data, my_data):
 
     global whiteboardHeight, currentX
-    # When the agent is known by the Whiteboard agent, we add the score on the whiteboard
+    # When the agent is known by the Whiteboard agent
     if name == "Whiteboard":
         if event == igs.AGENT_KNOWS_US:
+            # Create the score on the whiteboard
             arguments_list = ("Score : 0 / 0", 0, -60, "black")
             igs.service_call("Whiteboard", "addText", arguments_list, "score")
+            # Draw the obstacle and the hole on the whiteboard
+            arguments_list = ("rectangle", currentX, 0.0, obstacleThickness, whiteboardHeight, color, "transparent", 0)
+            igs.service_call("Whiteboard", "addShape", arguments_list, "obstacle")
+            arguments_list = ("rectangle", currentX, currentY + holeThickness / 2, obstacleThickness, holeThickness, "white", "transparent", 0)
+            igs.service_call("Whiteboard", "addShape", arguments_list, "hole")
 
 
 # Callback function to get and update the inputs from the other agents
@@ -101,26 +107,18 @@ def clock_callback(io_type, name, value_type, value, my_data):
     if(currentX < obstacleThickness and currentX > 0 and note > bmin and note < bmax):
         localContact = localContact or not(note < obstacleNote + epsilon and note > obstacleNote - epsilon)
 
-    # If the obstacle isn't created yet
-    if (obstacleId == -1):
-        # Draw the obstacle and the hole on the whiteboard
-        arguments_list = ("rectangle", currentX, 0.0, obstacleThickness, whiteboardHeight, color, "transparent", 0)
-        igs.service_call("Whiteboard", "addShape", arguments_list, "obstacle")
-        arguments_list = ("rectangle", currentX, currentY + holeThickness / 2, obstacleThickness, holeThickness, "white", "transparent", 0)
-        igs.service_call("Whiteboard", "addShape", arguments_list, "hole")
-    else :
-        # Move the obstacle and the hole on the whiteboard
-        arguments_list = (obstacleId, currentX, 0.0)
-        igs.service_call("Whiteboard", "moveTo", arguments_list, "obstacle")
-        arguments_list = (holeId, currentX, currentY + holeThickness / 2)
-        igs.service_call("Whiteboard", "moveTo", arguments_list, "hole")
+    # Move the obstacle and the hole on the whiteboard
+    arguments_list = (obstacleId, currentX, 0.0)
+    igs.service_call("Whiteboard", "moveTo", arguments_list, "obstacle")
+    arguments_list = (holeId, currentX, currentY + holeThickness / 2)
+    igs.service_call("Whiteboard", "moveTo", arguments_list, "hole")
 
     # Update the absciss position of the obstacle
     currentX -= offset
 
     # If the obstacle is out left of the whiteboard
     if(currentX < 0):
-        # Reset the absciss position of the obstacle to the right of the whiteboad
+        # Reset the absciss position of the obstacle to the right of the whiteboard
         currentX = whiteboardWidth
         # Increment the total number of attempts
         nbAttempts += 1
@@ -150,13 +148,14 @@ def stop_callback(io_type, name, value_type, value, my_data):
     successfulAttempts = 0
     nbAttempts = 0
 
-    # Remove the obstacle and the hole from the whiteboard and reset the IDs
-    arguments_list = (obstacleId)
-    igs.service_call("Whiteboard", "remove", arguments_list, "obstacle")
-    obstacleId = -1
-    arguments_list = (holeId)
-    igs.service_call("Whiteboard", "remove", arguments_list, "hole")
-    holeId = -1
+    # Reset the absciss position of the obstacle to the right of the whiteboard
+    currentX = whiteboardWidth
+
+    # Reset the position of the obstacle and the hole to the right of the whiteboard
+    arguments_list = (obstacleId, currentX, 0.0)
+    igs.service_call("Whiteboard", "moveTo", arguments_list, "obstacle")
+    arguments_list = (holeId, currentX, currentY + holeThickness / 2)
+    igs.service_call("Whiteboard", "moveTo", arguments_list, "hole")
 
 # TODO : Elle fait quoi cette fonction? Ne sert à rien non ? Peut-elle être supprimée ? Sinon la commenter
 def actionResult_callback(sender_agent_name, sender_agent_uuid, service_name, arguments, token, my_data):

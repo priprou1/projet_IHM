@@ -697,13 +697,6 @@
                             "name": "switch",
                             "type": "STRING"
                         }
-                    ],
-                    "outputs": [
-                        {
-                            "description": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Asap'; font-size:13px; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Name of the pitch of the voice</p></body></html>",
-                            "name": "noteName",
-                            "type": "STRING"
-                        }
                     ]
                 },
                 "description": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Asap'; font-size:13px; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Box that contain all the agent needed for the PitchBird game that comunicate with the WhiteBoard agent</p></body></html>",
@@ -851,81 +844,34 @@
         ],
         "scripts": [
             {
-                "code": "//\n// Obstacle_tests\n//\n// created on 2025-01-25\n// Authors : Lucas Bolbènes, Armand Claveau, Priscilia Gonthier\n\n// The script language documentation is available at\n// https://ingescape.com/verification-validation-using-ingescape/\n\n\"My sample block\" {\n    // -> \"manual entry in the execution report\"\n\n    // Input allocation\n    // MyAgent.my_input = 12\n\n    // Output verification\n    // assert MyAgent.my_output >= 5.43\n\n    // Service call\n    // MyAgent.my_service (\"arg1\", 12.34)\n\n    // Reply verification\n    // assert my_reply from CallerAgent with arg2 = 34.56 and arg3 = \"this value\"\n}\n\n\"stop\" {\n    // -> \"manual entry in the execution report\"\n\n    // Input allocation\n    Obstacle.stop = 0\n    \n    // Service call verification\n    assert chat from Whiteboard with arg1 = \"~ Last score : (.*)\"\n    assert setStringProperty from Whiteboard with arg2 = \"text\" and arg3 = \"Score : 0 / 0\"\n    assert remove from Whiteboard\n    \n}\n\n\"clock\" {\n    // -> \"manual entry in the execution report\"\n\n    // Input allocation\n    Obstacle.clock = 0\n\n    // Output verification\n    // assert MyAgent.my_output >= 5.43\n\n    // Service call\n    // MyAgent.my_service (\"arg1\", 12.34)\n\n    // Reply verification\n    // assert my_reply from CallerAgent with arg2 = 34.56 and arg3 = \"this value\"\n}",
+                "code": "//\n// Obstacle_tests\n//\n// created on 2025-01-25\n// Authors : Lucas Bolbènes, Armand Claveau, Priscilia Gonthier\n\n// The script language documentation is available at\n// https://ingescape.com/verification-validation-using-ingescape/\n\n\"stop\" \"test the correctness when stopping the game\" {\n\n    // Input allocation\n    Obstacle.stop = 0 // Obstacle receive the impulsion to stop\n    \n    // Service call verification\n    assert chat from Whiteboard with arg1 = \"~ Last score : (.*)\" // The chat of the whiteboard display the last score before the stop\n    assert setStringProperty from Whiteboard with arg2 = \"text\" and arg3 = \"Score : 0 / 0\" // The score is reset on the whiteboard\n    assert moveTo from Whiteboard // The obstacle is moved to the right end of the whiteboard\n}\n\n\"clock\" \"test that the obstacle move on the tick of the clock\" {\n\n    // Input allocation\n    Obstacle.clock = 0 // Obstacle receive the impulsion of the clock (the tick)\n    \n    // Service call verification\n    assert moveTo from Whiteboard // The obstacle is moved on the whiteboard\n}",
                 "name": "Obstacle_tests",
                 "package": "",
                 "uuid": "0c173ac5-303d-4281-a83c-57270688cd11"
             },
             {
-                "code": "//\n// Bird_tests\n//\n// created on 2025-01-25\n// Authors : Lucas Bolbènes, Armand Claveau, Priscilia Gonthier\n\n// The script language documentation is available at\n// https://ingescape.com/verification-validation-using-ingescape/\n\n\"position_of bird\" {\n    // -> \"manual entry in the execution report\"\n\n    // Input allocation\n    Bird.note = 50\n\n    // Service call verification\n    assert moveTo from Whiteboard with arg2 = 50.0\n}\n\n",
+                "code": "//\n// Bird_tests\n//\n// created on 2025-01-25\n// Authors : Lucas Bolbènes, Armand Claveau, Priscilia Gonthier\n\n// The script language documentation is available at\n// https://ingescape.com/verification-validation-using-ingescape/\n\n\"position_of bird\" \"test the the bird move when receiving a note\" {\n\n    // Input allocation\n    Bird.note = 45 // Bird receive a note input\n\n    // Service call verification\n    assert moveTo from Whiteboard with arg2 = 50.0 // The bird is moved on the whiteboard vertically (absciss doesn't change)\n}\n",
                 "name": "Bird_tests",
                 "package": "",
                 "uuid": "bd15f59a-6cf1-411d-bc47-ab06a8925653"
             },
             {
-                "code": "//\n// Switch_tests\n//\n// created on 2025-01-25\n// Authors : Lucas Bolbènes, Armand Claveau, Priscilia Gonthier\n\n// The script language documentation is available at\n// https://ingescape.com/verification-validation-using-ingescape/\n\n\"switch_to_microphone\" {\n    // -> \"manual entry in the execution report\"\n\n    // Input allocation\n    Switch.switch = \"microphone\"\n    Switch.pitchDetector = 1\n    Switch.keyBoard = 2\n    \n    // Output verification\n    assert Switch.note == 1\n    \n    // Service call verification\n    assert chat from Whiteboard with arg1 = \"Switched to microphone input\"\n}\n\n\"switch_to_keyboard\" {\n    // -> \"manual entry in the execution report\"\n\n    // Input allocation\n    Switch.switch = \"microphone\"\n    Switch.pitchDetector = 1\n    Switch.keyBoard = 2\n    \n    // Output verification\n    assert Switch.note == 2\n    \n    // Service call verification\n    assert chat from Whiteboard with arg1 = \"Switched to keyboard input\"\n}\n\n\n",
+                "code": "//\n// Switch_tests\n//\n// created on 2025-01-25\n// Authors : Lucas Bolbènes, Armand Claveau, Priscilia Gonthier\n\n// The script language documentation is available at\n// https://ingescape.com/verification-validation-using-ingescape/\n\n\"switch_to_microphone\" \"test the switch to the microphone\" {\n\n    // Input allocation\n    Switch.switch = \"microphone\" // Switch receive the command microphone\n    Switch.pitchDetector = 1 // Switch receive the note 1 from the PitchDetector's input\n    Switch.keyBoard = 2 // Switch receive the note 2 from the KeyBoard's input\n    \n    // Output verification\n    assert Switch.note == 1 // Switch return the note 1 (same as the pitchdetector)\n    \n    // Service call verification\n    assert chat from Whiteboard with arg1 = \"Switched to microphone input\" // The chat of the whiteboard display the switch occured\n}\n\n\"switch_to_keyboard\" \"test the switch to the MIDI keyboard\" {\n\n    // Input allocation\n    Switch.switch = \"keyboard\" // Switch receive the command keyboard\n    Switch.pitchDetector = 1 // Switch receive the note 1 from the PitchDetector's input\n    Switch.keyBoard = 2 // Switch receive the note 2 from the KeyBoard's input\n    \n    // Output verification\n    assert Switch.note == 2 // Switch return the note 2 (same as the keyboard)\n    \n    // Service call verification\n    assert chat from Whiteboard with arg1 = \"Switched to keyboard input\" // The chat of the whiteboard display the switch occured\n}\n\n\n",
                 "name": "Switch_tests",
                 "package": "",
                 "uuid": "74b01f0a-06fe-4479-816f-e87ca9a0b179"
+            },
+            {
+                "code": "//\n// PitchDetector_tests\n//\n// created on 2025-01-25\n// Authors : Lucas Bolbènes, Armand Claveau, Priscilia Gonthier\n\n// The script language documentation is available at\n// https://ingescape.com/verification-validation-using-ingescape/\n\n\"detect_pitch\" \"test that the pitch detection correspond to the requirement\" {\n\n    // Output verification\n    // The note output respects the minimum and maximum constraints\n    assert PitchDetector.note >= 0\n    assert PitchDetector.note <= 127\n}\n\n",
+                "name": "PitchDetector_tests",
+                "package": "",
+                "uuid": "8db9dbc6-9b7e-4015-9090-822be2d702ac"
             }
         ]
     },
     "systemViews": [
         {
             "children": [
-                {
-                    "agent": {
-                        "instances": [
-                            {
-                                "commandLine": "/home/priscilia/Cours/IHM/agents/Whiteboard/bin/Whiteboard",
-                                "hostname": "LAPTOP-PRISCILIA",
-                                "ip": "172.25.43.23",
-                                "isAttachedToCircle": false,
-                                "uuid": "57b5b5f5-8706-4d29-8ced-db9af03ba2ed"
-                            },
-                            {
-                                "commandLine": "/home/lucas/repositories/projet_IHM/agents/Whiteboard/bin/Whiteboard",
-                                "hostname": "amyoga",
-                                "ip": "172.22.223.227",
-                                "isAttachedToCircle": false,
-                                "mac": "C8:6E:08:D2:D1:8D",
-                                "uuid": "b57b705f-93ff-43a4-98f2-b856206c57ca"
-                            },
-                            {
-                                "commandLine": "/home/lucas/repositories/projet_IHM/agents/Whiteboard/bin/Whiteboard",
-                                "hostname": "amyoga",
-                                "ip": "192.168.142.106",
-                                "isAttachedToCircle": false,
-                                "mac": "32:B0:CD:29:15:7D",
-                                "uuid": "a7762cdf-bd94-463d-aa25-c4ac3d8cc8cf"
-                            },
-                            {
-                                "commandLine": "/home/lucas/repositories/projet_IHM/agents/Whiteboard/bin/Whiteboard",
-                                "hostname": "amyoga",
-                                "ip": "192.168.142.43",
-                                "isAttachedToCircle": false,
-                                "uuid": "3305ada2-0e51-40eb-8794-41f212a0e428"
-                            },
-                            {
-                                "commandLine": "/media/lucas/T7/repositories/projet_IHM/agents/Whiteboard/bin/Whiteboard",
-                                "hostname": "adell",
-                                "ip": "172.22.227.4",
-                                "isAttachedToCircle": false,
-                                "mac": "90:0F:0C:8F:03:BD",
-                                "uuid": "85c8ef06-0d89-4714-9dd3-670d5e7452af"
-                            }
-                        ]
-                    },
-                    "class": "49986800-5f93-4f38-b14a-e9245f623301",
-                    "comment": "",
-                    "height": 224,
-                    "name": "Whiteboard",
-                    "simulationTime": 5000,
-                    "uuid": "037d3303-3d37-4b58-9bda-78004cba8bbe",
-                    "width": 250,
-                    "x": 1447.6427130407665,
-                    "y": -209.064997553453
-                },
                 {
                     "data": {
                         "entries": [
@@ -985,10 +931,29 @@
                     "y": 387.53329026926167
                 },
                 {
+                    "data": {
+                        "selectedAgentUuid": "Circle"
+                    },
+                    "height": 174,
+                    "name": "",
+                    "tool": "com.ingescape.circle.tool.serviceobserver",
+                    "uuid": "afcb2e6f-5d97-423c-a324-309b8c348ce2",
+                    "width": 354.4910493171664,
+                    "x": 777.3294708569783,
+                    "y": 509.49456837996837
+                },
+                {
                     "children": [
                         {
                             "agent": {
                                 "instances": [
+                                    {
+                                        "commandLine": "/home/lucas/.pyenv/versions/3.8.20/bin/python3 ./scripts/../agents/Bird/main.py Bird enxd21f3b1d5290 5670",
+                                        "hostname": "amyoga",
+                                        "ip": "192.168.142.43",
+                                        "isAttachedToCircle": false,
+                                        "uuid": "9f5f6b64-1233-4d07-b657-5bd50cbf4026"
+                                    },
                                     {
                                         "commandLine": "/usr/bin/python3 ./scripts/../agents/Bird/main.py Bird eth0 5670",
                                         "hostname": "LAPTOP-PRISCILIA",
@@ -1018,13 +983,6 @@
                                         "isAttachedToCircle": false,
                                         "mac": "32:B0:CD:29:15:7D",
                                         "uuid": "15df0f5a-5dbb-4570-a53c-5dd655391391"
-                                    },
-                                    {
-                                        "commandLine": "/home/lucas/.pyenv/versions/3.8.20/bin/python3 ./scripts/../agents/Bird/main.py Bird enxd21f3b1d5290 5670",
-                                        "hostname": "amyoga",
-                                        "ip": "192.168.142.43",
-                                        "isAttachedToCircle": false,
-                                        "uuid": "9f5f6b64-1233-4d07-b657-5bd50cbf4026"
                                     }
                                 ]
                             },
@@ -1041,6 +999,13 @@
                         {
                             "agent": {
                                 "instances": [
+                                    {
+                                        "commandLine": "/home/lucas/.pyenv/versions/3.8.20/bin/python3 ./scripts/../agents/PitchDetector/main.py PitchDetector enxd21f3b1d5290 5670",
+                                        "hostname": "amyoga",
+                                        "ip": "192.168.142.43",
+                                        "isAttachedToCircle": false,
+                                        "uuid": "feb4d4bc-ff2f-4cc8-bcf4-bcaf2ad3b582"
+                                    },
                                     {
                                         "commandLine": "/usr/bin/python3 ./../agents/PitchDetector/main.py PitchDetector eth0 5670",
                                         "hostname": "LAPTOP-PRISCILIA",
@@ -1063,13 +1028,6 @@
                                         "isAttachedToCircle": false,
                                         "mac": "32:B0:CD:29:15:7D",
                                         "uuid": "5112bd2c-63eb-40ba-aadc-da0e65f9b6e4"
-                                    },
-                                    {
-                                        "commandLine": "/home/lucas/.pyenv/versions/3.8.20/bin/python3 ./scripts/../agents/PitchDetector/main.py PitchDetector enxd21f3b1d5290 5670",
-                                        "hostname": "amyoga",
-                                        "ip": "192.168.142.43",
-                                        "isAttachedToCircle": false,
-                                        "uuid": "feb4d4bc-ff2f-4cc8-bcf4-bcaf2ad3b582"
                                     }
                                 ]
                             },
@@ -1113,21 +1071,6 @@
                         },
                         {
                             "data": {
-                                "entries": [
-                                    "40"
-                                ],
-                                "value_type": "INTEGER"
-                            },
-                            "height": 79,
-                            "name": "",
-                            "tool": "com.ingescape.circle.tool.writer",
-                            "uuid": "03d41624-b3d6-43d8-b601-d05d67c3d227",
-                            "width": 256,
-                            "x": 396.5436760521584,
-                            "y": 973.1599378397308
-                        },
-                        {
-                            "data": {
                                 "duration": 10,
                                 "repeat": -1
                             },
@@ -1142,6 +1085,13 @@
                         {
                             "agent": {
                                 "instances": [
+                                    {
+                                        "commandLine": "/home/lucas/.pyenv/versions/3.8.20/bin/python3 ./scripts/../agents/Obstacle/main.py Obstacle enxd21f3b1d5290 5670",
+                                        "hostname": "amyoga",
+                                        "ip": "192.168.142.43",
+                                        "isAttachedToCircle": false,
+                                        "uuid": "17e098c8-8d28-4eee-b3eb-efc0934c78e0"
+                                    },
                                     {
                                         "commandLine": "/usr/bin/python3 ./scripts/../agents/Obstacle/main.py Obstacle eth0 5670",
                                         "hostname": "LAPTOP-PRISCILIA",
@@ -1171,13 +1121,6 @@
                                         "isAttachedToCircle": false,
                                         "mac": "32:B0:CD:29:15:7D",
                                         "uuid": "af1bd08b-5430-467c-8538-28e9c1d55641"
-                                    },
-                                    {
-                                        "commandLine": "/home/lucas/.pyenv/versions/3.8.20/bin/python3 ./scripts/../agents/Obstacle/main.py Obstacle enxd21f3b1d5290 5670",
-                                        "hostname": "amyoga",
-                                        "ip": "192.168.142.43",
-                                        "isAttachedToCircle": false,
-                                        "uuid": "17e098c8-8d28-4eee-b3eb-efc0934c78e0"
                                     }
                                 ]
                             },
@@ -1253,6 +1196,21 @@
                             "width": 256,
                             "x": 397.2414196898767,
                             "y": 1059.2222338555775
+                        },
+                        {
+                            "data": {
+                                "entries": [
+                                    "40"
+                                ],
+                                "value_type": "INTEGER"
+                            },
+                            "height": 79,
+                            "name": "",
+                            "tool": "com.ingescape.circle.tool.writer",
+                            "uuid": "03d41624-b3d6-43d8-b601-d05d67c3d227",
+                            "width": 256,
+                            "x": 396.5436760521584,
+                            "y": 973.1599378397308
                         }
                     ],
                     "childrenViewport": {
@@ -1266,20 +1224,61 @@
                     "simulationTime": 5000,
                     "uuid": "e57063ba-778b-4ea8-aa95-b4814a5d60ff",
                     "width": 843.6890879407238,
-                    "x": 1075.4294376714192,
-                    "y": 137.34010828852706
+                    "x": 1229.9099982643918,
+                    "y": 126.40343143238749
                 },
                 {
-                    "data": {
-                        "selectedAgentUuid": "Circle"
+                    "agent": {
+                        "instances": [
+                            {
+                                "commandLine": "/home/lucas/repositories/projet_IHM/agents/Whiteboard/bin/Whiteboard",
+                                "hostname": "amyoga",
+                                "ip": "192.168.142.43",
+                                "isAttachedToCircle": false,
+                                "uuid": "3305ada2-0e51-40eb-8794-41f212a0e428"
+                            },
+                            {
+                                "commandLine": "/home/priscilia/Cours/IHM/agents/Whiteboard/bin/Whiteboard",
+                                "hostname": "LAPTOP-PRISCILIA",
+                                "ip": "172.25.43.23",
+                                "isAttachedToCircle": false,
+                                "uuid": "57b5b5f5-8706-4d29-8ced-db9af03ba2ed"
+                            },
+                            {
+                                "commandLine": "/home/lucas/repositories/projet_IHM/agents/Whiteboard/bin/Whiteboard",
+                                "hostname": "amyoga",
+                                "ip": "172.22.223.227",
+                                "isAttachedToCircle": false,
+                                "mac": "C8:6E:08:D2:D1:8D",
+                                "uuid": "b57b705f-93ff-43a4-98f2-b856206c57ca"
+                            },
+                            {
+                                "commandLine": "/media/lucas/T7/repositories/projet_IHM/agents/Whiteboard/bin/Whiteboard",
+                                "hostname": "adell",
+                                "ip": "172.22.227.4",
+                                "isAttachedToCircle": false,
+                                "mac": "90:0F:0C:8F:03:BD",
+                                "uuid": "85c8ef06-0d89-4714-9dd3-670d5e7452af"
+                            },
+                            {
+                                "commandLine": "/home/lucas/repositories/projet_IHM/agents/Whiteboard/bin/Whiteboard",
+                                "hostname": "amyoga",
+                                "ip": "192.168.142.106",
+                                "isAttachedToCircle": false,
+                                "mac": "32:B0:CD:29:15:7D",
+                                "uuid": "a7762cdf-bd94-463d-aa25-c4ac3d8cc8cf"
+                            }
+                        ]
                     },
-                    "height": 174,
-                    "name": "",
-                    "tool": "com.ingescape.circle.tool.serviceobserver",
-                    "uuid": "afcb2e6f-5d97-423c-a324-309b8c348ce2",
-                    "width": 354.4910493171664,
-                    "x": 1017.93636169205,
-                    "y": -189.08566580594982
+                    "class": "49986800-5f93-4f38-b14a-e9245f623301",
+                    "comment": "",
+                    "height": 224,
+                    "name": "Whiteboard",
+                    "simulationTime": 5000,
+                    "uuid": "037d3303-3d37-4b58-9bda-78004cba8bbe",
+                    "width": 250,
+                    "x": 781.8725094232675,
+                    "y": -16.30606796399212
                 }
             ],
             "links": {
@@ -1481,30 +1480,6 @@
                         "source": "83d6d035-5f8e-4b0b-9854-5f2edf8f9e85",
                         "sourceIO": {
                             "name": "value",
-                            "type": "OUTPUT"
-                        }
-                    },
-                    {
-                        "destination": "e57063ba-778b-4ea8-aa95-b4814a5d60ff",
-                        "destinationIO": {
-                            "name": "noteName",
-                            "type": "OUTPUT"
-                        },
-                        "source": "1f2e7f4a-5570-4f69-ae37-039c92ca7907",
-                        "sourceIO": {
-                            "name": "noteName",
-                            "type": "OUTPUT"
-                        }
-                    },
-                    {
-                        "destination": "037d3303-3d37-4b58-9bda-78004cba8bbe",
-                        "destinationIO": {
-                            "name": "chatMessage",
-                            "type": "INPUT"
-                        },
-                        "source": "e57063ba-778b-4ea8-aa95-b4814a5d60ff",
-                        "sourceIO": {
-                            "name": "noteName",
                             "type": "OUTPUT"
                         }
                     },
