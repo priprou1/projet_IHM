@@ -12,13 +12,16 @@
 
 
 import sys
+sys.path.append("../../")
 import ingescape as igs
 import random
+import midiConverter as mc
 
 ## Definition of global variables
 # IDs of the obstacle shapes
 obstacleId = -1
 holeId = -1
+obstacleNoteId = -1
 # ID of the score on the whiteboard
 scoreId = -1
 # Width and height of the whiteboard
@@ -32,6 +35,7 @@ currentX = 1000.0
 currentY = 500.0
 # Note of the obstacle and the pitch of the user
 obstacleNote = 50
+obstacleNoteName = mc.midiToString(obstacleNote)
 note = 50
 # Offset of the movement of the obstacle
 offset = 10
@@ -61,6 +65,9 @@ def on_agent_event_callback(event, uuid, name, event_data, my_data):
             igs.service_call("Whiteboard", "addShape", arguments_list, "obstacle")
             arguments_list = ("rectangle", currentX, currentY + holeThickness / 2, obstacleThickness, holeThickness, "white", "transparent", 0)
             igs.service_call("Whiteboard", "addShape", arguments_list, "hole")
+            arguments_list = (obstacleNoteName, currentX, 0, "black")
+            igs.service_call("Whiteboard", "addText", arguments_list, "obstacleNote")
+
 
 
 # Callback function to get and update the inputs from the other agents
@@ -95,7 +102,7 @@ def input_callback(io_type, name, value_type, value, my_data):
 # Callback function to update the position of the obstacle and detect if there is a collision with the bird on the tick of an external clock
 def clock_callback(io_type, name, value_type, value, my_data):
 
-    global currentX, currentY, obstacleThickness, bmin, bmax, color, note, obstacleNote, nbAttempts, successfulAttempts, localContact 
+    global currentX, currentY, obstacleThickness, bmin, bmax, color, note, obstacleNote, nbAttempts, successfulAttempts, localContact, holeId, scoreId, obstacleNoteId, whiteboardHeight, holeThickness
     # Epsilon of the pitch error to detect a collision
     epsilon = 2
     
@@ -112,6 +119,8 @@ def clock_callback(io_type, name, value_type, value, my_data):
     igs.service_call("Whiteboard", "moveTo", arguments_list, "obstacle")
     arguments_list = (holeId, currentX, currentY + holeThickness / 2)
     igs.service_call("Whiteboard", "moveTo", arguments_list, "hole")
+    arguments_list = (obstacleNoteId, currentX, 0.0)
+    igs.service_call("Whiteboard", "moveTo", arguments_list, "obstacleNote")
 
     # Update the absciss position of the obstacle
     currentX -= offset
@@ -133,6 +142,10 @@ def clock_callback(io_type, name, value_type, value, my_data):
         localContact = False
         # Generate a random integer between bmin and bmax, that will correspond to the new note of the obstacle
         obstacleNote = random.randint(bmin, bmax)
+        obstacleNoteName = mc.midiToString(obstacleNote)
+        # Update the name of the obstacle note on the whiteboard
+        arguments_list = (obstacleNoteId, "text", obstacleNoteName)
+        igs.service_call("Whiteboard", "setStringProperty", arguments_list, "obstacleNote")
 
 # Callback function to stop the game
 def stop_callback(io_type, name, value_type, value, my_data):
@@ -156,6 +169,8 @@ def stop_callback(io_type, name, value_type, value, my_data):
     igs.service_call("Whiteboard", "moveTo", arguments_list, "obstacle")
     arguments_list = (holeId, currentX, currentY + holeThickness / 2)
     igs.service_call("Whiteboard", "moveTo", arguments_list, "hole")
+    arguments_list = (obstacleNoteId, currentX, 0.0)
+    igs.service_call("Whiteboard", "moveTo", arguments_list, "obstacleNote")
 
 # TODO : Elle fait quoi cette fonction? Ne sert à rien non ? Peut-elle être supprimée ? Sinon la commenter
 def actionResult_callback(sender_agent_name, sender_agent_uuid, service_name, arguments, token, my_data):
@@ -164,7 +179,7 @@ def actionResult_callback(sender_agent_name, sender_agent_uuid, service_name, ar
 # Callback function to get the ID of the obstacle shapes and the score on the whiteboard
 def elementCreated_callback(sender_agent_name, sender_agent_uuid, service_name, arguments, token, my_data):
     
-    global obstacleId, holeId, scoreId
+    global obstacleId, holeId, scoreId, obstacleNoteId
 
     if(token == "obstacle"):
         obstacleId = arguments[0]
@@ -174,6 +189,9 @@ def elementCreated_callback(sender_agent_name, sender_agent_uuid, service_name, 
     
     if (token == "score"):
         scoreId = arguments[0]
+    
+    if (token == "obstacleNote"):
+        obstacleNoteId = arguments[0]
 
 if __name__ == "__main__":
     if len(sys.argv) < 4:

@@ -81,7 +81,6 @@ def get_current_note(printOut=False):
 
             if printOut:
                 print(current_pitch, " : ", current_pitch.nameWithOctave)
-                igs.output_set_string("noteName", current_pitch.nameWithOctave)
                 igs.output_set_int("note", current_pitch.midi)
 
             else:
@@ -125,10 +124,7 @@ if __name__ == "__main__":
     igs.output_set_description("note", """<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Asap'; font-size:13px; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Number of the note found wich correspond of the input of a MIDI keyboard</p></body></html>""")
     igs.output_add_constraint("note", "range [0,127]")
     
-    igs.output_create("noteName", igs.STRING_T, None)
-    igs.output_set_description("noteName", """<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Asap'; font-size:13px; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Name of the pitch of the voice</p></body></html>""")
 
-    
     igs.start_with_device(sys.argv[2], int(sys.argv[3]))
 
     get_current_note(printOut=True)

@@ -12,11 +12,15 @@
 
 
 import sys
+sys.path.append("../../")
 import ingescape as igs
+import midiConverter as mc
 
 ## Definition of global variables
 # ID of the bird on the whiteboard
 id = -1
+# ID of the note on the whiteboard
+noteNameId = -1
 # Height of the whiteboard
 whiteboardHeight = 1000.0
 # Minimum and maximum values of the note that the bird can reach
@@ -27,11 +31,14 @@ birdSize = 150.0
 
 # Callback function for the agent events
 def on_agent_event_callback(event, uuid, name, event_data, my_data):
-    if name == "Whiteboard":
+
+    if name == "Whiteboard": # TODO peut être changer en Obstacle car on veut que les obstacle soient affichés en fond et l'oiseau devant
         # When the agent is known by the Whiteboard agent, we add the image of the bird on the whiteboard
         if event == igs.AGENT_KNOWS_US:
             arguments_list = ("https://raw.githubusercontent.com/priprou1/projet_IHM/refs/heads/master/Bird.png", 20.0, 20.0)
             igs.service_call("Whiteboard", "addImageFromUrl", arguments_list, "bird")
+            arguments_list = (" ", 20.0, 20.0)
+            igs.service_call("Whiteboard", "addText", arguments_list, "birdNote")
         # TODO : Sert à quoi? fait quelque chose? Si oui à commenter sinon à supprimer
         elif event == igs.AGENT_EXITED:
             pass
@@ -43,11 +50,15 @@ def actionResult_callback(sender_agent_name, sender_agent_uuid, service_name, ar
 # Callback function to get the ID of the bird on the whiteboard
 def elementCreated_callback(sender_agent_name, sender_agent_uuid, service_name, arguments, token, my_data):
     
-    global id
+    global id, noteNameId
 
     if(token == "bird"):
         id = arguments[0]
         print(id)
+    
+    if(token == "birdNote"):
+        noteNameId = arguments[0]
+        print(noteNameId)
 
 # Callback function to get and update the inputs from the other agents
 def input_callback(io_type, name, value_type, value, my_data):
@@ -80,7 +91,14 @@ def note_input_callback(io_type, name, value_type, value, my_data):
 
         if(id != -1):
             arguments_list = (id, 50.0, currentY - (birdSize / 2))
-            igs.service_call("Whiteboard", "moveTo", arguments_list, "")
+            igs.service_call("Whiteboard", "moveTo", arguments_list, "bird")
+        
+        if(noteNameId != -1):
+            arguments_list = (noteNameId, "text", mc.midiToString(value))
+            igs.service_call("Whiteboard", "setStringProperty", arguments_list, "birdNote")
+            arguments_list = (noteNameId, 50.0 , currentY)
+            igs.service_call("Whiteboard", "moveTo", arguments_list, "birdNote")
+
 
 if __name__ == "__main__":
     if len(sys.argv) < 4:
