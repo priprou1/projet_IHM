@@ -34,7 +34,7 @@ birdSize = 150.0
 # Callback function for the agent events
 def on_agent_event_callback(event, uuid, name, event_data, my_data):
 
-    if name == "Whiteboard": 
+    if name == "Whiteboard": # TODO : peut-être à changer en Obstacle pour que les obstacle soit derrière l'oiseau?
         # When the agent is known by the Whiteboard agent, we add the image of the bird on the whiteboard
         if event == igs.AGENT_KNOWS_US:
             arguments_list = ("https://raw.githubusercontent.com/priprou1/projet_IHM/refs/heads/master/Bird.png", 20.0, 20.0)
