@@ -17,10 +17,8 @@ import random
 
 ## Definition of global variables
 # IDs of the obstacle shapes
-obstacleId = -1
-holeId = -1
-# ID of the score on the whiteboard
-scoreId = -1
+hautId = -1
+basId = -1
 # Width and height of the whiteboard
 whiteboardWidth = 1000.0
 whiteboardHeight = 1000.0
@@ -46,15 +44,13 @@ nbAttempts = 0
 # Boolean to check if there is a collision between the bird and the obstacle
 localContact = False
 
-# Callback function for the agent events
+# TODO : Elle fait quoi cette fonction? Ne sert à rien non ? Peut-elle être supprimée ? Ou sinon peut-être juste enlever le currentX en global
 def on_agent_event_callback(event, uuid, name, event_data, my_data):
 
     global whiteboardHeight, currentX
-    # When the agent is known by the Whiteboard agent, we add the score on the whiteboard
+
     if name == "Whiteboard":
         if event == igs.AGENT_KNOWS_US:
-            arguments_list = ("Score : 0 / 0", 0, -60, "black")
-            igs.service_call("Whiteboard", "addText", arguments_list, "score")
             pass   
 
 
@@ -102,19 +98,17 @@ def clock_callback(io_type, name, value_type, value, my_data):
     if(currentX < obstacleThickness and currentX > 0 and note > bmin and note < bmax):
         localContact = localContact or not(note < obstacleNote + epsilon and note > obstacleNote - epsilon)
 
-    # If the obstacle isn't created yet
-    if (obstacleId == -1):
-        # Draw the obstacle and the hole on the whiteboard
-        arguments_list = ("rectangle", currentX, 0.0, obstacleThickness, whiteboardHeight, color, "transparent", 0)
-        igs.service_call("Whiteboard", "addShape", arguments_list, "obstacle")
-        arguments_list = ("rectangle", currentX, currentY + holeThickness / 2, obstacleThickness, holeThickness, "white", "transparent", 0)
-        igs.service_call("Whiteboard", "addShape", arguments_list, "hole")
-    else :
-        # Move the obstacle and the hole on the whiteboard
-        arguments_list = (obstacleId, currentX, 0.0)
-        igs.service_call("Whiteboard", "moveTo", arguments_list, "obstacle")
-        arguments_list = (holeId, currentX, currentY + holeThickness / 2)
-        igs.service_call("Whiteboard", "moveTo", arguments_list, "hole")
+    # Clear the previous obstacle
+    arguments_list = (hautId)
+    igs.service_call("Whiteboard", "remove", arguments_list, "haut")
+    arguments_list = (basId)
+    igs.service_call("Whiteboard", "remove", arguments_list, "bas")
+
+    # Draw again the obstacle
+    arguments_list = ("rectangle", currentX, 0.0, obstacleThickness, (currentY - (holeThickness / 2)), color, "transparent", 0)
+    igs.service_call("Whiteboard", "addShape", arguments_list, "haut")
+    arguments_list = ("rectangle", currentX, currentY + holeThickness / 2, obstacleThickness, whiteboardHeight - (currentY - (holeThickness / 2)), color, "transparent", 0)
+    igs.service_call("Whiteboard", "addShape", arguments_list, "bas")
 
     # Update the absciss position of the obstacle
     currentX -= offset
@@ -129,53 +123,28 @@ def clock_callback(io_type, name, value_type, value, my_data):
         if(not(localContact)):
             successfulAttempts += 1
         # Update the score on the whiteboard
-        successRate = "Score : " + str(successfulAttempts) + " / " + str(nbAttempts)
-        arguments_list = (scoreId, "text", successRate)
-        igs.service_call("Whiteboard", "setStringProperty", arguments_list, "score")
+        successRate = str(successfulAttempts) + " / " + str(nbAttempts)
+        arguments_list = (successRate)
+        igs.service_call("Whiteboard", "setTitle", arguments_list, None)
         # Reset the boolean to check the collision
         localContact = False
         # Generate a random integer between bmin and bmax, that will correspond to the new note of the obstacle
         obstacleNote = random.randint(bmin, bmax)
 
-# Callback function to stop the game
-def stop_callback(io_type, name, value_type, value, my_data):
-    global successfulAttempts, nbAttempts
-
-    # Display the last score on the whiteboard chat
-    arguments_list = ("Last score : " + str(successfulAttempts) + " / " + str(nbAttempts))
-    igs.service_call("Whiteboard", "chat", arguments_list, None)
-
-    # Reset the score
-    arguments_list = (scoreId, "text", "Score : 0 / 0")
-    igs.service_call("Whiteboard", "setStringProperty", arguments_list, "score")
-    successfulAttempts = 0
-    nbAttempts = 0
-
-    # Remove the obstacle and the hole from the whiteboard and reset the IDs
-    arguments_list = (obstacleId)
-    igs.service_call("Whiteboard", "remove", arguments_list, "obstacle")
-    obstacleId = -1
-    arguments_list = (holeId)
-    igs.service_call("Whiteboard", "remove", arguments_list, "hole")
-    holeId = -1
-
 # TODO : Elle fait quoi cette fonction? Ne sert à rien non ? Peut-elle être supprimée ? Sinon la commenter
 def actionResult_callback(sender_agent_name, sender_agent_uuid, service_name, arguments, token, my_data):
     pass
 
-# Callback function to get the ID of the obstacle shapes and the score on the whiteboard
+# Callback function to get the ID of the obstacle shapes on the whiteboard
 def elementCreated_callback(sender_agent_name, sender_agent_uuid, service_name, arguments, token, my_data):
     
-    global obstacleId, holeId, scoreId
+    global hautId, basId
 
-    if(token == "obstacle"):
-        obstacleId = arguments[0]
+    if(token == "haut"):
+        hautId = arguments[0]
     
     if(token == "bas"):
-        holeId = arguments[0]
-    
-    if (token == "score"):
-        scoreId = arguments[0]
+        basId = arguments[0]
 
 if __name__ == "__main__":
     if len(sys.argv) < 4:
@@ -228,10 +197,6 @@ if __name__ == "__main__":
     igs.input_set_description("note", """<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Asap'; font-size:13px; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Number of the note that that the user is currently singing, used to detect collision (correspond of the input of a MIDI keyboard)</p></body></html>""")
     igs.input_add_constraint("note", "range [0,127]")
     igs.observe_input("note", input_callback, None)
-
-    igs.input_create("stop", igs.IMPULSION_T, None)
-    igs.input_set_description("stop", """<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Asap'; font-size:13px; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Impulsion to stop the game</p></body></html>""")
-    igs.observe_input("stop", stop_callback, None)
 
     ## Initialise the service of the agent
     igs.service_init("elementCreated", elementCreated_callback, None)
