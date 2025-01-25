@@ -943,6 +943,59 @@
                     "y": 509.49456837996837
                 },
                 {
+                    "agent": {
+                        "instances": [
+                            {
+                                "commandLine": "/home/lucas/repositories/projet_IHM/agents/Whiteboard/bin/Whiteboard",
+                                "hostname": "amyoga",
+                                "ip": "192.168.142.43",
+                                "isAttachedToCircle": false,
+                                "uuid": "3305ada2-0e51-40eb-8794-41f212a0e428"
+                            },
+                            {
+                                "commandLine": "/home/priscilia/Cours/IHM/agents/Whiteboard/bin/Whiteboard",
+                                "hostname": "LAPTOP-PRISCILIA",
+                                "ip": "172.25.43.23",
+                                "isAttachedToCircle": false,
+                                "uuid": "57b5b5f5-8706-4d29-8ced-db9af03ba2ed"
+                            },
+                            {
+                                "commandLine": "/home/lucas/repositories/projet_IHM/agents/Whiteboard/bin/Whiteboard",
+                                "hostname": "amyoga",
+                                "ip": "172.22.223.227",
+                                "isAttachedToCircle": false,
+                                "mac": "C8:6E:08:D2:D1:8D",
+                                "uuid": "b57b705f-93ff-43a4-98f2-b856206c57ca"
+                            },
+                            {
+                                "commandLine": "/media/lucas/T7/repositories/projet_IHM/agents/Whiteboard/bin/Whiteboard",
+                                "hostname": "adell",
+                                "ip": "172.22.227.4",
+                                "isAttachedToCircle": false,
+                                "mac": "90:0F:0C:8F:03:BD",
+                                "uuid": "85c8ef06-0d89-4714-9dd3-670d5e7452af"
+                            },
+                            {
+                                "commandLine": "/home/lucas/repositories/projet_IHM/agents/Whiteboard/bin/Whiteboard",
+                                "hostname": "amyoga",
+                                "ip": "192.168.142.106",
+                                "isAttachedToCircle": false,
+                                "mac": "32:B0:CD:29:15:7D",
+                                "uuid": "a7762cdf-bd94-463d-aa25-c4ac3d8cc8cf"
+                            }
+                        ]
+                    },
+                    "class": "49986800-5f93-4f38-b14a-e9245f623301",
+                    "comment": "",
+                    "height": 224,
+                    "name": "Whiteboard",
+                    "simulationTime": 5000,
+                    "uuid": "037d3303-3d37-4b58-9bda-78004cba8bbe",
+                    "width": 250,
+                    "x": 777.1256878711235,
+                    "y": -16.30606796399212
+                },
+                {
                     "children": [
                         {
                             "agent": {
@@ -1070,19 +1123,6 @@
                             "y": 889.7458136132924
                         },
                         {
-                            "data": {
-                                "duration": 10,
-                                "repeat": -1
-                            },
-                            "height": 112,
-                            "name": "",
-                            "tool": "com.ingescape.circle.tool.timer",
-                            "uuid": "27074822-98ac-4dc0-b2ad-503c69d8779d",
-                            "width": 230,
-                            "x": 407.6384148464233,
-                            "y": 1144.0396515057773
-                        },
-                        {
                             "agent": {
                                 "instances": [
                                     {
@@ -1170,21 +1210,6 @@
                         {
                             "data": {
                                 "entries": [
-                                    "0.5"
-                                ],
-                                "value_type": "DOUBLE"
-                            },
-                            "height": 79,
-                            "name": "",
-                            "tool": "com.ingescape.circle.tool.writer",
-                            "uuid": "47ce2325-134f-41f1-b0bb-7b152a2db137",
-                            "width": 256,
-                            "x": 351.96217364996266,
-                            "y": 96.59725668845027
-                        },
-                        {
-                            "data": {
-                                "entries": [
                                     "10"
                                 ],
                                 "value_type": "INTEGER"
@@ -1211,6 +1236,34 @@
                             "width": 256,
                             "x": 396.5436760521584,
                             "y": 973.1599378397308
+                        },
+                        {
+                            "data": {
+                                "entries": [
+                                    "0.5"
+                                ],
+                                "value_type": "DOUBLE"
+                            },
+                            "height": 79,
+                            "name": "",
+                            "tool": "com.ingescape.circle.tool.writer",
+                            "uuid": "47ce2325-134f-41f1-b0bb-7b152a2db137",
+                            "width": 256,
+                            "x": 379.3038657903121,
+                            "y": 96.59725668845022
+                        },
+                        {
+                            "data": {
+                                "duration": 10,
+                                "repeat": -1
+                            },
+                            "height": 112,
+                            "name": "",
+                            "tool": "com.ingescape.circle.tool.timer",
+                            "uuid": "27074822-98ac-4dc0-b2ad-503c69d8779d",
+                            "width": 230,
+                            "x": 401.04560713511216,
+                            "y": 1145.3582130480395
                         }
                     ],
                     "childrenViewport": {
@@ -1226,59 +1279,6 @@
                     "width": 843.6890879407238,
                     "x": 1229.9099982643918,
                     "y": 126.40343143238749
-                },
-                {
-                    "agent": {
-                        "instances": [
-                            {
-                                "commandLine": "/home/lucas/repositories/projet_IHM/agents/Whiteboard/bin/Whiteboard",
-                                "hostname": "amyoga",
-                                "ip": "192.168.142.43",
-                                "isAttachedToCircle": false,
-                                "uuid": "3305ada2-0e51-40eb-8794-41f212a0e428"
-                            },
-                            {
-                                "commandLine": "/home/priscilia/Cours/IHM/agents/Whiteboard/bin/Whiteboard",
-                                "hostname": "LAPTOP-PRISCILIA",
-                                "ip": "172.25.43.23",
-                                "isAttachedToCircle": false,
-                                "uuid": "57b5b5f5-8706-4d29-8ced-db9af03ba2ed"
-                            },
-                            {
-                                "commandLine": "/home/lucas/repositories/projet_IHM/agents/Whiteboard/bin/Whiteboard",
-                                "hostname": "amyoga",
-                                "ip": "172.22.223.227",
-                                "isAttachedToCircle": false,
-                                "mac": "C8:6E:08:D2:D1:8D",
-                                "uuid": "b57b705f-93ff-43a4-98f2-b856206c57ca"
-                            },
-                            {
-                                "commandLine": "/media/lucas/T7/repositories/projet_IHM/agents/Whiteboard/bin/Whiteboard",
-                                "hostname": "adell",
-                                "ip": "172.22.227.4",
-                                "isAttachedToCircle": false,
-                                "mac": "90:0F:0C:8F:03:BD",
-                                "uuid": "85c8ef06-0d89-4714-9dd3-670d5e7452af"
-                            },
-                            {
-                                "commandLine": "/home/lucas/repositories/projet_IHM/agents/Whiteboard/bin/Whiteboard",
-                                "hostname": "amyoga",
-                                "ip": "192.168.142.106",
-                                "isAttachedToCircle": false,
-                                "mac": "32:B0:CD:29:15:7D",
-                                "uuid": "a7762cdf-bd94-463d-aa25-c4ac3d8cc8cf"
-                            }
-                        ]
-                    },
-                    "class": "49986800-5f93-4f38-b14a-e9245f623301",
-                    "comment": "",
-                    "height": 224,
-                    "name": "Whiteboard",
-                    "simulationTime": 5000,
-                    "uuid": "037d3303-3d37-4b58-9bda-78004cba8bbe",
-                    "width": 250,
-                    "x": 781.8725094232675,
-                    "y": -16.30606796399212
                 }
             ],
             "links": {
