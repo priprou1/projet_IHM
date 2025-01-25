@@ -38,7 +38,7 @@ def input_callback(io_type, name, value_type, value, my_data):
         VOLUME_TRESH = value
         print("Volume treshold set to : ", value)
 
-# Function to get the current note from the microphone TODO : Code à commenter dedans ou pas à voir
+# Function to get the current note from the microphone #TODO : Code à commenter dedans ou pas, à voir
 def get_current_note(printOut=False):
 
     global VOLUME_TRESH

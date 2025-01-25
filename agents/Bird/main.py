@@ -75,7 +75,7 @@ def note_input_callback(io_type, name, value_type, value, my_data):
 
         currentY = whiteboardHeight - (((value - bmin) / (bmax - bmin)) * whiteboardHeight)
 
-        # Print the value of the note and the current position of the bird in the console for debugging TODO : A laisser ou pas?
+        # Print the value of the note and the current position of the bird in the console for debugging #TODO : A laisser ou pas?
         print(value, " ; ", currentY)
 
         if(id != -1):
