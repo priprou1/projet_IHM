@@ -25,6 +25,9 @@ def input_callback(io_type, name, value_type, value, my_data):
     # Set the switch input value
     if (name == "switch"):
         switch = value
+        # Display the switch on the whiteboard chat
+        arguments_list = ("Switched to : " + value + " input")
+        igs.service_call("Whiteboard", "chat", arguments_list, None)
         print("switch set to : ", value)
 
     # Set the note output depending on the switch input value

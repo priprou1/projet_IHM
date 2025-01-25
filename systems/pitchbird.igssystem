@@ -1545,30 +1545,6 @@
                         }
                     },
                     {
-                        "destination": "037d3303-3d37-4b58-9bda-78004cba8bbe",
-                        "destinationIO": {
-                            "name": "chatMessage",
-                            "type": "INPUT"
-                        },
-                        "source": "f58ac3be-979a-4829-ac73-f178b799f2f3",
-                        "sourceIO": {
-                            "name": "value",
-                            "type": "OUTPUT"
-                        }
-                    },
-                    {
-                        "destination": "037d3303-3d37-4b58-9bda-78004cba8bbe",
-                        "destinationIO": {
-                            "name": "chatMessage",
-                            "type": "INPUT"
-                        },
-                        "source": "672cc6a0-f4b1-437c-b841-602ed2003a82",
-                        "sourceIO": {
-                            "name": "value",
-                            "type": "OUTPUT"
-                        }
-                    },
-                    {
                         "destination": "d370235f-266e-4563-9a7f-bc00df14a96b",
                         "destinationIO": {
                             "name": "trigger",
