@@ -12,9 +12,11 @@
 
 
 import sys
-sys.path.append("../../")
+import os
+# Ajouter le dossier racine au sys.path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../../')))
 import ingescape as igs
-import midiConverter as mc
+from Module import midiConverter as mc
 
 ## Definition of global variables
 # ID of the bird on the whiteboard
@@ -32,12 +34,12 @@ birdSize = 150.0
 # Callback function for the agent events
 def on_agent_event_callback(event, uuid, name, event_data, my_data):
 
-    if name == "Whiteboard": # TODO peut être changer en Obstacle car on veut que les obstacle soient affichés en fond et l'oiseau devant
+    if name == "Whiteboard": 
         # When the agent is known by the Whiteboard agent, we add the image of the bird on the whiteboard
         if event == igs.AGENT_KNOWS_US:
             arguments_list = ("https://raw.githubusercontent.com/priprou1/projet_IHM/refs/heads/master/Bird.png", 20.0, 20.0)
             igs.service_call("Whiteboard", "addImageFromUrl", arguments_list, "bird")
-            arguments_list = (" ", 20.0, 20.0)
+            arguments_list = ("C#4", 20.0 + birdSize / 2 - 25, 20.0 + birdSize / 2 - 10, "black")
             igs.service_call("Whiteboard", "addText", arguments_list, "birdNote")
         # TODO : Sert à quoi? fait quelque chose? Si oui à commenter sinon à supprimer
         elif event == igs.AGENT_EXITED:
@@ -96,7 +98,7 @@ def note_input_callback(io_type, name, value_type, value, my_data):
         if(noteNameId != -1):
             arguments_list = (noteNameId, "text", mc.midiToString(value))
             igs.service_call("Whiteboard", "setStringProperty", arguments_list, "birdNote")
-            arguments_list = (noteNameId, 50.0 , currentY)
+            arguments_list = (noteNameId, 50.0 + birdSize / 2 - 25 , currentY + birdSize / 2 - 10)
             igs.service_call("Whiteboard", "moveTo", arguments_list, "birdNote")
 
 

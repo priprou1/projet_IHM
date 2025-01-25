@@ -12,10 +12,12 @@
 
 
 import sys
-sys.path.append("../../")
+import os
+# Ajouter le dossier racine au sys.path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../../')))
 import ingescape as igs
 import random
-import midiConverter as mc
+from Module import midiConverter as mc
 
 ## Definition of global variables
 # IDs of the obstacle shapes
@@ -58,14 +60,14 @@ def on_agent_event_callback(event, uuid, name, event_data, my_data):
     if name == "Whiteboard":
         if event == igs.AGENT_KNOWS_US:
             # Create the score on the whiteboard
-            arguments_list = ("Score : 0 / 0", 0, -60, "black")
+            arguments_list = ("Score : 0 / 0", 20, -60, "black")
             igs.service_call("Whiteboard", "addText", arguments_list, "score")
             # Draw the obstacle and the hole on the whiteboard
             arguments_list = ("rectangle", currentX, 0.0, obstacleThickness, whiteboardHeight, color, "transparent", 0)
             igs.service_call("Whiteboard", "addShape", arguments_list, "obstacle")
             arguments_list = ("rectangle", currentX, currentY + holeThickness / 2, obstacleThickness, holeThickness, "white", "transparent", 0)
             igs.service_call("Whiteboard", "addShape", arguments_list, "hole")
-            arguments_list = (obstacleNoteName, currentX, 0, "black")
+            arguments_list = (obstacleNoteName, currentX + obstacleThickness / 2 - 25 , 0, "black")
             igs.service_call("Whiteboard", "addText", arguments_list, "obstacleNote")
 
 
@@ -119,7 +121,7 @@ def clock_callback(io_type, name, value_type, value, my_data):
     igs.service_call("Whiteboard", "moveTo", arguments_list, "obstacle")
     arguments_list = (holeId, currentX, currentY + holeThickness / 2)
     igs.service_call("Whiteboard", "moveTo", arguments_list, "hole")
-    arguments_list = (obstacleNoteId, currentX, 0.0)
+    arguments_list = (obstacleNoteId, currentX + obstacleThickness / 2 - 25, 0.0)
     igs.service_call("Whiteboard", "moveTo", arguments_list, "obstacleNote")
 
     # Update the absciss position of the obstacle
