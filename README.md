@@ -32,7 +32,9 @@ You need also in the Ingescape circle v.4 software and in the Whiteboard agent t
 
 ## Game interaction
 
-You can start
+You can start #TODO
+
+TODO : ajout d'une capture d'écran du jeu.
 
 ### The differents parameters
 
