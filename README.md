@@ -2,7 +2,7 @@
 
 - Python3 (https://www.python.org/downloads/)
 - Ingescape python binding (from pip)
-- Ingescape circle v.4 (on the ingescape website)
+- Ingescape circle v.4 (on the [ingescape website](https://ingescape.com/get/))
 - aubio module (from pip)
 - pyaudio (form pip, if pip doesn't work : from apt : sudo apt install python3-pyaudio)
 - music21 (from pip)
@@ -50,7 +50,7 @@ You can change differents parameters of the game inside the PitchBird box in Ing
 
 ## Credits
 
-- The keyboard agent has been made by another group, they kindly gave it to us in order to interact with it.\
+- The keyboard agent has been made by another group, they kindly shared it with us in order to interact with it.\
   Thank you Xavier Naxara, Ulysse Radisson and #TODO for this agent.
 
 - The WhiteBoard agent has been made by the ingenuity i/o society. You can find their gitLab repository [there](https://gitlab.ingescape.com/learn/whiteboard).
