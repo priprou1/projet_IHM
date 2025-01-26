@@ -47,4 +47,4 @@ def midiToString(midiNumber):
 # Example usage
 if __name__ == "__main__":
     midiNumber = 60
-    print(midiToString(midiNumber))  # Output: C4
+    print("Convert MIDI 60 to", midiToString(midiNumber))  # Output: C4

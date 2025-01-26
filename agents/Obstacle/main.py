@@ -17,7 +17,7 @@ import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../../')))
 import ingescape as igs
 import random
-from Module import midiConverter as mc
+from module import midiConverter as mc
 
 ## Definition of global variables
 # IDs of the obstacle shapes
