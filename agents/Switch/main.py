@@ -46,7 +46,7 @@ def input_callback(io_type, name, value_type, value, my_data):
         print(name, " : ", value)
         pass
 
-    if (name == "keyBoard" and switch == "keyboard"):
+    if (name == "keyboard" and switch == "keyboard"):
         igs.output_set_int("note", value)
         print(name, " : ", value)
         pass
@@ -81,10 +81,10 @@ if __name__ == "__main__":
     igs.input_add_constraint("pitchDetector", "range [0,127]")
     igs.observe_input("pitchDetector", input_callback, None)
 
-    igs.input_create("keyBoard", igs.INTEGER_T, None)
-    igs.input_set_description("keyBoard", """<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Asap'; font-size:13px; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Number of the note found from the KeyBoard agent which correspond of the input of a MIDI keyboard</p></body></html>""")
-    igs.input_add_constraint("keyBoard", "range [0,127]")
-    igs.observe_input("keyBoard", input_callback, None)
+    igs.input_create("keyboard", igs.INTEGER_T, None)
+    igs.input_set_description("keyboard", """<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Asap'; font-size:13px; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Number of the note found from the KeyBoard agent which correspond of the input of a MIDI keyboard</p></body></html>""")
+    igs.input_add_constraint("keyboard", "range [0,127]")
+    igs.observe_input("keyboard", input_callback, None)
 
     ## Create the output of the agent
     igs.output_create("note", igs.INTEGER_T, None)

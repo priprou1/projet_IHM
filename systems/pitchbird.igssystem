@@ -712,7 +712,7 @@
                         {
                             "constraint": "[0,127]",
                             "description": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Asap'; font-size:13px; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Number of the note found from the KeyBoard agent which correspond of the input of a MIDI keyboard</p></body></html>",
-                            "name": "keyBoard",
+                            "name": "keyboard",
                             "type": "INTEGER"
                         },
                         {
@@ -859,7 +859,7 @@
                 "uuid": "bd15f59a-6cf1-411d-bc47-ab06a8925653"
             },
             {
-                "code": "//\n// Switch_tests\n//\n// created on 2025-01-25\n// Authors : Lucas Bolbènes, Armand Claveau, Priscilia Gonthier\n\n// The script language documentation is available at\n// https://ingescape.com/verification-validation-using-ingescape/\n\n\"switch_to_microphone\" \"test the switch to the microphone\" {\n\n    // Input allocation\n    Switch.switch = \"microphone\" // Switch receive the command microphone\n    Switch.pitchDetector = 1 // Switch receive the note 1 from the PitchDetector's input\n    Switch.keyBoard = 2 // Switch receive the note 2 from the KeyBoard's input\n    \n    // Output verification\n    assert Switch.note == 1 // Switch return the note 1 (same as the pitchdetector)\n    \n    // Service call verification\n    assert Whiteboard.lastAction== \"Service chat: Switched to microphone input\" // The chat of the whiteboard display the switch occured\n}\n\n\"switch_to_keyboard\" \"test the switch to the MIDI keyboard\" {\n\n    // Input allocation\n    Switch.switch = \"keyboard\" // Switch receive the command keyboard\n    Switch.pitchDetector = 1 // Switch receive the note 1 from the PitchDetector's input\n    Switch.keyBoard = 2 // Switch receive the note 2 from the KeyBoard's input\n    \n    // Output verification\n    assert Switch.note == 2 // Switch return the note 2 (same as the keyboard)\n    \n    // Service call verification\n    assert Whiteboard.lastAction==\"Service chat: Switched to keyboard input\" // The chat of the whiteboard display the switch occured\n}\n\n\n",
+                "code": "//\n// Switch_tests\n//\n// created on 2025-01-25\n// Authors : Lucas Bolbènes, Armand Claveau, Priscilia Gonthier\n\n// The script language documentation is available at\n// https://ingescape.com/verification-validation-using-ingescape/\n\n\"switch_to_microphone\" \"test the switch to the microphone\" {\n\n    // Input allocation\n    Switch.switch = \"microphone\" // Switch receive the command microphone\n    Switch.pitchDetector = 1 // Switch receive the note 1 from the PitchDetector's input\n    Switch.keyboard = 2 // Switch receive the note 2 from the KeyBoard's input\n    \n    // Output verification\n    assert Switch.note == 1 // Switch return the note 1 (same as the pitchdetector)\n    \n    // Service call verification\n    assert Whiteboard.lastAction== \"Service chat: Switched to microphone input\" // The chat of the whiteboard display the switch occured\n}\n\n\"switch_to_keyboard\" \"test the switch to the MIDI keyboard\" {\n\n    // Input allocation\n    Switch.switch = \"keyboard\" // Switch receive the command keyboard\n    Switch.pitchDetector = 1 // Switch receive the note 1 from the PitchDetector's input\n    Switch.keyboard = 2 // Switch receive the note 2 from the KeyBoard's input\n    \n    // Output verification\n    assert Switch.note == 2 // Switch return the note 2 (same as the keyboard)\n    \n    // Service call verification\n    assert Whiteboard.lastAction==\"Service chat: Switched to keyboard input\" // The chat of the whiteboard display the switch occured\n}\n\n\n",
                 "name": "Switch_tests",
                 "package": "",
                 "uuid": "74b01f0a-06fe-4479-816f-e87ca9a0b179"
@@ -902,9 +902,25 @@
                             {
                                 "commandLine": "/home/lucas/repositories/projet_IHM/agents/Whiteboard/bin/Whiteboard",
                                 "hostname": "amyoga",
+                                "ip": "192.168.142.106",
+                                "isAttachedToCircle": false,
+                                "mac": "32:B0:CD:29:15:7D",
+                                "uuid": "a7762cdf-bd94-463d-aa25-c4ac3d8cc8cf"
+                            },
+                            {
+                                "commandLine": "/home/lucas/repositories/projet_IHM/agents/Whiteboard/bin/Whiteboard",
+                                "hostname": "amyoga",
                                 "ip": "192.168.142.43",
                                 "isAttachedToCircle": false,
                                 "uuid": "3305ada2-0e51-40eb-8794-41f212a0e428"
+                            },
+                            {
+                                "commandLine": "/home/lucas/repositories/projet_IHM/agents/Whiteboard/bin/Whiteboard",
+                                "hostname": "amyoga",
+                                "ip": "192.168.157.175",
+                                "isAttachedToCircle": false,
+                                "mac": "72:24:4A:D5:D9:21",
+                                "uuid": "9fc02ded-39cf-4161-a9e3-db3c16a52667"
                             },
                             {
                                 "commandLine": "/media/lucas/T7/repositories/projet_IHM/agents/Whiteboard/bin/Whiteboard",
@@ -917,10 +933,10 @@
                             {
                                 "commandLine": "/home/lucas/repositories/projet_IHM/agents/Whiteboard/bin/Whiteboard",
                                 "hostname": "amyoga",
-                                "ip": "192.168.157.175",
+                                "ip": "172.22.223.227",
                                 "isAttachedToCircle": false,
-                                "mac": "72:24:4A:D5:D9:21",
-                                "uuid": "9fc02ded-39cf-4161-a9e3-db3c16a52667"
+                                "mac": "C8:6E:08:D2:D1:8D",
+                                "uuid": "b57b705f-93ff-43a4-98f2-b856206c57ca"
                             },
                             {
                                 "commandLine": "/home/priscilia/Cours/IHM/agents/Whiteboard/bin/Whiteboard",
@@ -928,22 +944,6 @@
                                 "ip": "172.25.43.23",
                                 "isAttachedToCircle": false,
                                 "uuid": "57b5b5f5-8706-4d29-8ced-db9af03ba2ed"
-                            },
-                            {
-                                "commandLine": "/home/lucas/repositories/projet_IHM/agents/Whiteboard/bin/Whiteboard",
-                                "hostname": "amyoga",
-                                "ip": "192.168.142.106",
-                                "isAttachedToCircle": false,
-                                "mac": "32:B0:CD:29:15:7D",
-                                "uuid": "a7762cdf-bd94-463d-aa25-c4ac3d8cc8cf"
-                            },
-                            {
-                                "commandLine": "/home/lucas/repositories/projet_IHM/agents/Whiteboard/bin/Whiteboard",
-                                "hostname": "amyoga",
-                                "ip": "172.22.223.227",
-                                "isAttachedToCircle": false,
-                                "mac": "C8:6E:08:D2:D1:8D",
-                                "uuid": "b57b705f-93ff-43a4-98f2-b856206c57ca"
                             }
                         ]
                     },
@@ -1096,6 +1096,14 @@
                             "agent": {
                                 "instances": [
                                     {
+                                        "commandLine": "/home/lucas/.pyenv/versions/3.8.20/bin/python3 ./scripts/../agents/Bird/main.py Bird enx32b0cd29157d 5670",
+                                        "hostname": "amyoga",
+                                        "ip": "192.168.142.106",
+                                        "isAttachedToCircle": false,
+                                        "mac": "32:B0:CD:29:15:7D",
+                                        "uuid": "15df0f5a-5dbb-4570-a53c-5dd655391391"
+                                    },
+                                    {
                                         "commandLine": "/home/lucas/.pyenv/versions/3.8.20/bin/python3 ./scripts/../agents/Bird/main.py Bird enxd21f3b1d5290 5670",
                                         "hostname": "amyoga",
                                         "ip": "192.168.142.43",
@@ -1111,6 +1119,14 @@
                                         "uuid": "ebc25cda-bf37-40dc-a215-4f9915d51769"
                                     },
                                     {
+                                        "commandLine": "/home/lucas/.pyenv/versions/3.8.20/bin/python3 ./scripts/../agents/Bird/main.py Bird wlp0s20f3 5670",
+                                        "hostname": "amyoga",
+                                        "ip": "172.22.223.227",
+                                        "isAttachedToCircle": false,
+                                        "mac": "C8:6E:08:D2:D1:8D",
+                                        "uuid": "44ad68a5-41e7-48d6-88a6-4eeec03a5068"
+                                    },
+                                    {
                                         "commandLine": "/usr/bin/python3 ./scripts/../agents/Bird/main.py Bird eth0 5670",
                                         "hostname": "LAPTOP-PRISCILIA",
                                         "ip": "172.25.43.23",
@@ -1123,22 +1139,6 @@
                                         "ip": "172.25.43.23",
                                         "isAttachedToCircle": false,
                                         "uuid": "d1c6f6f1-48e2-47e7-85a8-855b48ca3219"
-                                    },
-                                    {
-                                        "commandLine": "/home/lucas/.pyenv/versions/3.8.20/bin/python3 ./scripts/../agents/Bird/main.py Bird enx32b0cd29157d 5670",
-                                        "hostname": "amyoga",
-                                        "ip": "192.168.142.106",
-                                        "isAttachedToCircle": false,
-                                        "mac": "32:B0:CD:29:15:7D",
-                                        "uuid": "15df0f5a-5dbb-4570-a53c-5dd655391391"
-                                    },
-                                    {
-                                        "commandLine": "/home/lucas/.pyenv/versions/3.8.20/bin/python3 ./scripts/../agents/Bird/main.py Bird wlp0s20f3 5670",
-                                        "hostname": "amyoga",
-                                        "ip": "172.22.223.227",
-                                        "isAttachedToCircle": false,
-                                        "mac": "C8:6E:08:D2:D1:8D",
-                                        "uuid": "44ad68a5-41e7-48d6-88a6-4eeec03a5068"
                                     }
                                 ]
                             },
@@ -1183,35 +1183,13 @@
                             "agent": {
                                 "instances": [
                                     {
-                                        "commandLine": "/home/lucas/.pyenv/versions/3.8.20/bin/python3 ./scripts/../agents/Switch/main.py Switch enx72244ad5d921 5670",
+                                        "commandLine": "/home/lucas/.pyenv/versions/3.8.20/bin/python3 ./scripts/../agents/Obstacle/main.py Obstacle enx32b0cd29157d 5670",
                                         "hostname": "amyoga",
-                                        "ip": "192.168.157.175",
+                                        "ip": "192.168.142.106",
                                         "isAttachedToCircle": false,
-                                        "mac": "72:24:4A:D5:D9:21",
-                                        "uuid": "43dc9753-c058-4dfe-a2eb-7cb8c57afd50"
+                                        "mac": "32:B0:CD:29:15:7D",
+                                        "uuid": "af1bd08b-5430-467c-8538-28e9c1d55641"
                                     },
-                                    {
-                                        "commandLine": "/usr/bin/python3 ./../agents/Switch/main.py Switch eth0 5670",
-                                        "hostname": "LAPTOP-PRISCILIA",
-                                        "ip": "172.25.43.23",
-                                        "isAttachedToCircle": false,
-                                        "uuid": "76191ca0-50a3-4072-8d8a-1db00b0f0d25"
-                                    }
-                                ]
-                            },
-                            "class": "a9a7b4d2-2f6d-4f7d-82f5-760f30157d54",
-                            "comment": "",
-                            "height": 158,
-                            "name": "Switch",
-                            "simulationTime": 5000,
-                            "uuid": "49b8a2f1-d092-4923-abf3-6df1e6f40221",
-                            "width": 250,
-                            "x": 1071.2678009544752,
-                            "y": 534.9892633778253
-                        },
-                        {
-                            "agent": {
-                                "instances": [
                                     {
                                         "commandLine": "/home/lucas/.pyenv/versions/3.8.20/bin/python3 ./scripts/../agents/Obstacle/main.py Obstacle enxd21f3b1d5290 5670",
                                         "hostname": "amyoga",
@@ -1228,6 +1206,14 @@
                                         "uuid": "78abc993-22f4-4212-ad60-caaaa4f8ef47"
                                     },
                                     {
+                                        "commandLine": "/home/lucas/.pyenv/versions/3.8.20/bin/python3 ./scripts/../agents/Obstacle/main.py Obstacle wlp0s20f3 5670",
+                                        "hostname": "amyoga",
+                                        "ip": "172.22.223.227",
+                                        "isAttachedToCircle": false,
+                                        "mac": "C8:6E:08:D2:D1:8D",
+                                        "uuid": "33936019-3ccb-41e7-bb0e-85ec2372eb46"
+                                    },
+                                    {
                                         "commandLine": "/usr/bin/python3 ./scripts/../agents/Obstacle/main.py Obstacle eth0 5670",
                                         "hostname": "LAPTOP-PRISCILIA",
                                         "ip": "172.25.43.23",
@@ -1240,22 +1226,6 @@
                                         "ip": "172.25.43.23",
                                         "isAttachedToCircle": false,
                                         "uuid": "e3e83485-583d-4674-93b8-b0217645e740"
-                                    },
-                                    {
-                                        "commandLine": "/home/lucas/.pyenv/versions/3.8.20/bin/python3 ./scripts/../agents/Obstacle/main.py Obstacle enx32b0cd29157d 5670",
-                                        "hostname": "amyoga",
-                                        "ip": "192.168.142.106",
-                                        "isAttachedToCircle": false,
-                                        "mac": "32:B0:CD:29:15:7D",
-                                        "uuid": "af1bd08b-5430-467c-8538-28e9c1d55641"
-                                    },
-                                    {
-                                        "commandLine": "/home/lucas/.pyenv/versions/3.8.20/bin/python3 ./scripts/../agents/Obstacle/main.py Obstacle wlp0s20f3 5670",
-                                        "hostname": "amyoga",
-                                        "ip": "172.22.223.227",
-                                        "isAttachedToCircle": false,
-                                        "mac": "C8:6E:08:D2:D1:8D",
-                                        "uuid": "33936019-3ccb-41e7-bb0e-85ec2372eb46"
                                     }
                                 ]
                             },
@@ -1288,6 +1258,14 @@
                             "agent": {
                                 "instances": [
                                     {
+                                        "commandLine": "/home/lucas/.pyenv/versions/3.8.20/bin/python3 ./scripts/../agents/PitchDetector/main.py PitchDetector enx32b0cd29157d 5670",
+                                        "hostname": "amyoga",
+                                        "ip": "192.168.142.106",
+                                        "isAttachedToCircle": false,
+                                        "mac": "32:B0:CD:29:15:7D",
+                                        "uuid": "5112bd2c-63eb-40ba-aadc-da0e65f9b6e4"
+                                    },
+                                    {
                                         "commandLine": "/home/lucas/.pyenv/versions/3.8.20/bin/python3 ./scripts/../agents/PitchDetector/main.py PitchDetector enxd21f3b1d5290 5670",
                                         "hostname": "amyoga",
                                         "ip": "192.168.142.43",
@@ -1303,27 +1281,19 @@
                                         "uuid": "022b260a-7bf9-47e1-b531-c8acfd6ffa42"
                                     },
                                     {
-                                        "commandLine": "/usr/bin/python3 ./../agents/PitchDetector/main.py PitchDetector eth0 5670",
-                                        "hostname": "LAPTOP-PRISCILIA",
-                                        "ip": "172.25.43.23",
-                                        "isAttachedToCircle": false,
-                                        "uuid": "3619c24c-56b3-4a54-aa22-8a067ce43dbc"
-                                    },
-                                    {
-                                        "commandLine": "/home/lucas/.pyenv/versions/3.8.20/bin/python3 ./scripts/../agents/PitchDetector/main.py PitchDetector enx32b0cd29157d 5670",
-                                        "hostname": "amyoga",
-                                        "ip": "192.168.142.106",
-                                        "isAttachedToCircle": false,
-                                        "mac": "32:B0:CD:29:15:7D",
-                                        "uuid": "5112bd2c-63eb-40ba-aadc-da0e65f9b6e4"
-                                    },
-                                    {
                                         "commandLine": "/home/lucas/.pyenv/versions/3.8.20/bin/python3 ./scripts/../agents/PitchDetector/main.py PitchDetector wlp0s20f3 5670",
                                         "hostname": "amyoga",
                                         "ip": "172.22.223.227",
                                         "isAttachedToCircle": false,
                                         "mac": "C8:6E:08:D2:D1:8D",
                                         "uuid": "5e1cd72a-5b8d-4b44-852a-2ebdb36c39b8"
+                                    },
+                                    {
+                                        "commandLine": "/usr/bin/python3 ./../agents/PitchDetector/main.py PitchDetector eth0 5670",
+                                        "hostname": "LAPTOP-PRISCILIA",
+                                        "ip": "172.25.43.23",
+                                        "isAttachedToCircle": false,
+                                        "uuid": "3619c24c-56b3-4a54-aa22-8a067ce43dbc"
                                     }
                                 ]
                             },
@@ -1336,6 +1306,36 @@
                             "width": 250,
                             "x": 702.4594460017372,
                             "y": 82.44183957800362
+                        },
+                        {
+                            "agent": {
+                                "instances": [
+                                    {
+                                        "commandLine": "/home/lucas/.pyenv/versions/3.8.20/bin/python3 ./scripts/../agents/Switch/main.py Switch enx72244ad5d921 5670",
+                                        "hostname": "amyoga",
+                                        "ip": "192.168.157.175",
+                                        "isAttachedToCircle": false,
+                                        "mac": "72:24:4A:D5:D9:21",
+                                        "uuid": "43dc9753-c058-4dfe-a2eb-7cb8c57afd50"
+                                    },
+                                    {
+                                        "commandLine": "/usr/bin/python3 ./../agents/Switch/main.py Switch eth0 5670",
+                                        "hostname": "LAPTOP-PRISCILIA",
+                                        "ip": "172.25.43.23",
+                                        "isAttachedToCircle": false,
+                                        "uuid": "76191ca0-50a3-4072-8d8a-1db00b0f0d25"
+                                    }
+                                ]
+                            },
+                            "class": "a9a7b4d2-2f6d-4f7d-82f5-760f30157d54",
+                            "comment": "",
+                            "height": 158,
+                            "name": "Switch",
+                            "simulationTime": 5000,
+                            "uuid": "49b8a2f1-d092-4923-abf3-6df1e6f40221",
+                            "width": 250,
+                            "x": 1071.2678009544752,
+                            "y": 534.9892633778253
                         }
                     ],
                     "childrenViewport": {
