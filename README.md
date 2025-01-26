@@ -51,6 +51,6 @@ You can change differents parameters of the game inside the PitchBird box in Ing
 
 ## Credits
 
-- The WhiteBoard agent has been made by the ingenuity i/o society. You can find their gitLab repository [there](https://gitlab.ingescape.com/learn/whiteboard).
+- The Whiteboard agent has been made by the ingenuity i/o society. You can find their gitLab repository [there](https://gitlab.ingescape.com/learn/whiteboard).
 
 - All the other agents, the interaction between them, the requirements, the V&Vs scripts and the midiConverter module has been made by our group composed by Lucas Bolbènes, Armand Claveau and Priscilia Gonthier.
