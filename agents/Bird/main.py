@@ -34,16 +34,13 @@ birdSize = 150.0
 # Callback function for the agent events
 def on_agent_event_callback(event, uuid, name, event_data, my_data):
 
-    if name == "Whiteboard": # TODO : peut-être à changer en Obstacle pour que les obstacle soit derrière l'oiseau?
-        # When the agent is known by the Whiteboard agent, we add the image of the bird on the whiteboard
+    if name == "Obstacle":
+        
         if event == igs.AGENT_KNOWS_US:
             arguments_list = ("https://raw.githubusercontent.com/priprou1/projet_IHM/refs/heads/master/Bird.png", 20.0, 20.0)
             igs.service_call("Whiteboard", "addImageFromUrl", arguments_list, "bird")
             arguments_list = ("C#4", 20.0 + birdSize / 2 - 25, 20.0 + birdSize / 2 - 10, "black")
             igs.service_call("Whiteboard", "addText", arguments_list, "birdNote")
-        # TODO : Sert à quoi? fait quelque chose? Si oui à commenter sinon à supprimer
-        elif event == igs.AGENT_EXITED:
-            pass
 
 # TODO : Elle fait quoi cette fonction? Ne sert à rien non ? Peut-elle être supprimée ? Sinon la commenter
 def actionResult_callback(sender_agent_name, sender_agent_uuid, service_name, arguments, token, my_data):

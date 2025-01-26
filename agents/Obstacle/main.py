@@ -60,7 +60,7 @@ def on_agent_event_callback(event, uuid, name, event_data, my_data):
     if name == "Whiteboard":
         if event == igs.AGENT_KNOWS_US:
             # Create the score on the whiteboard
-            arguments_list = ("Score : 0 / 0", 20, -60, "black")
+            arguments_list = ("Score : 0 / 0", 20.0, -60.0, "black")
             igs.service_call("Whiteboard", "addText", arguments_list, "score")
             # Draw the obstacle and the hole on the whiteboard
             arguments_list = ("rectangle", currentX, 0.0, obstacleThickness, whiteboardHeight, color, "transparent", 0)
@@ -143,7 +143,7 @@ def clock_callback(io_type, name, value_type, value, my_data):
         # Reset the boolean to check the collision
         localContact = False
         # Generate a random integer between bmin and bmax, that will correspond to the new note of the obstacle
-        obstacleNote = random.randint(bmin, bmax)
+        obstacleNote = random.randint(bmin + 3, bmax)
         obstacleNoteName = mc.midiToString(obstacleNote)
         # Update the name of the obstacle note on the whiteboard
         arguments_list = (obstacleNoteId, "text", obstacleNoteName)
@@ -153,6 +153,7 @@ def clock_callback(io_type, name, value_type, value, my_data):
 def stop_callback(io_type, name, value_type, value, my_data):
     global successfulAttempts, nbAttempts
 
+    print("Game stopped")
     # Display the last score on the whiteboard chat
     arguments_list = ("Last score : " + str(successfulAttempts) + " / " + str(nbAttempts))
     igs.service_call("Whiteboard", "chat", arguments_list, None)
@@ -186,7 +187,7 @@ def elementCreated_callback(sender_agent_name, sender_agent_uuid, service_name, 
     if(token == "obstacle"):
         obstacleId = arguments[0]
     
-    if(token == "bas"):
+    if(token == "hole"):
         holeId = arguments[0]
     
     if (token == "score"):
