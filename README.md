@@ -35,7 +35,7 @@ You can now start the game.
 ## Game interaction
 
 To **start** (respectively **stop**) the game you need to click on the impulsion writer linked to the **start** (respectively **stop**) input of the PitchBird box in Ingescape circle v.4.\
-To switch between the microphone and keyboard input you need to click on the corresponding writer.
+To **switch** between the microphone and keyboard input you need to click on the corresponding writer.
 
 ### The differents parameters
 
