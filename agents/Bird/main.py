@@ -35,7 +35,6 @@ birdSize = 150.0
 def on_agent_event_callback(event, uuid, name, event_data, my_data):
 
     if name == "Obstacle":
-        
         if event == igs.AGENT_KNOWS_US:
             arguments_list = ("https://raw.githubusercontent.com/priprou1/projet_IHM/refs/heads/master/Bird.png", 20.0, 20.0)
             igs.service_call("Whiteboard", "addImageFromUrl", arguments_list, "bird")
@@ -85,7 +84,7 @@ def note_input_callback(io_type, name, value_type, value, my_data):
 
         currentY = whiteboardHeight - (((value - bmin) / (bmax - bmin)) * whiteboardHeight)
 
-        # Print the value of the note and the current position of the bird in the console for debugging #TODO : A laisser ou pas?
+        # Print the value of the note and the current position of the bird in the console for debugging
         print(value, " ; ", currentY)
 
         if(id != -1):

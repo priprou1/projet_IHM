@@ -237,6 +237,7 @@ if __name__ == "__main__":
 
     igs.input_create("offset", igs.INTEGER_T, None)
     igs.input_set_description("offset", """<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Asap'; font-size:13px; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Size of the movement of the obstacle</p></body></html>""")
+    igs.input_add_constraint("offset", "min 10")
     igs.observe_input("offset", input_callback, None)
 
     igs.input_create("clock", igs.IMPULSION_T, None)

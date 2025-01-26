@@ -63,7 +63,6 @@ def get_current_note(printOut=False):
 
     current_pitch = music21.pitch.Pitch()
 
-
     try:
         while True:
 
