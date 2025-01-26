@@ -156,7 +156,7 @@ def stop_callback(io_type, name, value_type, value, my_data):
     print("Game stopped")
     # Display the last score on the whiteboard chat
     arguments_list = ("Last score : " + str(successfulAttempts) + " / " + str(nbAttempts))
-    igs.service_call("Whiteboard", "chat", arguments_list, None)
+    igs.service_call("Whiteboard", "chat", arguments_list, None) # TODO : Est ce que ça s'affiche bien dans le chat du whiteboard?
 
     # Reset the score
     arguments_list = (scoreId, "text", "Score : 0 / 0")

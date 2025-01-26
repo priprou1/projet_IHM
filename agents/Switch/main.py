@@ -26,7 +26,7 @@ def on_agent_event_callback(event, uuid, name, event_data, my_data):
     if name == "Whiteboard":
         if event == igs.AGENT_KNOWS_US:
             arguments_list = ("Input device " + switch + " selected")
-            igs.service_call("Whiteboard", "chat", arguments_list, "switch")
+            igs.service_call("Whiteboard", "chat", arguments_list, "switch") # TODO : Est-ce que ça s'affiche bien dans le chat du whiteboard ?
 
 # Callback function to get and update the inputs from the other agents and set the output
 def input_callback(io_type, name, value_type, value, my_data):
@@ -37,7 +37,7 @@ def input_callback(io_type, name, value_type, value, my_data):
         switch = value
         # Display the switch on the whiteboard chat
         arguments_list = ("Switched to " + value + " input")
-        igs.service_call("Whiteboard", "chat", arguments_list, "switch")
+        igs.service_call("Whiteboard", "chat", arguments_list, "switch") # TODO : Est-ce que ça s'affiche bien dans le chat du whiteboard ?
         print("switch set to : ", value)
 
     # Set the note output depending on the switch input value
