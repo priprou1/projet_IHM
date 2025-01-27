@@ -47,8 +47,15 @@ def get_current_note():
     white_key_positions = []
     for i in range(len(WHITE_KEYS) * OCTAVES):
         x = i * KEY_WIDTH
-        key = canvas.create_rectangle(x + OFFSET , 0, x + OFFSET + KEY_WIDTH, KEY_HEIGHT, fill=KEY_COLORS["white"], outline="black")
-        canvas.tag_bind(key, "<Button-1>", lambda e, note=WHITE_KEYS[i % len(WHITE_KEYS)], octave=(i // len(WHITE_KEYS)) + START_OCTAVE : play_note(note, octave))
+        key = canvas.create_rectangle(x + OFFSET, 0, x + OFFSET + KEY_WIDTH, KEY_HEIGHT, 
+                                    fill=KEY_COLORS["white"], outline="black")
+        # Save the initial state of the key
+        canvas.itemconfig(key, tag=f"white_key_{i}")
+        # Bind the events
+        canvas.tag_bind(key, "<Button-1>", lambda e, note=WHITE_KEYS[i % len(WHITE_KEYS)], 
+                        octave=(i // len(WHITE_KEYS)) + START_OCTAVE, key_id=key: on_key_press(e, note, octave, key_id))
+        canvas.tag_bind(key, "<ButtonRelease-1>", lambda e, key_id=key, color=KEY_COLORS["white"]: on_key_release(e, key_id, color))
+
         white_key_positions.append(x)
 
     # Draw black keys
@@ -57,7 +64,11 @@ def get_current_note():
             continue
         x = white_key_positions[i] + (KEY_WIDTH - BLACK_KEY_WIDTH // 2)
         key = canvas.create_rectangle(x + OFFSET, 0, x + OFFSET + BLACK_KEY_WIDTH, BLACK_KEY_HEIGHT, fill=KEY_COLORS["black"], outline="black")
-        canvas.tag_bind(key, "<Button-1>", lambda e, note=WHITE_KEYS[i % len(WHITE_KEYS)] + "#", octave=(i // len(WHITE_KEYS)) + START_OCTAVE : play_note(note, octave))
+        # Save the initial state of the key
+        canvas.itemconfig(key, tag=f"black_key_{i}")
+        # Bind the events
+        canvas.tag_bind(key, "<Button-1>", lambda e, note=WHITE_KEYS[i % len(WHITE_KEYS)] + "#", octave=(i // len(WHITE_KEYS)) + START_OCTAVE, key_id=key: on_key_press(e, note, octave, key_id))
+        canvas.tag_bind(key, "<ButtonRelease-1>", lambda e, key_id=key, color=KEY_COLORS["black"]: on_key_release(e, key_id, color))
 
     # Add labels to the first and last keys
     canvas.create_text(KEY_WIDTH // 2 + OFFSET, KEY_HEIGHT + 10, text=f"{WHITE_KEYS[0]}{START_OCTAVE}", font=("Arial", 10), fill="black")
@@ -72,6 +83,14 @@ def play_note(note, octave):
     print(f"Playing note: {note}{octave}, MIDI number: {midiNumber}")
     igs.output_set_int("note", midiNumber)
 
+# Change the color of the key and play the note
+def on_key_press(event, note, octave, key_id):
+        canvas.itemconfig(key_id, fill="lightblue")
+        play_note(note, octave)
+
+# Reestablish the color of the key
+def on_key_release(event, key_id, color):
+    canvas.itemconfig(key_id, fill=color)
 
 
 if __name__ == "__main__":
