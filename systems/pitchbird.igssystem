@@ -937,10 +937,17 @@
                             {
                                 "commandLine": "/home/lucas/repositories/projet_IHM/agents/Whiteboard/bin/Whiteboard",
                                 "hostname": "amyoga",
-                                "ip": "172.22.223.227",
+                                "ip": "192.168.142.43",
                                 "isAttachedToCircle": false,
-                                "mac": "C8:6E:08:D2:D1:8D",
-                                "uuid": "b57b705f-93ff-43a4-98f2-b856206c57ca"
+                                "uuid": "3305ada2-0e51-40eb-8794-41f212a0e428"
+                            },
+                            {
+                                "commandLine": "/media/lucas/T7/repositories/projet_IHM/agents/Whiteboard/bin/Whiteboard",
+                                "hostname": "adell",
+                                "ip": "172.22.227.4",
+                                "isAttachedToCircle": false,
+                                "mac": "90:0F:0C:8F:03:BD",
+                                "uuid": "85c8ef06-0d89-4714-9dd3-670d5e7452af"
                             },
                             {
                                 "commandLine": "/home/lucas/repositories/projet_IHM/agents/Whiteboard/bin/Whiteboard",
@@ -953,17 +960,10 @@
                             {
                                 "commandLine": "/home/lucas/repositories/projet_IHM/agents/Whiteboard/bin/Whiteboard",
                                 "hostname": "amyoga",
-                                "ip": "192.168.142.43",
+                                "ip": "172.22.223.227",
                                 "isAttachedToCircle": false,
-                                "uuid": "3305ada2-0e51-40eb-8794-41f212a0e428"
-                            },
-                            {
-                                "commandLine": "/media/lucas/T7/repositories/projet_IHM/agents/Whiteboard/bin/Whiteboard",
-                                "hostname": "adell",
-                                "ip": "172.22.227.4",
-                                "isAttachedToCircle": false,
-                                "mac": "90:0F:0C:8F:03:BD",
-                                "uuid": "85c8ef06-0d89-4714-9dd3-670d5e7452af"
+                                "mac": "C8:6E:08:D2:D1:8D",
+                                "uuid": "b57b705f-93ff-43a4-98f2-b856206c57ca"
                             }
                         ]
                     },
@@ -1138,12 +1138,11 @@
                                         "uuid": "15df0f5a-5dbb-4570-a53c-5dd655391391"
                                     },
                                     {
-                                        "commandLine": "/home/lucas/.pyenv/versions/3.8.20/bin/python3 ./scripts/../agents/Bird/main.py Bird wlp0s20f3 5670",
+                                        "commandLine": "/home/lucas/.pyenv/versions/3.8.20/bin/python3 ./scripts/../agents/Bird/main.py Bird enxd21f3b1d5290 5670",
                                         "hostname": "amyoga",
-                                        "ip": "172.22.223.227",
+                                        "ip": "192.168.142.43",
                                         "isAttachedToCircle": false,
-                                        "mac": "C8:6E:08:D2:D1:8D",
-                                        "uuid": "44ad68a5-41e7-48d6-88a6-4eeec03a5068"
+                                        "uuid": "9f5f6b64-1233-4d07-b657-5bd50cbf4026"
                                     },
                                     {
                                         "commandLine": "/home/lucas/.pyenv/versions/3.8.20/bin/python3 ./scripts/../agents/Bird/main.py Bird enx72244ad5d921 5670",
@@ -1154,11 +1153,12 @@
                                         "uuid": "ebc25cda-bf37-40dc-a215-4f9915d51769"
                                     },
                                     {
-                                        "commandLine": "/home/lucas/.pyenv/versions/3.8.20/bin/python3 ./scripts/../agents/Bird/main.py Bird enxd21f3b1d5290 5670",
+                                        "commandLine": "/home/lucas/.pyenv/versions/3.8.20/bin/python3 ./scripts/../agents/Bird/main.py Bird wlp0s20f3 5670",
                                         "hostname": "amyoga",
-                                        "ip": "192.168.142.43",
+                                        "ip": "172.22.223.227",
                                         "isAttachedToCircle": false,
-                                        "uuid": "9f5f6b64-1233-4d07-b657-5bd50cbf4026"
+                                        "mac": "C8:6E:08:D2:D1:8D",
+                                        "uuid": "44ad68a5-41e7-48d6-88a6-4eeec03a5068"
                                     }
                                 ]
                             },
@@ -1225,12 +1225,11 @@
                                         "uuid": "af1bd08b-5430-467c-8538-28e9c1d55641"
                                     },
                                     {
-                                        "commandLine": "/home/lucas/.pyenv/versions/3.8.20/bin/python3 ./scripts/../agents/Obstacle/main.py Obstacle wlp0s20f3 5670",
+                                        "commandLine": "/home/lucas/.pyenv/versions/3.8.20/bin/python3 ./scripts/../agents/Obstacle/main.py Obstacle enxd21f3b1d5290 5670",
                                         "hostname": "amyoga",
-                                        "ip": "172.22.223.227",
+                                        "ip": "192.168.142.43",
                                         "isAttachedToCircle": false,
-                                        "mac": "C8:6E:08:D2:D1:8D",
-                                        "uuid": "33936019-3ccb-41e7-bb0e-85ec2372eb46"
+                                        "uuid": "17e098c8-8d28-4eee-b3eb-efc0934c78e0"
                                     },
                                     {
                                         "commandLine": "/home/lucas/.pyenv/versions/3.8.20/bin/python3 ./scripts/../agents/Obstacle/main.py Obstacle enx72244ad5d921 5670",
@@ -1241,11 +1240,12 @@
                                         "uuid": "78abc993-22f4-4212-ad60-caaaa4f8ef47"
                                     },
                                     {
-                                        "commandLine": "/home/lucas/.pyenv/versions/3.8.20/bin/python3 ./scripts/../agents/Obstacle/main.py Obstacle enxd21f3b1d5290 5670",
+                                        "commandLine": "/home/lucas/.pyenv/versions/3.8.20/bin/python3 ./scripts/../agents/Obstacle/main.py Obstacle wlp0s20f3 5670",
                                         "hostname": "amyoga",
-                                        "ip": "192.168.142.43",
+                                        "ip": "172.22.223.227",
                                         "isAttachedToCircle": false,
-                                        "uuid": "17e098c8-8d28-4eee-b3eb-efc0934c78e0"
+                                        "mac": "C8:6E:08:D2:D1:8D",
+                                        "uuid": "33936019-3ccb-41e7-bb0e-85ec2372eb46"
                                     }
                                 ]
                             },
@@ -1293,12 +1293,11 @@
                                         "uuid": "5112bd2c-63eb-40ba-aadc-da0e65f9b6e4"
                                     },
                                     {
-                                        "commandLine": "/home/lucas/.pyenv/versions/3.8.20/bin/python3 ./scripts/../agents/PitchDetector/main.py PitchDetector wlp0s20f3 5670",
+                                        "commandLine": "/home/lucas/.pyenv/versions/3.8.20/bin/python3 ./scripts/../agents/PitchDetector/main.py PitchDetector enxd21f3b1d5290 5670",
                                         "hostname": "amyoga",
-                                        "ip": "172.22.223.227",
+                                        "ip": "192.168.142.43",
                                         "isAttachedToCircle": false,
-                                        "mac": "C8:6E:08:D2:D1:8D",
-                                        "uuid": "5e1cd72a-5b8d-4b44-852a-2ebdb36c39b8"
+                                        "uuid": "feb4d4bc-ff2f-4cc8-bcf4-bcaf2ad3b582"
                                     },
                                     {
                                         "commandLine": "/home/lucas/.pyenv/versions/3.8.20/bin/python3 ./scripts/../agents/PitchDetector/main.py PitchDetector enx72244ad5d921 5670",
@@ -1309,11 +1308,12 @@
                                         "uuid": "022b260a-7bf9-47e1-b531-c8acfd6ffa42"
                                     },
                                     {
-                                        "commandLine": "/home/lucas/.pyenv/versions/3.8.20/bin/python3 ./scripts/../agents/PitchDetector/main.py PitchDetector enxd21f3b1d5290 5670",
+                                        "commandLine": "/home/lucas/.pyenv/versions/3.8.20/bin/python3 ./scripts/../agents/PitchDetector/main.py PitchDetector wlp0s20f3 5670",
                                         "hostname": "amyoga",
-                                        "ip": "192.168.142.43",
+                                        "ip": "172.22.223.227",
                                         "isAttachedToCircle": false,
-                                        "uuid": "feb4d4bc-ff2f-4cc8-bcf4-bcaf2ad3b582"
+                                        "mac": "C8:6E:08:D2:D1:8D",
+                                        "uuid": "5e1cd72a-5b8d-4b44-852a-2ebdb36c39b8"
                                     }
                                 ]
                             },
@@ -1369,6 +1369,21 @@
                             "width": 250,
                             "x": 706.7805507147282,
                             "y": 301.22840732280383
+                        },
+                        {
+                            "data": {
+                                "data_decoder": "BINARY",
+                                "msg_type": "",
+                                "proto_file_path": "",
+                                "string_decoder": "PLAIN_TEXT"
+                            },
+                            "height": 112,
+                            "name": "",
+                            "tool": "com.ingescape.circle.tool.observer",
+                            "uuid": "7d7288dc-aebd-45bc-bfe8-b915422f81fd",
+                            "width": 270,
+                            "x": 1124.3047014201002,
+                            "y": 314.73893345274314
                         }
                     ],
                     "childrenViewport": {
@@ -1736,6 +1751,18 @@
                         "sourceIO": {
                             "name": "stop",
                             "type": "INPUT"
+                        }
+                    },
+                    {
+                        "destination": "7d7288dc-aebd-45bc-bfe8-b915422f81fd",
+                        "destinationIO": {
+                            "name": "wildcard",
+                            "type": "INPUT"
+                        },
+                        "source": "79caca4e-3b30-48b5-99e7-85674c8aec99",
+                        "sourceIO": {
+                            "name": "note",
+                            "type": "OUTPUT"
                         }
                     }
                 ]

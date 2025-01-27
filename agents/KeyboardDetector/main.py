@@ -29,8 +29,8 @@ BLACK_KEY_HEIGHT = 100
 OCTAVES = 5
 START_OCTAVE = 2
 OFFSET = 25
-KEYBOARD_HEIGHT = KEY_HEIGHT + offset
-KEYBOARD_WIDTH = len(WHITE_KEYS) * KEY_WIDTH * OCTAVES + 2 * offset
+KEYBOARD_HEIGHT = KEY_HEIGHT + OFFSET
+KEYBOARD_WIDTH = len(WHITE_KEYS) * KEY_WIDTH * OCTAVES + 2 * OFFSET
 
 # Function to get the current note from the keyboard
 def get_current_note():
