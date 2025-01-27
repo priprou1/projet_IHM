@@ -53,8 +53,8 @@ def get_current_note():
         canvas.itemconfig(key, tag=f"white_key_{i}")
         # Bind the events
         canvas.tag_bind(key, "<Button-1>", lambda e, note=WHITE_KEYS[i % len(WHITE_KEYS)], 
-                        octave=(i // len(WHITE_KEYS)) + START_OCTAVE, key_id=key: on_key_press(e, note, octave, key_id))
-        canvas.tag_bind(key, "<ButtonRelease-1>", lambda e, key_id=key, color=KEY_COLORS["white"]: on_key_release(e, key_id, color))
+                        octave=(i // len(WHITE_KEYS)) + START_OCTAVE, key_id=key: on_key_press(e, note, octave, key_id, canvas))
+        canvas.tag_bind(key, "<ButtonRelease-1>", lambda e, key_id=key, color=KEY_COLORS["white"]: on_key_release(e, key_id, color, canvas))
 
         white_key_positions.append(x)
 
@@ -67,8 +67,8 @@ def get_current_note():
         # Save the initial state of the key
         canvas.itemconfig(key, tag=f"black_key_{i}")
         # Bind the events
-        canvas.tag_bind(key, "<Button-1>", lambda e, note=WHITE_KEYS[i % len(WHITE_KEYS)] + "#", octave=(i // len(WHITE_KEYS)) + START_OCTAVE, key_id=key: on_key_press(e, note, octave, key_id))
-        canvas.tag_bind(key, "<ButtonRelease-1>", lambda e, key_id=key, color=KEY_COLORS["black"]: on_key_release(e, key_id, color))
+        canvas.tag_bind(key, "<Button-1>", lambda e, note=WHITE_KEYS[i % len(WHITE_KEYS)] + "#", octave=(i // len(WHITE_KEYS)) + START_OCTAVE, key_id=key: on_key_press(e, note, octave, key_id, canvas))
+        canvas.tag_bind(key, "<ButtonRelease-1>", lambda e, key_id=key, color=KEY_COLORS["black"]: on_key_release(e, key_id, color, canvas))
 
     # Add labels to the first and last keys
     canvas.create_text(KEY_WIDTH // 2 + OFFSET, KEY_HEIGHT + 10, text=f"{WHITE_KEYS[0]}{START_OCTAVE}", font=("Arial", 10), fill="black")
@@ -84,12 +84,12 @@ def play_note(note, octave):
     igs.output_set_int("note", midiNumber)
 
 # Change the color of the key and play the note
-def on_key_press(event, note, octave, key_id):
-        canvas.itemconfig(key_id, fill="lightblue")
-        play_note(note, octave)
+def on_key_press(event, note, octave, key_id, canvas):
+    canvas.itemconfig(key_id, fill="lightblue")
+    play_note(note, octave)
 
 # Reestablish the color of the key
-def on_key_release(event, key_id, color):
+def on_key_release(event, key_id, color, canvas):
     canvas.itemconfig(key_id, fill=color)
 
 
