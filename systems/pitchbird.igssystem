@@ -767,6 +767,9 @@
                 "name": "Detect pitch from microphone",
                 "package": "",
                 "plugin": "ingescape_requirement",
+                "scripts": [
+                    "8db9dbc6-9b7e-4015-9090-822be2d702ac"
+                ],
                 "uuid": "b53338b6-df61-412f-b2ff-7a4a7efe932b"
             },
             {
@@ -840,6 +843,9 @@
                 "name": "Detect pitch from keyboard",
                 "package": "",
                 "plugin": "ingescape_requirement",
+                "scripts": [
+                    "b50f3549-fa10-4d87-a48a-cad1968b32d4"
+                ],
                 "uuid": "29969037-e07e-46e3-b590-b3549ec557bb"
             },
             {
@@ -895,27 +901,18 @@
                 "name": "whiteboard_tests_asupprimer",
                 "package": "",
                 "uuid": "4e70a2fa-1cbf-489e-b31f-498ef239acf5"
+            },
+            {
+                "code": "//\n// KeyboardDetector_tests\n//\n// created on 2025-01-27\n// Authors : Lucas Bolbènes, Armand Claveau, Priscilia Gonthier\n\n// The script language documentation is available at\n// https://ingescape.com/verification-validation-using-ingescape/\n\n\"detect_pitch\" \"test that the pitch detection correspond to the requirement\" {\n\n    // Output verification\n    // The note output respects the minimum and maximum constraints\n    assert KeyboardDetector.note >= 0\n    assert KeyboardDetector.note <= 127\n}\n\n",
+                "name": "KeyboardDetector_tests",
+                "package": "",
+                "uuid": "b50f3549-fa10-4d87-a48a-cad1968b32d4"
             }
         ]
     },
     "systemViews": [
         {
             "children": [
-                {
-                    "data": {
-                        "entries": [
-                            "keyboard"
-                        ],
-                        "value_type": "STRING"
-                    },
-                    "height": 79,
-                    "name": "",
-                    "tool": "com.ingescape.circle.tool.writer",
-                    "uuid": "672cc6a0-f4b1-437c-b841-602ed2003a82",
-                    "width": 256,
-                    "x": 777.9189765582321,
-                    "y": 387.53329026926167
-                },
                 {
                     "agent": {
                         "instances": [
@@ -979,6 +976,47 @@
                 },
                 {
                     "data": {
+                        "selectedAgentUuid": "Circle"
+                    },
+                    "height": 174,
+                    "name": "",
+                    "tool": "com.ingescape.circle.tool.serviceobserver",
+                    "uuid": "afcb2e6f-5d97-423c-a324-309b8c348ce2",
+                    "width": 354.4910493171664,
+                    "x": 774.7215702394578,
+                    "y": 502.8272750689826
+                },
+                {
+                    "data": {
+                        "entries": [
+                        ],
+                        "value_type": "IMPULSION"
+                    },
+                    "height": 44,
+                    "name": "",
+                    "tool": "com.ingescape.circle.tool.writer",
+                    "uuid": "dde36e9d-8120-4998-b6a6-0fc2d17bd7e2",
+                    "width": 256,
+                    "x": 777.4930773236206,
+                    "y": 257.3148279524037
+                },
+                {
+                    "data": {
+                        "entries": [
+                            "keyboard"
+                        ],
+                        "value_type": "STRING"
+                    },
+                    "height": 79,
+                    "name": "",
+                    "tool": "com.ingescape.circle.tool.writer",
+                    "uuid": "672cc6a0-f4b1-437c-b841-602ed2003a82",
+                    "width": 256,
+                    "x": 777.9189765582321,
+                    "y": 387.53329026926167
+                },
+                {
+                    "data": {
                         "entries": [
                             "microphone"
                         ],
@@ -1001,36 +1039,10 @@
                     "height": 44,
                     "name": "",
                     "tool": "com.ingescape.circle.tool.writer",
-                    "uuid": "dde36e9d-8120-4998-b6a6-0fc2d17bd7e2",
-                    "width": 256,
-                    "x": 777.4930773236206,
-                    "y": 257.3148279524037
-                },
-                {
-                    "data": {
-                        "entries": [
-                        ],
-                        "value_type": "IMPULSION"
-                    },
-                    "height": 44,
-                    "name": "",
-                    "tool": "com.ingescape.circle.tool.writer",
                     "uuid": "42c2a3dc-3d57-442f-931a-6fd610a78380",
                     "width": 256,
                     "x": 776.5844737329433,
                     "y": 212.32732949596954
-                },
-                {
-                    "data": {
-                        "selectedAgentUuid": "Circle"
-                    },
-                    "height": 174,
-                    "name": "",
-                    "tool": "com.ingescape.circle.tool.serviceobserver",
-                    "uuid": "afcb2e6f-5d97-423c-a324-309b8c348ce2",
-                    "width": 354.4910493171664,
-                    "x": 774.7215702394578,
-                    "y": 502.8272750689826
                 },
                 {
                     "children": [
@@ -1359,6 +1371,15 @@
                         },
                         {
                             "agent": {
+                                "instances": [
+                                    {
+                                        "commandLine": "/usr/bin/python3 ./../agents/KeyboardDetector/main.py KeyboardDetector eth0 5670",
+                                        "hostname": "LAPTOP-PRISCILIA",
+                                        "ip": "172.25.43.23",
+                                        "isAttachedToCircle": false,
+                                        "uuid": "94376a71-446b-42f7-af76-4d4181f176b7"
+                                    }
+                                ]
                             },
                             "class": "fd848330-1e10-4092-91cd-622b4685a932",
                             "comment": "",
@@ -1369,21 +1390,6 @@
                             "width": 250,
                             "x": 706.7805507147282,
                             "y": 301.22840732280383
-                        },
-                        {
-                            "data": {
-                                "data_decoder": "BINARY",
-                                "msg_type": "",
-                                "proto_file_path": "",
-                                "string_decoder": "PLAIN_TEXT"
-                            },
-                            "height": 112,
-                            "name": "",
-                            "tool": "com.ingescape.circle.tool.observer",
-                            "uuid": "7d7288dc-aebd-45bc-bfe8-b915422f81fd",
-                            "width": 270,
-                            "x": 1124.3047014201002,
-                            "y": 314.73893345274314
                         }
                     ],
                     "childrenViewport": {
@@ -1410,12 +1416,6 @@
                         "toOutput": "note"
                     },
                     {
-                        "from": "Obstacle",
-                        "fromInput": "note",
-                        "to": "Switch",
-                        "toOutput": "note"
-                    },
-                    {
                         "from": "Switch",
                         "fromInput": "keyboard",
                         "to": "KeyboardDetector",
@@ -1423,6 +1423,12 @@
                     },
                     {
                         "from": "Bird",
+                        "fromInput": "note",
+                        "to": "Switch",
+                        "toOutput": "note"
+                    },
+                    {
+                        "from": "Obstacle",
                         "fromInput": "note",
                         "to": "Switch",
                         "toOutput": "note"
@@ -1751,18 +1757,6 @@
                         "sourceIO": {
                             "name": "stop",
                             "type": "INPUT"
-                        }
-                    },
-                    {
-                        "destination": "7d7288dc-aebd-45bc-bfe8-b915422f81fd",
-                        "destinationIO": {
-                            "name": "wildcard",
-                            "type": "INPUT"
-                        },
-                        "source": "79caca4e-3b30-48b5-99e7-85674c8aec99",
-                        "sourceIO": {
-                            "name": "note",
-                            "type": "OUTPUT"
                         }
                     }
                 ]
