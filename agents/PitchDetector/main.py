@@ -87,6 +87,7 @@ def get_current_note(printOut=False):
                 q.put({'Note': current, 'Cents': current_pitch.microtone.cents})
 
     except KeyboardInterrupt:
+        # Exit on Ctrl+C
         print('Interrupt')
     finally:
         stream.stop_stream()

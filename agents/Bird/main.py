@@ -13,7 +13,7 @@
 
 import sys
 import os
-# Ajouter le dossier racine au sys.path
+# Add the root directory to the path in order to import the modules
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../../')))
 import ingescape as igs
 from modules import midiConverter as mc
@@ -92,7 +92,7 @@ def note_input_callback(io_type, name, value_type, value, my_data):
             igs.service_call("Whiteboard", "moveTo", arguments_list, "bird")
         
         if(noteNameId != -1):
-            arguments_list = (noteNameId, "text", mc.midiToString(value))
+            arguments_list = (noteNameId, "text", mc.midi_to_string(value))
             igs.service_call("Whiteboard", "setStringProperty", arguments_list, "birdNote")
             arguments_list = (noteNameId, 50.0 + birdSize / 2 - 25 , currentY + birdSize / 2 - 10)
             igs.service_call("Whiteboard", "moveTo", arguments_list, "birdNote")

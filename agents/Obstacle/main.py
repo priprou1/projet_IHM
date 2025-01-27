@@ -13,7 +13,7 @@
 
 import sys
 import os
-# Ajouter le dossier racine au sys.path
+# Add the root directory to the path in order to import the modules
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../../')))
 import ingescape as igs
 import random
@@ -37,8 +37,8 @@ currentX = 1000.0
 currentY = 500.0
 # Note of the obstacle and the pitch of the user
 obstacleNote = 50
-obstacleNoteName = mc.midiToString(obstacleNote)
-note = 50
+obstacleNoteName = mc.midi_to_string(obstacleNote)
+note = 45
 # Offset of the movement of the obstacle
 offset = 10
 # Thickness of the obstacle and the hole
@@ -144,7 +144,7 @@ def clock_callback(io_type, name, value_type, value, my_data):
         localContact = False
         # Generate a random integer between bmin and bmax, that will correspond to the new note of the obstacle
         obstacleNote = random.randint(bmin + 3, bmax)
-        obstacleNoteName = mc.midiToString(obstacleNote)
+        obstacleNoteName = mc.midi_to_string(obstacleNote)
         # Update the name of the obstacle note on the whiteboard
         arguments_list = (obstacleNoteId, "text", obstacleNoteName)
         igs.service_call("Whiteboard", "setStringProperty", arguments_list, "obstacleNote")

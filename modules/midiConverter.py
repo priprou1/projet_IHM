@@ -12,16 +12,16 @@ including converting them to human-readable note names and
 converting note strings back to their corresponding MIDI numbers.
 
 Functions:
-    midiToString(midiNumber): Converts a MIDI number to a note string.
-    stringToMidi(noteString): Converts a musical note string to its corresponding MIDI number.
+    midi_to_string(midiNumber): Converts a MIDI number to a note string.
+    string_to_midi(noteString): Converts a musical note string to its corresponding MIDI number.
 
 Constants:
     NOTE_NAMES: A list of note names in an octave.
 
 Examples:
-    >>> midiToString(60)
+    >>> midi_to_string(60)
     'C4'
-    >>> stringToMidi('C4')
+    >>> string_to_midi('C4')
     60
 
 Raises:
@@ -31,7 +31,7 @@ Raises:
 # Constants
 NOTE_NAMES = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"]
 
-def midiToString(midiNumber):
+def midi_to_string(midiNumber):
     """
     Converts a MIDI number to its corresponding musical note string.
 
@@ -45,7 +45,7 @@ def midiToString(midiNumber):
         ValueError: If the MIDI number is not between 0 and 127.
 
     Example:
-        >>> midiToString(60)
+        >>> midi_to_string(60)
         'C4'
     """
     if 0 <= midiNumber <= 127:
@@ -55,34 +55,7 @@ def midiToString(midiNumber):
     else:
         raise ValueError("MIDI number must be between 0 and 127")
     
-def stringToMidi(noteString):
-    """
-    Converts a musical note string to its corresponding MIDI number.
-
-    Args:
-        noteString (str): The musical note string (e.g., 'C4', 'D#3').
-                         The note must be a valid note and the octave must be an integer.
-
-    Returns:
-        int: The MIDI number corresponding to the given note string.
-
-    Raises:
-        ValueError: If the note string is invalid or out of range.
-    """
-    try:
-        note = noteString[:-1]  # Extract the note (e.g., 'C', 'D#')
-        octave = int(noteString[-1])  # Extract the octave (e.g., 4, 3)
-        if note not in NOTE_NAMES:
-            raise ValueError(f"Invalid note: {note}")
-        midiNumber = (octave + 1) * 12 + NOTE_NAMES.index(note)
-        if 0 <= midiNumber <= 127:
-            return midiNumber
-        else:
-            raise ValueError(f"Note out of MIDI range: {noteString}")
-    except (ValueError, IndexError) as e:
-        raise ValueError(f"Invalid note string: {noteString}. Error: {e}")
-    
-def stringToMidi(noteString):
+def string_to_midi(noteString):
     """
     Converts a musical note string to its corresponding MIDI number.
 
@@ -97,7 +70,7 @@ def stringToMidi(noteString):
         ValueError: If the note string is invalid or out of range.
 
     Example:
-        >>> stringToMidi('C4')
+        >>> string_to_midi('C4')
         60
     """
     try:
@@ -124,6 +97,6 @@ def stringToMidi(noteString):
 # Example usage
 if __name__ == "__main__":
     midiNumber = 60
-    print("midiToString(",midiNumber,") = ", midiToString(midiNumber))  # Output: C4
+    print("midi_to_string(",midiNumber,") = ", midi_to_string(midiNumber))  # Output: C4
     noteString = "C4"
-    print("stringToMidi(",noteString,") = ",stringToMidi(noteString))  # Output: 60
+    print("string_to_midi(",noteString,") = ",string_to_midi(noteString))  # Output: 60
