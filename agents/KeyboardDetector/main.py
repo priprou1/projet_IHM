@@ -17,31 +17,41 @@ import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../../')))
 import ingescape as igs
 from modules import midiConverter as mc
+import tkinter as tk
 
 # Function to get the current note from the keyboard
-def get_current_note(printOut=False):
-    while True:
+def get_current_note():
+    app = tk.Tk()
+    app.bind("<Return>", on_enter)
+    app.mainloop()
 
-        try:
-            # Prompt user for input
-            note_string = input("Enter a musical note (e.g., C4, D#-1): ").strip()
+    # while True:
+
+    #     try:
+    #         # Prompt user for input
+    #         note_string = input("Enter a musical note (e.g., C4, D#-1): ").strip()
             
-            # Convert to MIDI number
-            midi_number = mc.string_to_midi(note_string)
+    #         # Convert to MIDI number
+    #         midi_number = mc.string_to_midi(note_string)
             
-            # Display the result
-            print(f"{note_string} : {midi_number}")
-            # Return the MIDI number
-            igs.output_set_int("note", midi_number)
+    #         # Display the result
+    #         print(f"{note_string} : {midi_number}")
+    #         # Return the MIDI number
+    #         igs.output_set_int("note", midi_number)
 
-        except ValueError as e:
-            # Handle invalid input
-            print(f"Invalid input: {e}. Please try again.")
+    #     except ValueError as e:
+    #         # Handle invalid input
+    #         print(f"Invalid input: {e}. Please try again.")
 
-        except KeyboardInterrupt:
-            # Exit on Ctrl+C
-            print('Interrupt')
-            break
+    #     except KeyboardInterrupt:
+    #         # Exit on Ctrl+C
+    #         print('Interrupt')
+    #         break
+    pass
+
+def on_enter_callback(event):
+
+    
 
 
 if __name__ == "__main__":
@@ -71,7 +81,7 @@ if __name__ == "__main__":
 
     igs.start_with_device(sys.argv[2], int(sys.argv[3]))
 
-    input()
+    get_current_note()
 
     igs.stop()
 
