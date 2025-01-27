@@ -20,6 +20,7 @@ from modules import midiConverter as mc
 import tkinter as tk
 
 # Function to get the current note from the keyboard
+
 def get_current_note():
     app = tk.Tk()
     app.bind("<Return>", on_enter)
@@ -50,8 +51,7 @@ def get_current_note():
     pass
 
 def on_enter_callback(event):
-
-    
+    pass  
 
 
 if __name__ == "__main__":
