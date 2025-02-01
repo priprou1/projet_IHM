@@ -1,6 +1,6 @@
 ### Video
 
-You can watch an introductory video in [video.zip](video.zip)
+You can watch an introductory video in [video.mp4](video.mp4)
 
 ## Prerequisites
 
