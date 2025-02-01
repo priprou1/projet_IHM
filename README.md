@@ -1,3 +1,7 @@
+### Video
+
+You can watch an introductory video in [video.zip](video.zip)
+
 ## Prerequisites
 
 - Python3 (https://www.python.org/downloads/)
