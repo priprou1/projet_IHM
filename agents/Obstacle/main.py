@@ -157,8 +157,7 @@ def stop_callback(io_type, name, value_type, value, my_data):
     # Display the last score on the whiteboard chat
     arguments_list = ("Last score : " + str(successfulAttempts) + " / " + str(nbAttempts))
     igs.service_call("Whiteboard", "chat", arguments_list, None) 
-
-    # Reset the score
+# Reset the score
     arguments_list = (scoreId, "text", "Score : 0 / 0")
     igs.service_call("Whiteboard", "setStringProperty", arguments_list, "score")
     successfulAttempts = 0

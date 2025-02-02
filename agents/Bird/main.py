@@ -139,7 +139,7 @@ if __name__ == "__main__":
     ## Initialise the services of the agent
     igs.service_init("elementCreated", elementCreated_callback, None)
     igs.service_arg_add("elementCreated", "elementId", igs.INTEGER_T)
-  
+
     igs.service_init("actionResult", actionResult_callback, None)
     igs.service_arg_add("actionResult", "succeeded", igs.BOOL_T)
 
