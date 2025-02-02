@@ -156,7 +156,7 @@ def stop_callback(io_type, name, value_type, value, my_data):
     print("Game stopped")
     # Display the last score on the whiteboard chat
     arguments_list = ("Last score : " + str(successfulAttempts) + " / " + str(nbAttempts))
-    igs.service_call("Whiteboard", "chat", arguments_list, None) # TODO : Est ce que ça s'affiche bien dans le chat du whiteboard?
+    igs.service_call("Whiteboard", "chat", arguments_list, None)
 
     # Reset the score
     arguments_list = (scoreId, "text", "Score : 0 / 0")
@@ -175,7 +175,6 @@ def stop_callback(io_type, name, value_type, value, my_data):
     arguments_list = (obstacleNoteId, currentX, 0.0)
     igs.service_call("Whiteboard", "moveTo", arguments_list, "obstacleNote")
 
-# TODO : Elle fait quoi cette fonction? Ne sert à rien non ? Peut-elle être supprimée ? Sinon la commenter
 def actionResult_callback(sender_agent_name, sender_agent_uuid, service_name, arguments, token, my_data):
     pass
 
@@ -256,7 +255,6 @@ if __name__ == "__main__":
     ## Initialise the service of the agent
     igs.service_init("elementCreated", elementCreated_callback, None)
     igs.service_arg_add("elementCreated", "elementId", igs.INTEGER_T)
-    # TODO : A quoi sert cette fonction? Peut-elle être supprimée? Sinon la commenter
     igs.service_init("actionResult", actionResult_callback, None)
     igs.service_arg_add("actionResult", "succeeded", igs.BOOL_T)
 
