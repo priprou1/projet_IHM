@@ -41,7 +41,6 @@ def on_agent_event_callback(event, uuid, name, event_data, my_data):
             arguments_list = ("C#4", 20.0 + birdSize / 2 - 25, 20.0 + birdSize / 2 - 10, "black")
             igs.service_call("Whiteboard", "addText", arguments_list, "birdNote")
 
-# TODO : Elle fait quoi cette fonction? Ne sert à rien non ? Peut-elle être supprimée ? Sinon la commenter
 def actionResult_callback(sender_agent_name, sender_agent_uuid, service_name, arguments, token, my_data):
     pass
 
@@ -140,7 +139,7 @@ if __name__ == "__main__":
     ## Initialise the services of the agent
     igs.service_init("elementCreated", elementCreated_callback, None)
     igs.service_arg_add("elementCreated", "elementId", igs.INTEGER_T)
-    # TODO : A quoi sert cette fonction? Peut-elle être supprimée? Sinon la commenter
+  
     igs.service_init("actionResult", actionResult_callback, None)
     igs.service_arg_add("actionResult", "succeeded", igs.BOOL_T)
 
